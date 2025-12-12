@@ -18,3 +18,7 @@ ibmb_script/tf_online/historical/utils/__pycache__
 ibmb_script/tf_online/tf_online_5min/flagged
 ibmb_script/tf_online/tf_online_5min/logs
 ibmb_script/tf_online/tf_online_5min/utils/__pycache__
+
+ibmb_script/tf_online/tf_online_10min/flagged
+ibmb_script/tf_online/tf_online_10min/logs
+ibmb_script/tf_online/tf_online_10min/utils/__pycache__

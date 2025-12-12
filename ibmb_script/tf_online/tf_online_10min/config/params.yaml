@@ -1,0 +1,57 @@
+col_identifier: &shared_settings
+  tf_online_hist_path: /home/ubuntu/bvic/ibmb_script/tf_online/historical/data/tf_online_historical_data.parquet
+  transaction_date: transaction_date
+  account_number: from_account_number
+  transaction_status: transaction_status
+  transaction_state: transaction_state
+  transaction_category: transaction_category
+  no_referensi: no_referensi
+  temp_date_col: temp_date_col
+  flag_col: flag
+  usecols:
+    - transaction_date
+    - from_account_number 
+    - from_account_owner_name 
+    - to_account_number 
+    - to_account_owner_name 
+    - to_bank_name 
+    - transaction_category 
+    - transaction_status 
+    - transaction_amount 
+    - transaction_currency 
+    - channel_code 
+    - transaction_state 
+    - no_referensi
+  n_days: 120
+  null_values:
+    - "null"
+    - "NULL"
+    - ""
+    - None
+
+dtypes:
+  transaction_date: Datetime
+  from_account_number: Utf8
+  from_account_owner_name: Utf8
+  to_account_number: Utf8
+  to_account_owner_name: Utf8
+  to_bank_name: Utf8
+  transaction_category: Utf8
+  transaction_status: Int8
+  transaction_amount: Float64
+  transaction_currency: Utf8
+  channel_code: Utf8
+  transaction_state: Int8
+
+flag:
+  <<: *shared_settings
+  output_path: flagged/tf_online_10min_flag.parquet
+
+params_tf_online_10min:
+  <<: *shared_settings
+  rolling_window: 10m # in minutes
+  threshold: 10
+
+date:
+  date_file_format: '%Y%m%d'
+  datetime_format: '%Y-%m-%d %H:%M:%S'

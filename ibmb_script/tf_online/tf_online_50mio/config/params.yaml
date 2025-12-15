@@ -7,11 +7,7 @@ col_identifier: &shared_settings
   transaction_category: transaction_category
   no_referensi: no_referensi
   temp_date_col: temp_date_col
-  flag_col: 
-    - flag_5min
-    - flag_10min
-    - flag_50mio
-    - flag_50mio_e
+  flag_col: flag
   usecols:
     - transaction_date
     - from_account_number 
@@ -47,22 +43,15 @@ dtypes:
   channel_code: Utf8
   transaction_state: Int8
 
-historical:
+flag:
   <<: *shared_settings
-  input_folder: /home/ubuntu/bvic/data/new_ibmb_data/
-  file_prefix: trx_history_
-  file_suffix: .csv
+  output_path: flagged/tf_online_50mio_flag.parquet
 
-filter:
-  transaction_status:
-    - 0
-  transaction_state:
-    - 1
-  transaction_category:
-    - TRANSFER_OA
-    - TRANSFER_OFF_US
-    - TRANSFER_ON_US
-  
+params_tf_online_50mio:
+  <<: *shared_settings
+  rolling_window: 1d # in days
+  threshold: 50000000
+
 date:
   date_file_format: '%Y%m%d'
   datetime_format: '%Y-%m-%d %H:%M:%S'

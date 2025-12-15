@@ -14,9 +14,11 @@ def is_empty(lf: pl.LazyFrame) -> bool:
 
 def filter_date(
     df: pl.DataFrame,
-    n_days: int = CONSTS.params_tf_online_10min.n_days,
+    time_start: int = CONSTS.params_tf_online_50mio_e.time_range_start,
+    time_end: int = CONSTS.params_tf_online_50mio_e.time_range_start,
+    n_days: int = CONSTS.params_tf_online_50mio_e.n_days,
     transaction_date_col: str = CONSTS.flag.transaction_date,
-    temp_date_col: str = CONSTS.flag.temp_date_col
+    temp_date_col: str = CONSTS.flag.temp_date_col,
 ) -> pl.DataFrame | None:
     """
     Filter dataframe to include only transactions in specific dates.
@@ -40,24 +42,27 @@ def filter_date(
         cutoff_date = datetime.now().date() - timedelta(days=n_days)
         logger.info(f"Cutoff Date: {cutoff_date}")
         df = df.with_columns(
-            pl.col(transaction_date_col).dt.date().alias(temp_date_col))
+            pl.col(transaction_date_col).dt.date().alias(temp_date_col)
+        )
         df = df.filter(
-            pl.col(temp_date_col) >= cutoff_date
+            (pl.col(temp_date_col) >= cutoff_date) &
+            (pl.col(transaction_date_col).dt.hour().is_between(
+                time_start,
+                time_end))
         )
         return df
     except Exception as e:
         logger.error(f"Error filtering data: {e}")
 
 
-def flag_tf_online_10min(
+def flag_tf_online_50m_early(
     tf_online_hist_path: Path | str = CONSTS.flag.tf_online_hist_path,
     output_path: Path | str = CONSTS.flag.output_path,
     transaction_date_col: str = CONSTS.flag.transaction_date,
     account_number_col: str = CONSTS.flag.account_number,
     no_referensi_col: str = CONSTS.flag.no_referensi,
     flag_col: str = CONSTS.flag.flag_col,
-    rolling_window: int = CONSTS.params_tf_online_10min.rolling_window,
-    threshold: int = CONSTS.params_tf_online_10min.threshold,
+    threshold: int = CONSTS.params_tf_online_50mio_e.threshold,
 ) -> None:
     """
     Count transactions based on rolling window time frame.
@@ -98,73 +103,95 @@ def flag_tf_online_10min(
         logger.info("Succeeded loading historical transfer online data.")
     except Exception as e:
         logger.error(f"Error loading historical transfer online data: {e}.")
-        logger.error("Flag transfer online 10 mins Process terminated.")
+        logger.error(
+            "Flag transfer online 50 millions IDR Process terminated.")
         return
     # Filter based on days
     try:
         logger.info("Filtering daily data...")
         df = filter_date(df=df)
+
         logger.info("Filtering finished.")
         logger.info(
             f"Data after filtering: {df.select(pl.len()).collect()[0, 0]}")
     except Exception as e:
         logger.error(f"Error filtering data: {e}")
-        logger.error("Flag transfer online 10 mins Process terminated.")
+        logger.error(
+            "Flag transfer online 50 millions IDR Process terminated.")
         return
+
+    # Calculating flag transaction
     try:
         logger.info("Calculating flagged transaction data...")
-        df_rolling = (df.rolling(
-            index_column=transaction_date_col,
-            period=rolling_window,
-            group_by=account_number_col
-        ).agg(pl.len()).rename({"len": "rolling_count"})
+        # Step 1: Self-join on account number within 24h window
+        df_rolled = (
+            df.join(
+                df,
+                on=account_number_col,
+                how="left",
+                suffix="_r"
+            )
+            .filter(
+                (pl.col(f"{transaction_date_col}_r") >= pl.col(transaction_date_col) - pl.duration(hours=24)) &
+                (pl.col(f"{transaction_date_col}_r")
+                 <= pl.col(transaction_date_col))
+            )
         )
-        df_with_rolling = (df.join(
-            df_rolling,
-            on=[account_number_col, transaction_date_col],
-            how="left")
+
+        # Step 2: Group sums on the original transaction
+        df_sums = (
+            df_rolled
+            .group_by(no_referensi_col)
+            .agg(pl.sum("transaction_amount_r").alias("rolling_24h_sum"))
         )
-        burst_end = (df_rolling.filter(
-            pl.col("rolling_count") >= threshold).select([account_number_col, transaction_date_col])
+
+        # Step 3: Join sums back and filter >= 50M
+        df_flagged_accounts = (
+            df_rolled
+            .join(df_sums, on=no_referensi_col)
+            .filter(pl.col("rolling_24h_sum") >= threshold)
         )
-        # burst_end: ensure "t_start" column exists
-        burst_end = (burst_end.with_columns(
-            (pl.col(f"{transaction_date_col}") - pl.duration(minutes=10)).alias("t_start"))
+
+        # Step 4: Extract keys (these transactions exceeded 50M)
+        keys = (
+            df_flagged_accounts
+            .select([account_number_col, no_referensi_col])
+            .unique()
         )
-        df_with_rolling_with_burst = (df_with_rolling.join(
-            burst_end,
-            on=[f"{account_number_col}"],
-            how="inner")
+
+        # Step 5: Returns only rows that match the keys
+        tf_online_flag_only = (
+            df.join(
+                keys,
+                on=[account_number_col, no_referensi_col],
+                how="semi"
+            ).with_columns(pl.lit(1).cast(pl.Int8).alias(flag_col))
         )
-        tf_online_flag_only = (df_with_rolling_with_burst.filter(
-            (pl.col(transaction_date_col) >= pl.col("t_start")) &
-            (pl.col(transaction_date_col) <= pl.col("transaction_date_right"))).unique(subset=[no_referensi_col])
-        )
-        tf_online_flag_only = (tf_online_flag_only.with_columns(
-            pl.lit(1).cast(pl.Int8).alias(flag_col))
-        )
-        if not is_empty(tf_online_flag_only):
-            try:
-                rows = tf_online_flag_only.select(pl.len()).collect()[0, 0]
-                logger.info(f"Found {rows} flagged records.")
-                logger.info(
-                    "Saving daily flagged transfer online transactions...")
-                logger.info(f"Saving into {output_path}.")
-                tf_online_flag_only.collect().write_parquet(output_path)
-                logger.info(
-                    "Saving daily flagged transfer online transactions succeed.")
-            except Exception as e:
-                logger.error(
-                    f"Error saving daily flagged transfer online transactions: {e}")
-                logger.error(
-                    "Flag transfer online 10 mins Process terminated.")
-                return
-        else:
-            logger.info(
-                "There is no daily flagged transfer online 10 mins found.")
-            logger.info("Process finished")
+
     except Exception as e:
         logger.error(
-            f"Error calculation flagged transfer online 10 mins : {e}.")
-        logger.error("Flag transfer online 10 mins Process terminated.")
+            f"Error calculation flagged transfer online 50 millions IDR: {e}.")
+        logger.error(
+            "Flag transfer online 50 millions IDR Process terminated.")
         return
+
+    if not is_empty(tf_online_flag_only):
+        try:
+            rows = tf_online_flag_only.select(pl.len()).collect()[0, 0]
+            logger.info(f"Found {rows} flagged records.")
+            logger.info(
+                "Saving daily flagged transfer online transactions...")
+            logger.info(f"Saving into {output_path}.")
+            tf_online_flag_only.collect().write_parquet(output_path)
+            logger.info(
+                "Saving daily flagged transfer online transactions succeed.")
+        except Exception as e:
+            logger.error(
+                f"Error saving daily flagged transfer online transactions: {e}")
+            logger.error(
+                "Flag transfer online 50 millions IDR Process terminated.")
+            return
+    else:
+        logger.info(
+            "There is no daily flagged transfer online 50 millions IDR transaction found.")
+        logger.info("Process finished")

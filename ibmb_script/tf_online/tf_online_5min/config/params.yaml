@@ -7,7 +7,7 @@ col_identifier: &shared_settings
   transaction_category: transaction_category
   no_referensi: no_referensi
   temp_date_col: temp_date_col
-  flag_col: flag_5min
+  flag_col: flag
   usecols:
     - transaction_date
     - from_account_number 

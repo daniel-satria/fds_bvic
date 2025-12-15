@@ -10,6 +10,8 @@ col_identifier: &shared_settings
   flag_col: 
     - flag_5min
     - flag_10min
+    - flag_50mio
+    - flag_50mio_e
   usecols:
     - transaction_date
     - from_account_number 

@@ -5,6 +5,9 @@ from .logger import logger
 from .models import CONSTS
 
 
+DROP_COLS = ["flag_5min", "flag_10min", "flag_50mio"]
+
+
 def is_empty(lf: pl.LazyFrame) -> bool:
     return lf.limit(1).collect().height == 0
 
@@ -88,6 +91,8 @@ def flag_tf_online_10min(
     try:
         logger.info("Loading historical transfer online data...")
         df = pl.scan_parquet(tf_online_hist_path)
+        df = df.drop(DROP_COLS, strict=False)
+
         logger.info(
             f"Total tf_online records: {df.select(pl.len()).collect()[0, 0]}")
         logger.info("Succeeded loading historical transfer online data.")

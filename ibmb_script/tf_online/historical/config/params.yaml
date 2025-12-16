@@ -11,7 +11,7 @@ col_identifier: &shared_settings
     - flag_5min
     - flag_10min
     - flag_50mio
-    - flag_50mio_e
+    - flag_50mio_early
   usecols:
     - transaction_date
     - from_account_number 
@@ -52,6 +52,26 @@ historical:
   input_folder: /home/ubuntu/bvic/data/new_ibmb_data/
   file_prefix: trx_history_
   file_suffix: .csv
+
+update_flag_5min:
+  <<: *shared_settings
+  daily_path_flag: /home/ubuntu/bvic/ibmb_script/tf_online/tf_online_5min/flagged/tf_online_5min_flag.parquet
+  flag_col: flag_5min
+
+update_flag_10min:
+  <<: *shared_settings
+  daily_path_flag: /home/ubuntu/bvic/ibmb_script/tf_online/tf_online_10min/flagged/tf_online_10min_flag.parquet
+  flag_col: flag_10min 
+
+update_flag_50mio:
+  <<: *shared_settings
+  daily_path_flag: /home/ubuntu/bvic/ibmb_script/tf_online/tf_online_50mio/flagged/tf_online_50mio_flag.parquet
+  flag_col: flag_50mio
+
+update_flag_50mio_early:
+  <<: *shared_settings
+  daily_path_flag: /home/ubuntu/bvic/ibmb_script/tf_online/tf_online_50mio_early/flagged/tf_online_50mio_early_flag.parquet
+  flag_col: flag_50mio_early  
 
 filter:
   transaction_status:

@@ -30,6 +30,26 @@ class HistoricalConfig(ColIdentifier, frozen=True):
     file_suffix: str
 
 
+class UpdateFlag5minConfig(ColIdentifier, frozen=True):
+    daily_path_flag: Path | str
+    flag_col: str
+
+
+class UpdateFlag10minConfig(ColIdentifier, frozen=True):
+    daily_path_flag: Path | str
+    flag_col: str
+
+
+class UpdateFlag50mioConfig(ColIdentifier, frozen=True):
+    daily_path_flag: Path | str
+    flag_col: str
+
+
+class UpdateFlag50mioEConfig(ColIdentifier, frozen=True):
+    daily_path_flag: Path | str
+    flag_col: str
+
+
 # Filter block
 class FilterConfig(BaseModel, frozen=True):
     transaction_status: List[int]
@@ -48,6 +68,10 @@ class DateConfig(BaseModel, frozen=True):
 
 class AppConfig(BaseModel, frozen=True):
     historical: HistoricalConfig
+    update_flag_5min: UpdateFlag5minConfig
+    update_flag_10min: UpdateFlag10minConfig
+    update_flag_50mio: UpdateFlag50mioConfig
+    update_flag_50mio_early: UpdateFlag50mioEConfig
     filter: FilterConfig
     date: DateConfig
     dtypes: dict[str, str]
@@ -79,4 +103,7 @@ def load_constants(
 
 
 CONSTS = load_constants()
+if CONSTS is None:
+    raise RuntimeError("Failed to load config.")
+
 dtypes = {k: dtype_map[v] for k, v in CONSTS.dtypes.items()}

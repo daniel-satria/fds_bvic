@@ -153,11 +153,14 @@ def update_historical(
         f"Concatenated DataFrame has {total_rows} rows and {total_cols} columns.")
 
     # Check if flag columns already exists
-    for col in flag_col:
-        if CONSTS.historical.flag_col not in tf_online_daily_df.collect_schema().names():
-            tf_online_daily_df = (tf_online_daily_df.with_columns(
-                pl.lit(0).cast(pl.Int8).alias(col))
-            )
+    existing_cols = set(tf_online_daily_df.collect_schema().names())
+    missing_flags = [
+        pl.lit(0).cast(pl.Int8).alias(col)
+        for col in flag_col
+        if col not in existing_cols
+    ]
+    if missing_flags:
+        tf_online_daily_df = tf_online_daily_df.with_columns(missing_flags)
 
     # If there existing historical data
     if tf_online_hist_path.exists():
@@ -171,6 +174,18 @@ def update_historical(
         except Exception as e:
             logger.info(f"Error loading historical data: {e}")
 
+        # Ensure historical df has all flag columns
+        hist_existing_cols = set(
+            tf_online_hist_df.collect_schema().names())
+        hist_missing_flags = [
+            pl.lit(0).cast(pl.Int8).alias(col)
+            for col in flag_col
+            if col not in hist_existing_cols
+        ]
+        if hist_missing_flags:
+            tf_online_hist_df = tf_online_hist_df.with_columns(
+                hist_missing_flags)
+
         try:
             logger.info("Searching delta in new daily data.")
             delta_new = tf_online_daily_df.join(
@@ -180,7 +195,7 @@ def update_historical(
             )  # Get records from daily not in history
             logger.info("Searching delta in historical data.")
             delta_old = tf_online_hist_df.join(
-                tf_online_hist_df,
+                tf_online_daily_df,
                 on=no_referensi_col,
                 how="anti"
             )  # Get records from history not in daily
@@ -205,7 +220,15 @@ def update_historical(
         logger.info("Making new historical parquet data...")
 
     try:
-        tf_online_daily_df.collect().write_parquet(tf_online_hist_path)
+        final_df = (
+            tf_online_hist_df
+            if tf_online_hist_path.exists()
+            else tf_online_daily_df
+        )
+
+        final_df.collect().write_parquet(tf_online_hist_path)
+
+        # tf_online_daily_df.collect().write_parquet(tf_online_hist_path)
         logger.info(
             "Succeeded saving the updated historical transfer online records.")
     except Exception as e:

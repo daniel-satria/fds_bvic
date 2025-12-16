@@ -1,5 +1,6 @@
 from utils.logger import logger
 from utils.historical import update_historical
+from utils.daily import update_flag_5min, update_flag_10min, update_flag_50mio, update_flag_50mio_e
 
 
 def main():
@@ -10,6 +11,38 @@ def main():
     logger.info("Running Historical Process...")
     update_historical()
     logger.info("Historical Process succeed.")
+
+    # Update Flag 5 min
+    logger.info("="*50)
+    logger.info("Updating 5min flag Process...")
+    logger.info("="*50)
+    logger.info("Running Update 5min Flag Process...")
+    update_flag_5min()
+    logger.info("Updating 5min flag Succeded.")
+
+    # Update Flag 10 min
+    logger.info("="*50)
+    logger.info("Updating 10min flag Process...")
+    logger.info("="*50)
+    logger.info("Running Update 10min flag Process...")
+    update_flag_10min()
+    logger.info("Updating 10min flag Succeded.")
+
+    # Update Flag 50 mio
+    logger.info("="*50)
+    logger.info("Updating 50mio flag Process...")
+    logger.info("="*50)
+    logger.info("Running Update 50mio flag Process...")
+    update_flag_50mio()
+    logger.info("Updating 50mio flag Succeded.")
+
+    # Update Flag 50 mio early
+    logger.info("="*50)
+    logger.info("Updating 50mio early flag Process...")
+    logger.info("="*50)
+    logger.info("Running Update 50mio early flag Process...")
+    update_flag_50mio_e()
+    logger.info("Updating 50mio early flag Succeded.")
 
 
 if __name__ == "__main__":

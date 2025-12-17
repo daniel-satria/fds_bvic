@@ -12,6 +12,7 @@ ibmb_script/ccw/utils/__pycache__
 ibmb_script/ccw/__pycache__
 ibmb_script/ccw/test_hist.ipynb
 
+# TF Online
 ibmb_script/tf_online/historical/data
 ibmb_script/tf_online/historical/logs
 ibmb_script/tf_online/historical/test_hist.ipynb
@@ -31,12 +32,35 @@ ibmb_script/tf_online/tf_online_50mio/flagged
 ibmb_script/tf_online/tf_online_50mio/logs
 ibmb_script/tf_online/tf_online_50mio/utils/__pycache__
 
+ibmb_script/tf_online/tf_online_50mio_early/flagged
+ibmb_script/tf_online/tf_online_50mio_early/logs
+ibmb_script/tf_online/tf_online_50mio_early/utils/__pycache__
+
+
+# non-QR
 ibmb_script/pembayaran/non_qr/historical/flagged/
 ibmb_script/pembayaran/non_qr/historical/data/
-ibmb_script/pembayaran/non_qr/historical/utils/__pycache__/
+ibmb_script/pembayaran/non_qr/historical/utils/__pycache__
 ibmb_script/pembayaran/non_qr/historical/logs
 
-ibmb_script/pembayaran/non_qr/non_qr_10min/flagged/
-ibmb_script/pembayaran/non_qr/non_qr_10min/logs/
-ibmb_script/pembayaran/non_qr/non_qr_10min/data/
-ibmb_script/pembayaran/non_qr/non_qr_10min/utils/__pycache__/
+ibmb_script/pembayaran/non_qr/non_qr_10min/flagged
+ibmb_script/pembayaran/non_qr/non_qr_10min/logs
+ibmb_script/pembayaran/non_qr/non_qr_10min/utils/__pycache__
+
+ibmb_script/pembayaran/non_qr/non_qr_5mio/flagged
+ibmb_script/pembayaran/non_qr/non_qr_5mio/logs
+ibmb_script/pembayaran/non_qr/non_qr_5mio/utils/__pycache__
+
+
+# QR
+ibmb_script/pembayaran/qr/historical/data
+ibmb_script/pembayaran/qr/historical/logs
+ibmb_script/pembayaran/qr/historical/utils/__pycache__
+
+ibmb_script/pembayaran/qr/qr_5mio/flagged
+ibmb_script/pembayaran/qr/qr_5mio/logs
+ibmb_script/pembayaran/qr/qr_5mio/utils/__pycache__
+
+ibmb_script/pembayaran/qr/qr_10min/flagged
+ibmb_script/pembayaran/qr/qr_10min/logs
+ibmb_script/pembayaran/qr/qr_10min/utils/__pycache__

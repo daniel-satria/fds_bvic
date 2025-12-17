@@ -1,5 +1,5 @@
 col_identifier: &shared_settings
-  non_qr_hist_path: /home/ubuntu/bvic/ibmb_script/pembayaran/non_qr/historical/data/non_qr_historical_data.parquet
+  hist_path: /home/ubuntu/bvic/ibmb_script/pembayaran/non_qr/historical/data/non_qr_historical_data.parquet
   transaction_date: transaction_date
   account_number: from_account_number
   transaction_status: transaction_status
@@ -7,7 +7,7 @@ col_identifier: &shared_settings
   transaction_category: transaction_category
   no_referensi: no_referensi
   temp_date_col: temp_date_col
-  flag_col: flag_10min
+  flag_col: flag
   usecols:
     - transaction_date
     - from_account_number 
@@ -47,9 +47,10 @@ flag:
   <<: *shared_settings
   output_path: flagged/non_qr_10min_flag.parquet
 
-params_non_qr_10min:
+params:
   <<: *shared_settings
   rolling_window: 10m # in minutes
+  rolling_window_int: 10
   threshold: 5
 
 date:

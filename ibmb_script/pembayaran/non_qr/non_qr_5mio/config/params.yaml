@@ -1,5 +1,5 @@
 col_identifier: &shared_settings
-  non_qr_hist_path: /home/ubuntu/bvic/ibmb_script/pembayaran/non_qr/historical/data/non_qr_historical_data.parquet
+  hist_path: /home/ubuntu/bvic/ibmb_script/pembayaran/non_qr/historical/data/non_qr_historical_data.parquet
   transaction_date: transaction_date
   account_number: from_account_number
   transaction_status: transaction_status
@@ -47,7 +47,7 @@ flag:
   <<: *shared_settings
   output_path: flagged/non_qr_5mio_flag.parquet
 
-params_non_qr_5mio:
+params:
   <<: *shared_settings
   rolling_window: 24 #in hours
   threshold: 5000000

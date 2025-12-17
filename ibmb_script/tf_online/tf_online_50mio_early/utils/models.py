@@ -30,7 +30,7 @@ class FlagCOnfig(ColIdentifier, frozen=True):
 
 # TF Online 50 mio early in-a-day parameters
 class ParamsTFOnlineConfig(ColIdentifier, frozen=True):
-    rolling_window: str
+    rolling_window: int
     threshold: int
     time_range_start: int
     time_range_end: int

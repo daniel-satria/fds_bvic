@@ -117,6 +117,7 @@ def flag_tf_online_50mio(
     # Calculating flag transaction
     try:
         logger.info("Calculating flagged transaction data...")
+
         # Step 1: Self-join on account number within 24h window
         df_rolled = (
             df.join(
@@ -126,7 +127,7 @@ def flag_tf_online_50mio(
                 suffix="_r"
             )
             .filter(
-                (pl.col(f"{transaction_date_col}_r") >= pl.col(transaction_date_col) - pl.duration(hours=24)) &
+                (pl.col(f"{transaction_date_col}_r") >= pl.col(transaction_date_col) - pl.duration(hours=rolling_window)) &
                 (pl.col(f"{transaction_date_col}_r")
                  <= pl.col(transaction_date_col))
             )
@@ -159,7 +160,7 @@ def flag_tf_online_50mio(
                 keys,
                 on=[account_number_col, no_referensi_col],
                 how="semi"
-            ).with_columns(pl.lit(1).cast(pl.Int8).alias("flag"))
+            ).with_columns(pl.lit(1).cast(pl.Int8).alias(flag_col))
         )
 
     except Exception as e:

@@ -1,5 +1,4 @@
 import polars as pl
-from datetime import datetime, timedelta
 from pathlib import Path
 from .logger import logger
 from .models import CONSTS
@@ -13,23 +12,23 @@ def is_empty(lf: pl.LazyFrame) -> bool:
 
 
 def flag_non_qr_5mio(
-    hist_path: Path | str = CONSTS.flag.non_qr_hist_path,
+    hist_path: Path | str = CONSTS.flag.hist_path,
     output_path: Path | str = CONSTS.flag.output_path,
     transaction_date_col: str = CONSTS.flag.transaction_date,
     account_number_col: str = CONSTS.flag.account_number,
     no_referensi_col: str = CONSTS.flag.no_referensi,
     flag_col: str = CONSTS.flag.flag_col,
-    rolling_window: int = CONSTS.params_non_qr_5mio.rolling_window,
-    threshold: int = CONSTS.params_non_qr_5mio.threshold,
+    rolling_window: int = CONSTS.params.rolling_window,
+    threshold: int = CONSTS.params.threshold,
 ) -> None:
     """
     Count transactions based on rolling window time frame.
     Params:
     -------
     hist_path: Path | str
-        Path to the historical transfer online data.
+        Path to the historical Pembayaran non-QR data.
     output_path: Path | str
-        Path to save daily flagged tf_online data.
+        Path to save daily flagged pembayaran non-QR data.
     transaction_date_col:
         Column date to use as index.
     account_number_col:
@@ -47,22 +46,22 @@ def flag_non_qr_5mio(
     --------
     None
     """
-    logger.info("Processing Flagged transfer online data...")
+    logger.info("Processing Flagged Pembayaran non-QR data...")
     output_path = Path(output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
     try:
-        logger.info("Loading historical transfer online data...")
+        logger.info("Loading historical Pembayaran non-QR data...")
         df = pl.scan_parquet(hist_path)
         df = df.drop(DROP_COLS, strict=False)
 
         logger.info(
-            f"Total tf_online records: {df.select(pl.len()).collect()[0, 0]}")
-        logger.info("Succeeded loading historical transfer online data.")
+            f"Total pembayaran non-QR records: {df.select(pl.len()).collect()[0, 0]}")
+        logger.info("Succeeded loading historical Pembayaran non-QR data.")
     except Exception as e:
-        logger.error(f"Error loading historical transfer online data: {e}.")
+        logger.error(f"Error loading historical Pembayaran non-QR data: {e}.")
         logger.error(
-            "Flag transfer online 50 millions IDR Process terminated.")
+            "Flag Pembayaran non-QR 5 millions IDR Process terminated.")
         return
 
     # Calculating flag transaction
@@ -92,7 +91,7 @@ def flag_non_qr_5mio(
                 pl.sum("transaction_amount_r").alias("rolling_24h_sum"))
         )
 
-        # Step 3: Join sums back and filter >= 50M
+        # Step 3: Join sums back and filter >= 5mio
         df_flagged_accounts = (
             df_rolled
             .join(
@@ -100,7 +99,7 @@ def flag_non_qr_5mio(
                 on=no_referensi_col
             ).filter(pl.col("rolling_24h_sum") >= threshold))
 
-        # Step 4: EXTRACT KEY (these transactions exceeded 50M)
+        # Step 4: EXTRACT KEY (these transactions exceeded 5mio)
         keys = (
             df_flagged_accounts
             .select([account_number_col, no_referensi_col])
@@ -108,7 +107,7 @@ def flag_non_qr_5mio(
         )
 
         # Step 5: Returns only rows that match the keys
-        tf_online_flag_only = (
+        flag_only = (
             df.join(
                 keys,
                 on=[account_number_col, no_referensi_col],
@@ -118,28 +117,28 @@ def flag_non_qr_5mio(
 
     except Exception as e:
         logger.error(
-            f"Error calculation flagged transfer online 50 millions IDR: {e}.")
+            f"Error calculation flagged Pembayaran non-QR 5 millions IDR: {e}.")
         logger.error(
-            "Flag transfer online 50 millions IDR Process terminated.")
+            "Flag Pembayaran non-QR 5 millions IDR Process terminated.")
         return
 
-    if not is_empty(tf_online_flag_only):
+    if not is_empty(flag_only):
         try:
-            rows = tf_online_flag_only.select(pl.len()).collect()[0, 0]
+            rows = flag_only.select(pl.len()).collect()[0, 0]
             logger.info(f"Found {rows} flagged records.")
             logger.info(
-                "Saving daily flagged transfer online transactions...")
+                "Saving daily flagged Pembayaran non-QR transactions...")
             logger.info(f"Saving into {output_path}.")
-            tf_online_flag_only.collect().write_parquet(output_path)
+            flag_only.collect().write_parquet(output_path)
             logger.info(
-                "Saving daily flagged transfer online transactions succeed.")
+                "Saving daily flagged Pembayaran non-QR transactions succeed.")
         except Exception as e:
             logger.error(
-                f"Error saving daily flagged transfer online transactions: {e}")
+                f"Error saving daily flagged Pembayaran non-QR transactions: {e}")
             logger.error(
-                "Flag transfer online 50 millions IDR Process terminated.")
+                "Flag Pembayaran non-QR 5 millions IDR Process terminated.")
             return
     else:
         logger.info(
-            "There is no daily flagged transfer online 50 millions IDR transaction found.")
+            "There is no daily flagged Pembayaran non-QR 5 millions IDR transaction found.")
         logger.info("Process finished")

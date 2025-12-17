@@ -15,16 +15,16 @@ def update_flag_5mio(
     flag_col: str = CONSTS.update_flag_5mio.flag_col,
 ) -> None:
     """
-    Updating the historical TF online 5 min data by adding daily flagged transaction.
+    Updating the historical pembayaran non-QR 5 min data by adding daily flagged transaction.
 
     Params:
     ------
     n_days: int
-        Total number of days to look back for the flagged TF Online data.
+        Total number of days to look back for the flagged pembayaran non-QR data.
     history_path: Path | str
-        Path where the historical TF Online data stored.
+        Path where the historical pembayaran non-QR data stored.
     daily_path: Path | str
-        Path where the daily flagged TF Online data stored.
+        Path where the daily flagged pembayaran non-QR data stored.
     no_referensi_col: str
         Column of no_referensi to use.
     flag_col: str
@@ -38,24 +38,25 @@ def update_flag_5mio(
     daily_path = Path(daily_path)
     history_path.parent.mkdir(parents=True, exist_ok=True)
 
-    logger.info(f"Reading daily flag TF Online data from {history_path}...")
+    logger.info(
+        f"Reading daily flag pembayaran non-QR data from {history_path}...")
 
     if daily_path.exists():
         try:
             daily_flag_df = pl.scan_parquet(daily_path)
-            logger.info("Daily flag TF online data read succeeded.")
+            logger.info("Daily flag pembayaran non-QR data read succeeded.")
         except Exception as e:
             logger.error(f"Error reading parquet data : {e}")
             logger.error(
-                "Update TF online flag to Historical Data Process terminated.")
+                "Update pembayaran non-QR flag to Historical Data Process terminated.")
             return
     else:
-        logger.info("There is no daily flag TF online data found.")
+        logger.info("There is no daily flag pembayaran non-QR data found.")
         logger.info("Update Flag to Historical data finished.")
         return
 
     if is_empty(daily_flag_df):
-        logger.info("There is no daily flag TF online data found.")
+        logger.info("There is no daily flag pembayaran non-QR data found.")
         logger.info("Update flag process finished.")
         return
 
@@ -85,9 +86,10 @@ def update_flag_5mio(
                 (pl.col(no_referensi_col).is_in(new_flag_refs)) &
                 (pl.col(flag_col) == 0)
             )
-            logger.info("New records found in daily flag TF Online data.")
             logger.info(
-                f"Flagging {delta_df.select(pl.len()).collect()[0, 0]} new records to historical TF online data..")
+                "New records found in daily flag pembayaran non-QR data.")
+            logger.info(
+                f"Flagging {delta_df.select(pl.len()).collect()[0, 0]} new records to historical pembayaran non-QR data..")
 
             # Updating flagged records colunm 'flag' to 1
             updated_exist_df = (
@@ -98,7 +100,7 @@ def update_flag_5mio(
             updated_exist_df.collect().write_parquet(history_path)
             logger.info("Historical parquet data updated successfully.")
         else:
-            logger.info("There is no new flag TF Online found.")
+            logger.info("There is no new flag pembayaran non-QR found.")
             logger.info("Flagged records have been added previously.")
             logger.info("Updating flag record finished.")
             return
@@ -116,16 +118,16 @@ def update_flag_10min(
     flag_col: str = CONSTS.update_flag_10min.flag_col,
 ) -> None:
     """
-    Updating the historical TF online 5 min data by adding daily flagged transaction.
+    Updating the historical pembayaran non-QR 5 min data by adding daily flagged transaction.
 
     Params:
     ------
     n_days: int
-        Total number of days to look back for the flagged TF Online data.
+        Total number of days to look back for the flagged pembayaran non-QR data.
     history_path: Path | str
-        Path where the historical TF Online data stored.
+        Path where the historical pembayaran non-QR data stored.
     daily_path: Path | str
-        Path where the daily flagged TF Online data stored.
+        Path where the daily flagged pembayaran non-QR data stored.
     no_referensi_col: str
         Column of no_referensi to use.
     flag_col: str
@@ -139,24 +141,25 @@ def update_flag_10min(
     daily_path = Path(daily_path)
     history_path.parent.mkdir(parents=True, exist_ok=True)
 
-    logger.info(f"Reading daily flag TF Online data from {history_path}...")
+    logger.info(
+        f"Reading daily flag pembayaran non-QR data from {history_path}...")
 
     if daily_path.exists():
         try:
             daily_flag_df = pl.scan_parquet(daily_path)
-            logger.info("Daily flag TF online data read succeeded.")
+            logger.info("Daily flag pembayaran non-QR data read succeeded.")
         except Exception as e:
             logger.error(f"Error reading parquet data : {e}")
             logger.error(
-                "Update TF online flag to Historical Data Process terminated.")
+                "Update pembayaran non-QR flag to Historical Data Process terminated.")
             return
     else:
-        logger.info("There is no daily flag TF online data found.")
+        logger.info("There is no daily flag pembayaran non-QR data found.")
         logger.info("Update Flag to Historical data finished.")
         return
 
     if is_empty(daily_flag_df):
-        logger.info("There is no daily flag TF online data found.")
+        logger.info("There is no daily flag pembayaran non-QR data found.")
         logger.info("Update flag process finished.")
         return
 
@@ -186,9 +189,10 @@ def update_flag_10min(
                 (pl.col(no_referensi_col).is_in(new_flag_refs)) &
                 (pl.col(flag_col) == 0)
             )
-            logger.info("New records found in daily flag TF Online data.")
             logger.info(
-                f"Flagging {delta_df.select(pl.len()).collect()[0, 0]} new records to historical TF online data..")
+                "New records found in daily flag pembayaran non-QR data.")
+            logger.info(
+                f"Flagging {delta_df.select(pl.len()).collect()[0, 0]} new records to historical pembayaran non-QR data..")
 
             # Updating flagged records colunm 'flag' to 1
             updated_exist_df = (
@@ -199,7 +203,7 @@ def update_flag_10min(
             updated_exist_df.collect().write_parquet(history_path)
             logger.info("Historical parquet data updated successfully.")
         else:
-            logger.info("There is no new flag TF Online found.")
+            logger.info("There is no new flag pembayaran non-QR found.")
             logger.info("Flagged records have been added previously.")
             logger.info("Updating flag record finished.")
             return

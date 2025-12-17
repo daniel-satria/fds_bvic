@@ -9,7 +9,7 @@ from .logger import logger
 
 # Shared settings block (the anchor)
 class ColIdentifier(BaseModel):
-    non_qr_hist_path: str
+    hist_path: str
     transaction_date: str
     account_number: str
     transaction_status: str
@@ -41,7 +41,7 @@ class DateConfig(BaseModel, frozen=True):
 
 class AppConfig(BaseModel, frozen=True):
     flag: FlagCOnfig
-    params_non_qr_5mio: ParamsNonQRConfig
+    params: ParamsNonQRConfig
     date: DateConfig
     dtypes: dict[str, str]
 

@@ -62,6 +62,7 @@ def flag_tf_online_50m_early(
     account_number_col: str = CONSTS.flag.account_number,
     no_referensi_col: str = CONSTS.flag.no_referensi,
     flag_col: str = CONSTS.flag.flag_col,
+    rolling_window: int = CONSTS.params_tf_online_50mio_e.rolling_window,
     threshold: int = CONSTS.params_tf_online_50mio_e.threshold,
 ) -> None:
     """
@@ -132,7 +133,7 @@ def flag_tf_online_50m_early(
                 suffix="_r"
             )
             .filter(
-                (pl.col(f"{transaction_date_col}_r") >= pl.col(transaction_date_col) - pl.duration(hours=24)) &
+                (pl.col(f"{transaction_date_col}_r") >= pl.col(transaction_date_col) - pl.duration(hours=rolling_window)) &
                 (pl.col(f"{transaction_date_col}_r")
                  <= pl.col(transaction_date_col))
             )

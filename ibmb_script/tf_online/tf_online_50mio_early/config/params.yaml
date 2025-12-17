@@ -49,7 +49,7 @@ flag:
 
 params_tf_online_50mio_e:
   <<: *shared_settings
-  rolling_window: 1d # in days
+  rolling_window: 24 # in hours
   threshold: 50000000
   time_range_start: 0
   time_range_end: 6

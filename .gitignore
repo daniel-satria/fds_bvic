@@ -64,3 +64,16 @@ ibmb_script/pembayaran/qr/qr_5mio/utils/__pycache__
 ibmb_script/pembayaran/qr/qr_10min/flagged
 ibmb_script/pembayaran/qr/qr_10min/logs
 ibmb_script/pembayaran/qr/qr_10min/utils/__pycache__
+
+# Ewallet
+ibmb_script/e_wallet/historical/data
+ibmb_script/e_wallet/historical/logs
+ibmb_script/e_wallet/historical/utils/__pycache__
+
+ibmb_script/e_wallet/ewallet_5mio/flagged
+ibmb_script/e_wallet/ewallet_5mio/logs
+ibmb_script/e_wallet/ewallet_5mio/utils/__pycache__
+
+ibmb_script/e_wallet/ewallet_10min/flagged
+ibmb_script/e_wallet/ewallet_10min/logs
+ibmb_script/e_wallet/ewallet_10min/utils/__pycache__

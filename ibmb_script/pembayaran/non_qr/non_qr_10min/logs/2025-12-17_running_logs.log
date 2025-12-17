@@ -24,3 +24,46 @@ non_qr_10min
 2025-12-17 16:02:17,173: INFO: flag: Saving into flagged/non_qr_10min_flag.parquet.
 2025-12-17 16:02:17,197: INFO: flag: Saving daily flagged transfer online transactions succeed.
 2025-12-17 16:02:17,197: INFO: main: Transfer Online 5 Minutes Process completed.
+2025-12-17 17:36:55,846: ERROR: models: Parameter validation failed: 1 validation error for AppConfig
+params
+  Field required [type=missing, input_value={'col_identifier': {'hist...': '%Y-%m-%d %H:%M:%S'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2025-12-17 17:37:50,614: ERROR: models: Parameter validation failed: 1 validation error for AppConfig
+params
+  Field required [type=missing, input_value={'col_identifier': {'hist...': '%Y-%m-%d %H:%M:%S'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2025-12-17 17:39:44,677: INFO: main: Transfer Online 5 Minutes Process starting...
+2025-12-17 17:39:44,677: INFO: flag: Processing Flagged transfer online data...
+2025-12-17 17:39:44,677: INFO: flag: Loading historical transfer online data...
+2025-12-17 17:39:44,678: ERROR: flag: Error loading historical transfer online data: No such file or directory (os error 2): ...ubuntu/bvic/ibmb_script/pembayaran/non_qr/historical/data/non_qr_historical_data.parquet (set POLARS_VERBOSE=1 to see full path)
+
+This error occurred with the following context stack:
+	[1] 'parquet scan'
+	[2] 'select'
+	[3] 'select'
+	[4] 'sink'
+.
+2025-12-17 17:39:44,678: ERROR: flag: Flag transfer online 5 mins Process terminated.
+2025-12-17 17:39:44,679: INFO: main: Transfer Online 5 Minutes Process completed.
+2025-12-17 17:42:40,805: INFO: main: Transfer Online 5 Minutes Process starting...
+2025-12-17 17:42:40,806: INFO: flag: Processing Flagged transfer online data...
+2025-12-17 17:42:40,806: INFO: flag: Loading historical transfer online data...
+2025-12-17 17:42:40,811: INFO: flag: Total tf_online records: 20847
+2025-12-17 17:42:40,811: INFO: flag: Succeeded loading historical transfer online data.
+2025-12-17 17:42:40,811: INFO: flag: Calculating flagged transaction data...
+2025-12-17 17:42:40,916: INFO: flag: Found 4600 flagged records.
+2025-12-17 17:42:40,916: INFO: flag: Saving daily flagged transfer online transactions...
+2025-12-17 17:42:40,916: INFO: flag: Saving into flagged/non_qr_10min_flag.parquet.
+2025-12-17 17:42:40,973: INFO: flag: Saving daily flagged transfer online transactions succeed.
+2025-12-17 17:42:40,973: INFO: main: Transfer Online 5 Minutes Process completed.
+2025-12-17 23:34:26,918: INFO: main: Transfer Online 5 Minutes Process starting...
+2025-12-17 23:34:26,919: INFO: flag: Processing Flagged pembayaran non-QR data...
+2025-12-17 23:34:26,919: INFO: flag: Loading historical pembayaran non-QR data...
+2025-12-17 23:34:26,924: INFO: flag: Total tf_online records: 20847
+2025-12-17 23:34:26,924: INFO: flag: Succeeded loading historical pembayaran non-QR data.
+2025-12-17 23:34:26,924: INFO: flag: Calculating flagged transaction data...
+2025-12-17 23:34:27,018: INFO: flag: Found 4600 flagged records.
+2025-12-17 23:34:27,018: INFO: flag: Saving daily flagged pembayaran non-QR transactions...
+2025-12-17 23:34:27,018: INFO: flag: Saving into flagged/non_qr_10min_flag.parquet.
+2025-12-17 23:34:27,076: INFO: flag: Saving daily flagged pembayaran non-QR transactions succeed.
+2025-12-17 23:34:27,076: INFO: main: Transfer Online 5 Minutes Process completed.

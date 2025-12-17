@@ -217,7 +217,8 @@ def update_historical(
         logger.info(f"Saving historical data succeed.")
     else:
         logger.info("There is no existing historical parquet data found.")
-        logger.info("Making new historical parquet data...")
+        logger.info("Making new historical parquet data into:")
+        logger.info(hist_path)
 
     try:
         final_df = (

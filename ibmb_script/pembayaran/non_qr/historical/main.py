@@ -6,7 +6,7 @@ from utils.daily import update_flag_10min, update_flag_5mio
 def main():
     # Historical
     logger.info("="*50)
-    logger.info("HISTORICAL PROCESS")
+    logger.info("STEP 1: HISTORICAL PEMBAYARAN NON-QR PROCESS")
     logger.info("="*50)
     logger.info("Running non-QR Historical Process...")
     update_historical()
@@ -14,7 +14,7 @@ def main():
 
     # 10min
     logger.info("="*50)
-    logger.info("UPDATE FLAG 10MIN PROCESS")
+    logger.info("STEP 2: UPDATE FLAG 10MIN PROCESS")
     logger.info("="*50)
     logger.info("Running Update Flag 10min Process...")
     update_flag_10min()
@@ -22,7 +22,7 @@ def main():
 
     # 50mio
     logger.info("="*50)
-    logger.info("UPDATE FLAG 50MIO PROCESS")
+    logger.info("STEP 3: UPDATE FLAG 50MIO PROCESS")
     logger.info("="*50)
     logger.info("Running Update Flag 50mio Process...")
     update_flag_5mio()

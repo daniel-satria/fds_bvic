@@ -9,7 +9,7 @@ from .logger import logger
 
 # Shared settings block (the anchor)
 class ColIdentifier(BaseModel):
-    non_qr_hist_path: str
+    hist_path: str
     transaction_date: str
     account_number: str
     transaction_status: str
@@ -28,8 +28,9 @@ class FlagCOnfig(ColIdentifier, frozen=True):
 
 
 # Non QR 10 min parameters block
-class Params10minConfig(ColIdentifier, frozen=True):
+class ParamsConfig(ColIdentifier, frozen=True):
     rolling_window: str
+    rolling_window_int: int
     threshold: int
 
 
@@ -40,7 +41,7 @@ class DateConfig(BaseModel, frozen=True):
 
 class AppConfig(BaseModel, frozen=True):
     flag: FlagCOnfig
-    params_non_qr_10min: Params10minConfig
+    params: ParamsConfig
     date: DateConfig
     dtypes: dict[str, str]
 

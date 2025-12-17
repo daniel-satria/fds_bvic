@@ -1,0 +1,26 @@
+2025-12-17 15:58:58,562: ERROR: models: Parameter validation failed: 2 validation errors for AppConfig
+flag.tf_online_hist_path
+  Field required [type=missing, input_value={'non_qr_hist_path': '/ho..._qr_10min_flag.parquet'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+non_qr_10min
+  Field required [type=missing, input_value={'col_identifier': {'non_...': '%Y-%m-%d %H:%M:%S'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2025-12-17 16:00:46,098: ERROR: models: Parameter validation failed: 1 validation error for AppConfig
+non_qr_10min
+  Field required [type=missing, input_value={'col_identifier': {'non_...': '%Y-%m-%d %H:%M:%S'}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing
+2025-12-17 16:02:17,114: INFO: main: Transfer Online 5 Minutes Process starting...
+2025-12-17 16:02:17,115: INFO: flag: Processing Flagged transfer online data...
+2025-12-17 16:02:17,115: INFO: flag: Loading historical transfer online data...
+2025-12-17 16:02:17,120: INFO: flag: Total tf_online records: 20847
+2025-12-17 16:02:17,120: INFO: flag: Succeeded loading historical transfer online data.
+2025-12-17 16:02:17,121: INFO: flag: Filtering daily data...
+2025-12-17 16:02:17,121: INFO: flag: Cutoff Date: 2025-08-19
+2025-12-17 16:02:17,121: INFO: flag: Filtering finished.
+2025-12-17 16:02:17,124: INFO: flag: Data after filtering: 13654
+2025-12-17 16:02:17,124: INFO: flag: Calculating flagged transaction data...
+2025-12-17 16:02:17,173: INFO: flag: Found 2838 flagged records.
+2025-12-17 16:02:17,173: INFO: flag: Saving daily flagged transfer online transactions...
+2025-12-17 16:02:17,173: INFO: flag: Saving into flagged/non_qr_10min_flag.parquet.
+2025-12-17 16:02:17,197: INFO: flag: Saving daily flagged transfer online transactions succeed.
+2025-12-17 16:02:17,197: INFO: main: Transfer Online 5 Minutes Process completed.

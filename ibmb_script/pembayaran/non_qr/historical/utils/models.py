@@ -30,7 +30,7 @@ class HistoricalConfig(ColIdentifier, frozen=True):
     file_suffix: str
 
 
-class UpdateFlag5minConfig(ColIdentifier, frozen=True):
+class UpdateFlag10minConfig(ColIdentifier, frozen=True):
     daily_path_flag: Path | str
     flag_col: str
 
@@ -58,7 +58,7 @@ class DateConfig(BaseModel, frozen=True):
 
 class AppConfig(BaseModel, frozen=True):
     historical: HistoricalConfig
-    update_flag_5min: UpdateFlag5minConfig
+    update_flag_10min: UpdateFlag10minConfig
     update_flag_5mio: UpdateFlag5mioConfig
     filter: FilterConfig
     date: DateConfig

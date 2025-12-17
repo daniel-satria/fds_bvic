@@ -51,14 +51,14 @@ historical:
   file_prefix: trx_history_
   file_suffix: .csv
 
-update_flag_5min:
+update_flag_10min:
   <<: *shared_settings
-  daily_path_flag: /home/ubuntu/bvic/ibmb_script/tf_online/tf_online_5min/flagged/tf_online_5min_flag.parquet
-  flag_col: flag_5min
+  daily_path_flag: /home/ubuntu/bvic/ibmb_script/pembayaran/non_qr/non_qr_10min/flagged/non_qr_10min_flag.parquet
+  flag_col: flag_10min
 
 update_flag_5mio:
   <<: *shared_settings
-  daily_path_flag: /home/ubuntu/bvic/ibmb_script/tf_online/tf_online_50mio/flagged/tf_online_50mio_flag.parquet
+  daily_path_flag: /home/ubuntu/bvic/ibmb_script/pembayaran/non_qr/non_qr_5mio/flagged/non_qr_5mio_flag.parquet
   flag_col: flag_5mio
 
 filter:

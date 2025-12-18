@@ -1,0 +1,1815 @@
+2025-12-18 00:14:40,195: INFO: main: ==================================================
+2025-12-18 00:14:40,195: INFO: main: STEP 1: HISTORICAL E-wallet PROCESS
+2025-12-18 00:14:40,196: INFO: main: ==================================================
+2025-12-18 00:14:40,196: INFO: main: Running E-wallet Historical Process...
+2025-12-18 00:14:40,196: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251217.csv.
+2025-12-18 00:14:40,196: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251216.csv.
+2025-12-18 00:14:40,196: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251215.csv.
+2025-12-18 00:14:40,196: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251214.csv.
+2025-12-18 00:14:40,196: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251213.csv.
+2025-12-18 00:14:40,196: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251212.csv.
+2025-12-18 00:14:40,196: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251211.csv.
+2025-12-18 00:14:40,196: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251210.csv.
+2025-12-18 00:14:40,197: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251209.csv.
+2025-12-18 00:14:40,197: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251208.csv.
+2025-12-18 00:14:40,197: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251207.csv.
+2025-12-18 00:14:40,197: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251206.csv.
+2025-12-18 00:14:40,197: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251205.csv.
+2025-12-18 00:14:40,197: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251204.csv.
+2025-12-18 00:14:40,197: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251203.csv.
+2025-12-18 00:14:40,197: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251202.csv.
+2025-12-18 00:14:40,197: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251201.csv
+2025-12-18 00:14:40,211: INFO: historical: Loaded 234 rows and 13 columns.
+2025-12-18 00:14:40,212: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251130.csv
+2025-12-18 00:14:40,219: INFO: historical: Loaded 33 rows and 13 columns.
+2025-12-18 00:14:40,219: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251129.csv
+2025-12-18 00:14:40,226: INFO: historical: Loaded 38 rows and 13 columns.
+2025-12-18 00:14:40,226: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251128.csv
+2025-12-18 00:14:40,234: INFO: historical: Loaded 48 rows and 13 columns.
+2025-12-18 00:14:40,234: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251127.csv
+2025-12-18 00:14:40,243: INFO: historical: Loaded 39 rows and 13 columns.
+2025-12-18 00:14:40,243: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251126.csv
+2025-12-18 00:14:40,249: INFO: historical: Loaded 55 rows and 13 columns.
+2025-12-18 00:14:40,250: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251125.csv
+2025-12-18 00:14:40,257: INFO: historical: Loaded 102 rows and 13 columns.
+2025-12-18 00:14:40,257: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251124.csv
+2025-12-18 00:14:40,263: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:14:40,263: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251123.csv
+2025-12-18 00:14:40,270: INFO: historical: Loaded 32 rows and 13 columns.
+2025-12-18 00:14:40,270: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251122.csv
+2025-12-18 00:14:40,276: INFO: historical: Loaded 40 rows and 13 columns.
+2025-12-18 00:14:40,276: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251121.csv
+2025-12-18 00:14:40,282: INFO: historical: Loaded 113 rows and 13 columns.
+2025-12-18 00:14:40,282: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251120.csv
+2025-12-18 00:14:40,289: INFO: historical: Loaded 309 rows and 13 columns.
+2025-12-18 00:14:40,289: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251119.csv
+2025-12-18 00:14:40,295: INFO: historical: Loaded 329 rows and 13 columns.
+2025-12-18 00:14:40,296: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251118.csv
+2025-12-18 00:14:40,302: INFO: historical: Loaded 193 rows and 13 columns.
+2025-12-18 00:14:40,303: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251117.csv
+2025-12-18 00:14:40,311: INFO: historical: Loaded 191 rows and 13 columns.
+2025-12-18 00:14:40,311: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251116.csv
+2025-12-18 00:14:40,317: INFO: historical: Loaded 78 rows and 13 columns.
+2025-12-18 00:14:40,318: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251115.csv
+2025-12-18 00:14:40,324: INFO: historical: Loaded 113 rows and 13 columns.
+2025-12-18 00:14:40,325: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251114.csv
+2025-12-18 00:14:40,331: INFO: historical: Loaded 153 rows and 13 columns.
+2025-12-18 00:14:40,331: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251113.csv
+2025-12-18 00:14:40,337: INFO: historical: Loaded 144 rows and 13 columns.
+2025-12-18 00:14:40,338: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251112.csv
+2025-12-18 00:14:40,343: INFO: historical: Loaded 88 rows and 13 columns.
+2025-12-18 00:14:40,343: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251111.csv
+2025-12-18 00:14:40,350: INFO: historical: Loaded 164 rows and 13 columns.
+2025-12-18 00:14:40,350: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251110.csv
+2025-12-18 00:14:40,358: INFO: historical: Loaded 199 rows and 13 columns.
+2025-12-18 00:14:40,358: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251109.csv
+2025-12-18 00:14:40,366: INFO: historical: Loaded 72 rows and 13 columns.
+2025-12-18 00:14:40,367: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251108.csv
+2025-12-18 00:14:40,372: INFO: historical: Loaded 112 rows and 13 columns.
+2025-12-18 00:14:40,373: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251107.csv
+2025-12-18 00:14:40,379: INFO: historical: Loaded 119 rows and 13 columns.
+2025-12-18 00:14:40,379: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251106.csv
+2025-12-18 00:14:40,385: INFO: historical: Loaded 124 rows and 13 columns.
+2025-12-18 00:14:40,386: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251105.csv
+2025-12-18 00:14:40,394: INFO: historical: Loaded 234 rows and 13 columns.
+2025-12-18 00:14:40,395: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251104.csv
+2025-12-18 00:14:40,402: INFO: historical: Loaded 223 rows and 13 columns.
+2025-12-18 00:14:40,402: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251103.csv
+2025-12-18 00:14:40,410: INFO: historical: Loaded 257 rows and 13 columns.
+2025-12-18 00:14:40,411: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251102.csv
+2025-12-18 00:14:40,417: INFO: historical: Loaded 205 rows and 13 columns.
+2025-12-18 00:14:40,417: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251101.csv
+2025-12-18 00:14:40,425: INFO: historical: Loaded 212 rows and 13 columns.
+2025-12-18 00:14:40,425: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251031.csv
+2025-12-18 00:14:40,433: INFO: historical: Loaded 52 rows and 13 columns.
+2025-12-18 00:14:40,433: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251030.csv
+2025-12-18 00:14:40,440: INFO: historical: Loaded 25 rows and 13 columns.
+2025-12-18 00:14:40,440: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251029.csv
+2025-12-18 00:14:40,447: INFO: historical: Loaded 26 rows and 13 columns.
+2025-12-18 00:14:40,447: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251028.csv
+2025-12-18 00:14:40,455: INFO: historical: Loaded 42 rows and 13 columns.
+2025-12-18 00:14:40,455: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251027.csv
+2025-12-18 00:14:40,462: INFO: historical: Loaded 46 rows and 13 columns.
+2025-12-18 00:14:40,462: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251026.csv
+2025-12-18 00:14:40,468: INFO: historical: Loaded 30 rows and 13 columns.
+2025-12-18 00:14:40,469: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251025.csv
+2025-12-18 00:14:40,476: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:14:40,476: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251024.csv
+2025-12-18 00:14:40,484: INFO: historical: Loaded 133 rows and 13 columns.
+2025-12-18 00:14:40,484: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251023.csv
+2025-12-18 00:14:40,491: INFO: historical: Loaded 37 rows and 13 columns.
+2025-12-18 00:14:40,491: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251022.csv
+2025-12-18 00:14:40,498: INFO: historical: Loaded 41 rows and 13 columns.
+2025-12-18 00:14:40,498: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251021.csv
+2025-12-18 00:14:40,505: INFO: historical: Loaded 75 rows and 13 columns.
+2025-12-18 00:14:40,505: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251020.csv
+2025-12-18 00:14:40,514: INFO: historical: Loaded 451 rows and 13 columns.
+2025-12-18 00:14:40,515: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251019.csv
+2025-12-18 00:14:40,521: INFO: historical: Loaded 167 rows and 13 columns.
+2025-12-18 00:14:40,521: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251018.csv
+2025-12-18 00:14:40,529: INFO: historical: Loaded 150 rows and 13 columns.
+2025-12-18 00:14:40,529: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251017.csv
+2025-12-18 00:14:40,537: INFO: historical: Loaded 157 rows and 13 columns.
+2025-12-18 00:14:40,537: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251016.csv
+2025-12-18 00:14:40,544: INFO: historical: Loaded 142 rows and 13 columns.
+2025-12-18 00:14:40,544: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251015.csv
+2025-12-18 00:14:40,552: INFO: historical: Loaded 226 rows and 13 columns.
+2025-12-18 00:14:40,552: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251014.csv
+2025-12-18 00:14:40,560: INFO: historical: Loaded 116 rows and 13 columns.
+2025-12-18 00:14:40,561: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251013.csv
+2025-12-18 00:14:40,568: INFO: historical: Loaded 140 rows and 13 columns.
+2025-12-18 00:14:40,568: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251012.csv
+2025-12-18 00:14:40,574: INFO: historical: Loaded 73 rows and 13 columns.
+2025-12-18 00:14:40,575: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251011.csv
+2025-12-18 00:14:40,581: INFO: historical: Loaded 85 rows and 13 columns.
+2025-12-18 00:14:40,582: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251010.csv
+2025-12-18 00:14:40,589: INFO: historical: Loaded 158 rows and 13 columns.
+2025-12-18 00:14:40,589: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251009.csv
+2025-12-18 00:14:40,595: INFO: historical: Loaded 117 rows and 13 columns.
+2025-12-18 00:14:40,595: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251008.csv
+2025-12-18 00:14:40,602: INFO: historical: Loaded 162 rows and 13 columns.
+2025-12-18 00:14:40,602: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251007.csv
+2025-12-18 00:14:40,609: INFO: historical: Loaded 138 rows and 13 columns.
+2025-12-18 00:14:40,609: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251006.csv
+2025-12-18 00:14:40,617: INFO: historical: Loaded 199 rows and 13 columns.
+2025-12-18 00:14:40,618: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251005.csv
+2025-12-18 00:14:40,625: INFO: historical: Loaded 133 rows and 13 columns.
+2025-12-18 00:14:40,626: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251004.csv
+2025-12-18 00:14:40,632: INFO: historical: Loaded 124 rows and 13 columns.
+2025-12-18 00:14:40,633: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251003.csv
+2025-12-18 00:14:40,643: INFO: historical: Loaded 178 rows and 13 columns.
+2025-12-18 00:14:40,643: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251002.csv
+2025-12-18 00:14:40,652: INFO: historical: Loaded 227 rows and 13 columns.
+2025-12-18 00:14:40,652: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251001.csv
+2025-12-18 00:14:40,659: INFO: historical: Loaded 332 rows and 13 columns.
+2025-12-18 00:14:40,660: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250930.csv
+2025-12-18 00:14:40,668: INFO: historical: Loaded 65 rows and 13 columns.
+2025-12-18 00:14:40,668: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250929.csv
+2025-12-18 00:14:40,674: INFO: historical: Loaded 46 rows and 13 columns.
+2025-12-18 00:14:40,675: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250928.csv
+2025-12-18 00:14:40,680: INFO: historical: Loaded 28 rows and 13 columns.
+2025-12-18 00:14:40,681: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250927.csv
+2025-12-18 00:14:40,686: INFO: historical: Loaded 43 rows and 13 columns.
+2025-12-18 00:14:40,687: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250926.csv
+2025-12-18 00:14:40,694: INFO: historical: Loaded 37 rows and 13 columns.
+2025-12-18 00:14:40,694: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250925.csv
+2025-12-18 00:14:40,702: INFO: historical: Loaded 116 rows and 13 columns.
+2025-12-18 00:14:40,703: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250924.csv
+2025-12-18 00:14:40,710: INFO: historical: Loaded 35 rows and 13 columns.
+2025-12-18 00:14:40,710: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250923.csv
+2025-12-18 00:14:40,717: INFO: historical: Loaded 38 rows and 13 columns.
+2025-12-18 00:14:40,717: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250922.csv
+2025-12-18 00:14:40,724: INFO: historical: Loaded 60 rows and 13 columns.
+2025-12-18 00:14:40,724: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250921.csv
+2025-12-18 00:14:40,730: INFO: historical: Loaded 115 rows and 13 columns.
+2025-12-18 00:14:40,730: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250920.csv
+2025-12-18 00:14:40,737: INFO: historical: Loaded 276 rows and 13 columns.
+2025-12-18 00:14:40,737: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250919.csv
+2025-12-18 00:14:40,744: INFO: historical: Loaded 342 rows and 13 columns.
+2025-12-18 00:14:40,745: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250918.csv
+2025-12-18 00:14:40,752: INFO: historical: Loaded 196 rows and 13 columns.
+2025-12-18 00:14:40,753: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250917.csv
+2025-12-18 00:14:40,763: INFO: historical: Loaded 118 rows and 13 columns.
+2025-12-18 00:14:40,764: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250916.csv
+2025-12-18 00:14:40,770: INFO: historical: Loaded 100 rows and 13 columns.
+2025-12-18 00:14:40,770: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250915.csv
+2025-12-18 00:14:40,778: INFO: historical: Loaded 199 rows and 13 columns.
+2025-12-18 00:14:40,778: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250914.csv
+2025-12-18 00:14:40,784: INFO: historical: Loaded 72 rows and 13 columns.
+2025-12-18 00:14:40,785: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250913.csv
+2025-12-18 00:14:40,790: INFO: historical: Loaded 65 rows and 13 columns.
+2025-12-18 00:14:40,791: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250912.csv
+2025-12-18 00:14:40,797: INFO: historical: Loaded 134 rows and 13 columns.
+2025-12-18 00:14:40,798: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250911.csv
+2025-12-18 00:14:40,806: INFO: historical: Loaded 131 rows and 13 columns.
+2025-12-18 00:14:40,806: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250910.csv
+2025-12-18 00:14:40,813: INFO: historical: Loaded 152 rows and 13 columns.
+2025-12-18 00:14:40,813: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250909.csv
+2025-12-18 00:14:40,820: INFO: historical: Loaded 179 rows and 13 columns.
+2025-12-18 00:14:40,820: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250908.csv
+2025-12-18 00:14:40,826: INFO: historical: Loaded 193 rows and 13 columns.
+2025-12-18 00:14:40,826: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250907.csv
+2025-12-18 00:14:40,832: INFO: historical: Loaded 113 rows and 13 columns.
+2025-12-18 00:14:40,833: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250906.csv
+2025-12-18 00:14:40,841: INFO: historical: Loaded 102 rows and 13 columns.
+2025-12-18 00:14:40,841: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250905.csv
+2025-12-18 00:14:40,848: INFO: historical: Loaded 130 rows and 13 columns.
+2025-12-18 00:14:40,849: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250904.csv
+2025-12-18 00:14:40,855: INFO: historical: Loaded 216 rows and 13 columns.
+2025-12-18 00:14:40,856: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250903.csv
+2025-12-18 00:14:40,865: INFO: historical: Loaded 171 rows and 13 columns.
+2025-12-18 00:14:40,866: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250902.csv
+2025-12-18 00:14:40,877: INFO: historical: Loaded 208 rows and 13 columns.
+2025-12-18 00:14:40,877: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250901.csv
+2025-12-18 00:14:40,888: INFO: historical: Loaded 328 rows and 13 columns.
+2025-12-18 00:14:40,888: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250831.csv
+2025-12-18 00:14:40,897: INFO: historical: Loaded 45 rows and 13 columns.
+2025-12-18 00:14:40,897: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250830.csv
+2025-12-18 00:14:40,904: INFO: historical: Loaded 54 rows and 13 columns.
+2025-12-18 00:14:40,904: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250829.csv
+2025-12-18 00:14:40,912: INFO: historical: Loaded 32 rows and 13 columns.
+2025-12-18 00:14:40,912: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250828.csv
+2025-12-18 00:14:40,919: INFO: historical: Loaded 39 rows and 13 columns.
+2025-12-18 00:14:40,919: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250827.csv
+2025-12-18 00:14:40,925: INFO: historical: Loaded 31 rows and 13 columns.
+2025-12-18 00:14:40,926: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250826.csv
+2025-12-18 00:14:40,932: INFO: historical: Loaded 53 rows and 13 columns.
+2025-12-18 00:14:40,932: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250825.csv
+2025-12-18 00:14:40,942: INFO: historical: Loaded 101 rows and 13 columns.
+2025-12-18 00:14:40,942: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250824.csv
+2025-12-18 00:14:40,950: INFO: historical: Loaded 41 rows and 13 columns.
+2025-12-18 00:14:40,951: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250823.csv
+2025-12-18 00:14:40,956: INFO: historical: Loaded 32 rows and 13 columns.
+2025-12-18 00:14:40,957: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250822.csv
+2025-12-18 00:14:40,962: INFO: historical: Loaded 41 rows and 13 columns.
+2025-12-18 00:14:40,963: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250821.csv
+2025-12-18 00:14:40,969: INFO: historical: Loaded 100 rows and 13 columns.
+2025-12-18 00:14:40,969: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250820.csv
+2025-12-18 00:14:40,975: INFO: historical: Loaded 424 rows and 13 columns.
+2025-12-18 00:14:40,976: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250819.csv
+2025-12-18 00:14:40,986: INFO: historical: Loaded 296 rows and 13 columns.
+2025-12-18 00:14:40,987: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250818.csv
+2025-12-18 00:14:40,993: INFO: historical: Loaded 169 rows and 13 columns.
+2025-12-18 00:14:40,993: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250817.csv
+2025-12-18 00:14:40,999: INFO: historical: Loaded 80 rows and 13 columns.
+2025-12-18 00:14:40,999: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250816.csv
+2025-12-18 00:14:41,005: INFO: historical: Loaded 89 rows and 13 columns.
+2025-12-18 00:14:41,005: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250815.csv
+2025-12-18 00:14:41,014: INFO: historical: Loaded 167 rows and 13 columns.
+2025-12-18 00:14:41,014: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250814.csv
+2025-12-18 00:14:41,021: INFO: historical: Loaded 131 rows and 13 columns.
+2025-12-18 00:14:41,022: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250813.csv
+2025-12-18 00:14:41,030: INFO: historical: Loaded 82 rows and 13 columns.
+2025-12-18 00:14:41,030: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250812.csv
+2025-12-18 00:14:41,044: INFO: historical: Loaded 122 rows and 13 columns.
+2025-12-18 00:14:41,045: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250811.csv
+2025-12-18 00:14:41,053: INFO: historical: Loaded 139 rows and 13 columns.
+2025-12-18 00:14:41,053: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250810.csv
+2025-12-18 00:14:41,059: INFO: historical: Loaded 125 rows and 13 columns.
+2025-12-18 00:14:41,059: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250809.csv
+2025-12-18 00:14:41,068: INFO: historical: Loaded 91 rows and 13 columns.
+2025-12-18 00:14:41,068: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250808.csv
+2025-12-18 00:14:41,076: INFO: historical: Loaded 126 rows and 13 columns.
+2025-12-18 00:14:41,076: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250807.csv
+2025-12-18 00:14:41,082: INFO: historical: Loaded 169 rows and 13 columns.
+2025-12-18 00:14:41,082: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250806.csv
+2025-12-18 00:14:41,090: INFO: historical: Loaded 170 rows and 13 columns.
+2025-12-18 00:14:41,090: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250805.csv
+2025-12-18 00:14:41,096: INFO: historical: Loaded 218 rows and 13 columns.
+2025-12-18 00:14:41,096: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250804.csv
+2025-12-18 00:14:41,104: INFO: historical: Loaded 241 rows and 13 columns.
+2025-12-18 00:14:41,105: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250803.csv
+2025-12-18 00:14:41,111: INFO: historical: Loaded 142 rows and 13 columns.
+2025-12-18 00:14:41,111: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250802.csv
+2025-12-18 00:14:41,117: INFO: historical: Loaded 148 rows and 13 columns.
+2025-12-18 00:14:41,117: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250801.csv
+2025-12-18 00:14:41,125: INFO: historical: Loaded 320 rows and 13 columns.
+2025-12-18 00:14:41,125: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250731.csv
+2025-12-18 00:14:41,133: INFO: historical: Loaded 31 rows and 13 columns.
+2025-12-18 00:14:41,133: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250730.csv
+2025-12-18 00:14:41,138: INFO: historical: Loaded 46 rows and 13 columns.
+2025-12-18 00:14:41,139: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250729.csv
+2025-12-18 00:14:41,144: INFO: historical: Loaded 32 rows and 13 columns.
+2025-12-18 00:14:41,144: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250728.csv
+2025-12-18 00:14:41,150: INFO: historical: Loaded 42 rows and 13 columns.
+2025-12-18 00:14:41,151: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250727.csv
+2025-12-18 00:14:41,157: INFO: historical: Loaded 23 rows and 13 columns.
+2025-12-18 00:14:41,157: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250726.csv
+2025-12-18 00:14:41,163: INFO: historical: Loaded 59 rows and 13 columns.
+2025-12-18 00:14:41,163: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250725.csv
+2025-12-18 00:14:41,170: INFO: historical: Loaded 108 rows and 13 columns.
+2025-12-18 00:14:41,170: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250724.csv
+2025-12-18 00:14:41,176: INFO: historical: Loaded 38 rows and 13 columns.
+2025-12-18 00:14:41,176: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250723.csv
+2025-12-18 00:14:41,182: INFO: historical: Loaded 55 rows and 13 columns.
+2025-12-18 00:14:41,182: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250722.csv
+2025-12-18 00:14:41,188: INFO: historical: Loaded 59 rows and 13 columns.
+2025-12-18 00:14:41,189: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250721.csv
+2025-12-18 00:14:41,194: INFO: historical: Loaded 100 rows and 13 columns.
+2025-12-18 00:14:41,195: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250720.csv
+2025-12-18 00:14:41,201: INFO: historical: Loaded 345 rows and 13 columns.
+2025-12-18 00:14:41,201: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250719.csv
+2025-12-18 00:14:41,208: INFO: historical: Loaded 248 rows and 13 columns.
+2025-12-18 00:14:41,208: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250718.csv
+2025-12-18 00:14:41,216: INFO: historical: Loaded 219 rows and 13 columns.
+2025-12-18 00:14:41,217: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250717.csv
+2025-12-18 00:14:41,222: INFO: historical: Loaded 134 rows and 13 columns.
+2025-12-18 00:14:41,222: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250716.csv
+2025-12-18 00:14:41,229: INFO: historical: Loaded 144 rows and 13 columns.
+2025-12-18 00:14:41,229: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250715.csv
+2025-12-18 00:14:41,235: INFO: historical: Loaded 158 rows and 13 columns.
+2025-12-18 00:14:41,236: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250714.csv
+2025-12-18 00:14:41,242: INFO: historical: Loaded 112 rows and 13 columns.
+2025-12-18 00:14:41,242: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250713.csv
+2025-12-18 00:14:41,249: INFO: historical: Loaded 57 rows and 13 columns.
+2025-12-18 00:14:41,249: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250712.csv
+2025-12-18 00:14:41,255: INFO: historical: Loaded 78 rows and 13 columns.
+2025-12-18 00:14:41,256: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250711.csv
+2025-12-18 00:14:41,261: INFO: historical: Loaded 106 rows and 13 columns.
+2025-12-18 00:14:41,262: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250710.csv
+2025-12-18 00:14:41,268: INFO: historical: Loaded 216 rows and 13 columns.
+2025-12-18 00:14:41,268: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250709.csv
+2025-12-18 00:14:41,274: INFO: historical: Loaded 111 rows and 13 columns.
+2025-12-18 00:14:41,274: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250708.csv
+2025-12-18 00:14:41,282: INFO: historical: Loaded 167 rows and 13 columns.
+2025-12-18 00:14:41,283: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250707.csv
+2025-12-18 00:14:41,290: INFO: historical: Loaded 160 rows and 13 columns.
+2025-12-18 00:14:41,290: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250706.csv
+2025-12-18 00:14:41,295: INFO: historical: Loaded 85 rows and 13 columns.
+2025-12-18 00:14:41,295: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250705.csv
+2025-12-18 00:14:41,301: INFO: historical: Loaded 120 rows and 13 columns.
+2025-12-18 00:14:41,301: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250704.csv
+2025-12-18 00:14:41,307: INFO: historical: Loaded 172 rows and 13 columns.
+2025-12-18 00:14:41,307: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250703.csv
+2025-12-18 00:14:41,313: INFO: historical: Loaded 211 rows and 13 columns.
+2025-12-18 00:14:41,314: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250702.csv
+2025-12-18 00:14:41,320: INFO: historical: Loaded 225 rows and 13 columns.
+2025-12-18 00:14:41,320: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250701.csv
+2025-12-18 00:14:41,327: INFO: historical: Loaded 319 rows and 13 columns.
+2025-12-18 00:14:41,327: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250630.csv
+2025-12-18 00:14:41,334: INFO: historical: Loaded 44 rows and 13 columns.
+2025-12-18 00:14:41,334: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250629.csv
+2025-12-18 00:14:41,339: INFO: historical: Loaded 28 rows and 13 columns.
+2025-12-18 00:14:41,339: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250628.csv
+2025-12-18 00:14:41,347: INFO: historical: Loaded 34 rows and 13 columns.
+2025-12-18 00:14:41,347: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250627.csv
+2025-12-18 00:14:41,355: INFO: historical: Loaded 32 rows and 13 columns.
+2025-12-18 00:14:41,355: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250626.csv
+2025-12-18 00:14:41,363: INFO: historical: Loaded 57 rows and 13 columns.
+2025-12-18 00:14:41,363: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250625.csv
+2025-12-18 00:14:41,371: INFO: historical: Loaded 113 rows and 13 columns.
+2025-12-18 00:14:41,371: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250624.csv
+2025-12-18 00:14:41,378: INFO: historical: Loaded 52 rows and 13 columns.
+2025-12-18 00:14:41,378: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250623.csv
+2025-12-18 00:14:41,383: INFO: historical: Loaded 41 rows and 13 columns.
+2025-12-18 00:14:41,384: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250622.csv
+2025-12-18 00:14:41,390: INFO: historical: Loaded 33 rows and 13 columns.
+2025-12-18 00:14:41,390: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250621.csv
+2025-12-18 00:14:41,396: INFO: historical: Loaded 50 rows and 13 columns.
+2025-12-18 00:14:41,396: INFO: historical: Concatenating all daily files...
+2025-12-18 00:14:41,397: INFO: historical: Concatenating all daily files succeed.
+2025-12-18 00:14:42,116: INFO: historical: Concatenated DataFrame has 20847 rows and 13 columns.
+2025-12-18 00:14:42,120: INFO: historical: Historical Data Exist...
+2025-12-18 00:14:42,120: INFO: historical: Loading Historical Data...
+2025-12-18 00:14:42,120: INFO: historical: Loading Historical Data succeed.
+2025-12-18 00:14:42,120: INFO: historical: Searching delta in new daily data.
+2025-12-18 00:14:42,121: INFO: historical: Searching delta in historical data.
+2025-12-18 00:14:43,466: INFO: historical: There is no historical data to be updated
+2025-12-18 00:14:43,467: INFO: historical: Update Historical Process finished
+2025-12-18 00:14:43,468: INFO: main: Historical E-wallet Historical Process succeeded.
+2025-12-18 00:17:13,350: INFO: main: ==================================================
+2025-12-18 00:17:13,350: INFO: main: STEP 1: HISTORICAL E-wallet PROCESS
+2025-12-18 00:17:13,350: INFO: main: ==================================================
+2025-12-18 00:17:13,350: INFO: main: Running E-wallet Historical Process...
+2025-12-18 00:17:13,351: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251217.csv.
+2025-12-18 00:17:13,351: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251216.csv.
+2025-12-18 00:17:13,351: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251215.csv.
+2025-12-18 00:17:13,351: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251214.csv.
+2025-12-18 00:17:13,351: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251213.csv.
+2025-12-18 00:17:13,351: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251212.csv.
+2025-12-18 00:17:13,351: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251211.csv.
+2025-12-18 00:17:13,351: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251210.csv.
+2025-12-18 00:17:13,351: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251209.csv.
+2025-12-18 00:17:13,352: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251208.csv.
+2025-12-18 00:17:13,352: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251207.csv.
+2025-12-18 00:17:13,352: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251206.csv.
+2025-12-18 00:17:13,352: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251205.csv.
+2025-12-18 00:17:13,352: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251204.csv.
+2025-12-18 00:17:13,352: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251203.csv.
+2025-12-18 00:17:13,352: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251202.csv.
+2025-12-18 00:17:13,352: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251201.csv
+2025-12-18 00:17:13,369: INFO: historical: Loaded 48 rows and 13 columns.
+2025-12-18 00:17:13,370: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251130.csv
+2025-12-18 00:17:13,379: INFO: historical: Loaded 83 rows and 13 columns.
+2025-12-18 00:17:13,379: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251129.csv
+2025-12-18 00:17:13,389: INFO: historical: Loaded 90 rows and 13 columns.
+2025-12-18 00:17:13,389: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251128.csv
+2025-12-18 00:17:13,398: INFO: historical: Loaded 87 rows and 13 columns.
+2025-12-18 00:17:13,399: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251127.csv
+2025-12-18 00:17:13,407: INFO: historical: Loaded 89 rows and 13 columns.
+2025-12-18 00:17:13,407: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251126.csv
+2025-12-18 00:17:13,415: INFO: historical: Loaded 83 rows and 13 columns.
+2025-12-18 00:17:13,415: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251125.csv
+2025-12-18 00:17:13,425: INFO: historical: Loaded 63 rows and 13 columns.
+2025-12-18 00:17:13,425: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251124.csv
+2025-12-18 00:17:13,433: INFO: historical: Loaded 60 rows and 13 columns.
+2025-12-18 00:17:13,433: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251123.csv
+2025-12-18 00:17:13,440: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:17:13,440: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251122.csv
+2025-12-18 00:17:13,446: INFO: historical: Loaded 64 rows and 13 columns.
+2025-12-18 00:17:13,446: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251121.csv
+2025-12-18 00:17:13,454: INFO: historical: Loaded 76 rows and 13 columns.
+2025-12-18 00:17:13,454: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251120.csv
+2025-12-18 00:17:13,461: INFO: historical: Loaded 78 rows and 13 columns.
+2025-12-18 00:17:13,461: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251119.csv
+2025-12-18 00:17:13,469: INFO: historical: Loaded 46 rows and 13 columns.
+2025-12-18 00:17:13,469: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251118.csv
+2025-12-18 00:17:13,476: INFO: historical: Loaded 64 rows and 13 columns.
+2025-12-18 00:17:13,476: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251117.csv
+2025-12-18 00:17:13,485: INFO: historical: Loaded 67 rows and 13 columns.
+2025-12-18 00:17:13,485: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251116.csv
+2025-12-18 00:17:13,502: INFO: historical: Loaded 72 rows and 13 columns.
+2025-12-18 00:17:13,503: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251115.csv
+2025-12-18 00:17:13,511: INFO: historical: Loaded 85 rows and 13 columns.
+2025-12-18 00:17:13,511: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251114.csv
+2025-12-18 00:17:13,521: INFO: historical: Loaded 57 rows and 13 columns.
+2025-12-18 00:17:13,521: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251113.csv
+2025-12-18 00:17:13,528: INFO: historical: Loaded 53 rows and 13 columns.
+2025-12-18 00:17:13,528: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251112.csv
+2025-12-18 00:17:13,535: INFO: historical: Loaded 42 rows and 13 columns.
+2025-12-18 00:17:13,535: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251111.csv
+2025-12-18 00:17:13,546: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:17:13,546: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251110.csv
+2025-12-18 00:17:13,554: INFO: historical: Loaded 68 rows and 13 columns.
+2025-12-18 00:17:13,554: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251109.csv
+2025-12-18 00:17:13,561: INFO: historical: Loaded 55 rows and 13 columns.
+2025-12-18 00:17:13,561: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251108.csv
+2025-12-18 00:17:13,569: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:17:13,569: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251107.csv
+2025-12-18 00:17:13,577: INFO: historical: Loaded 71 rows and 13 columns.
+2025-12-18 00:17:13,577: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251106.csv
+2025-12-18 00:17:13,584: INFO: historical: Loaded 67 rows and 13 columns.
+2025-12-18 00:17:13,585: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251105.csv
+2025-12-18 00:17:13,592: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:17:13,592: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251104.csv
+2025-12-18 00:17:13,601: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:17:13,601: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251103.csv
+2025-12-18 00:17:13,612: INFO: historical: Loaded 78 rows and 13 columns.
+2025-12-18 00:17:13,612: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251102.csv
+2025-12-18 00:17:13,619: INFO: historical: Loaded 92 rows and 13 columns.
+2025-12-18 00:17:13,619: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251101.csv
+2025-12-18 00:17:13,630: INFO: historical: Loaded 113 rows and 13 columns.
+2025-12-18 00:17:13,630: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251031.csv
+2025-12-18 00:17:13,639: INFO: historical: Loaded 101 rows and 13 columns.
+2025-12-18 00:17:13,640: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251030.csv
+2025-12-18 00:17:13,648: INFO: historical: Loaded 84 rows and 13 columns.
+2025-12-18 00:17:13,648: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251029.csv
+2025-12-18 00:17:13,655: INFO: historical: Loaded 73 rows and 13 columns.
+2025-12-18 00:17:13,656: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251028.csv
+2025-12-18 00:17:13,663: INFO: historical: Loaded 72 rows and 13 columns.
+2025-12-18 00:17:13,663: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251027.csv
+2025-12-18 00:17:13,671: INFO: historical: Loaded 64 rows and 13 columns.
+2025-12-18 00:17:13,671: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251026.csv
+2025-12-18 00:17:13,678: INFO: historical: Loaded 73 rows and 13 columns.
+2025-12-18 00:17:13,678: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251025.csv
+2025-12-18 00:17:13,685: INFO: historical: Loaded 77 rows and 13 columns.
+2025-12-18 00:17:13,685: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251024.csv
+2025-12-18 00:17:13,694: INFO: historical: Loaded 96 rows and 13 columns.
+2025-12-18 00:17:13,695: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251023.csv
+2025-12-18 00:17:13,701: INFO: historical: Loaded 54 rows and 13 columns.
+2025-12-18 00:17:13,701: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251022.csv
+2025-12-18 00:17:13,709: INFO: historical: Loaded 60 rows and 13 columns.
+2025-12-18 00:17:13,709: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251021.csv
+2025-12-18 00:17:13,716: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:17:13,716: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251020.csv
+2025-12-18 00:17:13,723: INFO: historical: Loaded 65 rows and 13 columns.
+2025-12-18 00:17:13,723: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251019.csv
+2025-12-18 00:17:13,730: INFO: historical: Loaded 50 rows and 13 columns.
+2025-12-18 00:17:13,730: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251018.csv
+2025-12-18 00:17:13,737: INFO: historical: Loaded 54 rows and 13 columns.
+2025-12-18 00:17:13,738: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251017.csv
+2025-12-18 00:17:13,745: INFO: historical: Loaded 59 rows and 13 columns.
+2025-12-18 00:17:13,745: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251016.csv
+2025-12-18 00:17:13,753: INFO: historical: Loaded 50 rows and 13 columns.
+2025-12-18 00:17:13,753: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251015.csv
+2025-12-18 00:17:13,761: INFO: historical: Loaded 67 rows and 13 columns.
+2025-12-18 00:17:13,761: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251014.csv
+2025-12-18 00:17:13,772: INFO: historical: Loaded 68 rows and 13 columns.
+2025-12-18 00:17:13,773: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251013.csv
+2025-12-18 00:17:13,786: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:17:13,786: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251012.csv
+2025-12-18 00:17:13,792: INFO: historical: Loaded 57 rows and 13 columns.
+2025-12-18 00:17:13,792: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251011.csv
+2025-12-18 00:17:13,798: INFO: historical: Loaded 56 rows and 13 columns.
+2025-12-18 00:17:13,799: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251010.csv
+2025-12-18 00:17:13,806: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:17:13,807: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251009.csv
+2025-12-18 00:17:13,817: INFO: historical: Loaded 52 rows and 13 columns.
+2025-12-18 00:17:13,817: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251008.csv
+2025-12-18 00:17:13,825: INFO: historical: Loaded 75 rows and 13 columns.
+2025-12-18 00:17:13,825: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251007.csv
+2025-12-18 00:17:13,831: INFO: historical: Loaded 63 rows and 13 columns.
+2025-12-18 00:17:13,832: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251006.csv
+2025-12-18 00:17:13,841: INFO: historical: Loaded 82 rows and 13 columns.
+2025-12-18 00:17:13,841: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251005.csv
+2025-12-18 00:17:13,849: INFO: historical: Loaded 77 rows and 13 columns.
+2025-12-18 00:17:13,849: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251004.csv
+2025-12-18 00:17:13,857: INFO: historical: Loaded 59 rows and 13 columns.
+2025-12-18 00:17:13,857: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251003.csv
+2025-12-18 00:17:13,866: INFO: historical: Loaded 83 rows and 13 columns.
+2025-12-18 00:17:13,866: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251002.csv
+2025-12-18 00:17:13,876: INFO: historical: Loaded 67 rows and 13 columns.
+2025-12-18 00:17:13,876: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251001.csv
+2025-12-18 00:17:13,885: INFO: historical: Loaded 73 rows and 13 columns.
+2025-12-18 00:17:13,886: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250930.csv
+2025-12-18 00:17:13,896: INFO: historical: Loaded 70 rows and 13 columns.
+2025-12-18 00:17:13,897: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250929.csv
+2025-12-18 00:17:13,909: INFO: historical: Loaded 87 rows and 13 columns.
+2025-12-18 00:17:13,909: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250928.csv
+2025-12-18 00:17:13,916: INFO: historical: Loaded 70 rows and 13 columns.
+2025-12-18 00:17:13,916: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250927.csv
+2025-12-18 00:17:13,924: INFO: historical: Loaded 60 rows and 13 columns.
+2025-12-18 00:17:13,924: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250926.csv
+2025-12-18 00:17:13,932: INFO: historical: Loaded 92 rows and 13 columns.
+2025-12-18 00:17:13,932: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250925.csv
+2025-12-18 00:17:13,940: INFO: historical: Loaded 89 rows and 13 columns.
+2025-12-18 00:17:13,941: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250924.csv
+2025-12-18 00:17:13,947: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:17:13,947: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250923.csv
+2025-12-18 00:17:13,953: INFO: historical: Loaded 47 rows and 13 columns.
+2025-12-18 00:17:13,953: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250922.csv
+2025-12-18 00:17:13,960: INFO: historical: Loaded 52 rows and 13 columns.
+2025-12-18 00:17:13,960: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250921.csv
+2025-12-18 00:17:13,967: INFO: historical: Loaded 63 rows and 13 columns.
+2025-12-18 00:17:13,967: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250920.csv
+2025-12-18 00:17:13,975: INFO: historical: Loaded 52 rows and 13 columns.
+2025-12-18 00:17:13,975: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250919.csv
+2025-12-18 00:17:13,981: INFO: historical: Loaded 55 rows and 13 columns.
+2025-12-18 00:17:13,981: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250918.csv
+2025-12-18 00:17:13,988: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:17:13,988: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250917.csv
+2025-12-18 00:17:13,994: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:17:13,994: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250916.csv
+2025-12-18 00:17:14,999: INFO: historical: Loaded 71 rows and 13 columns.
+2025-12-18 00:17:14,000: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250915.csv
+2025-12-18 00:17:14,010: INFO: historical: Loaded 65 rows and 13 columns.
+2025-12-18 00:17:14,010: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250914.csv
+2025-12-18 00:17:14,017: INFO: historical: Loaded 67 rows and 13 columns.
+2025-12-18 00:17:14,017: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250913.csv
+2025-12-18 00:17:14,026: INFO: historical: Loaded 50 rows and 13 columns.
+2025-12-18 00:17:14,026: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250912.csv
+2025-12-18 00:17:14,036: INFO: historical: Loaded 64 rows and 13 columns.
+2025-12-18 00:17:14,037: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250911.csv
+2025-12-18 00:17:14,046: INFO: historical: Loaded 49 rows and 13 columns.
+2025-12-18 00:17:14,046: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250910.csv
+2025-12-18 00:17:14,055: INFO: historical: Loaded 53 rows and 13 columns.
+2025-12-18 00:17:14,056: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250909.csv
+2025-12-18 00:17:14,062: INFO: historical: Loaded 51 rows and 13 columns.
+2025-12-18 00:17:14,062: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250908.csv
+2025-12-18 00:17:14,069: INFO: historical: Loaded 72 rows and 13 columns.
+2025-12-18 00:17:14,069: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250907.csv
+2025-12-18 00:17:14,075: INFO: historical: Loaded 51 rows and 13 columns.
+2025-12-18 00:17:14,076: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250906.csv
+2025-12-18 00:17:14,085: INFO: historical: Loaded 63 rows and 13 columns.
+2025-12-18 00:17:14,085: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250905.csv
+2025-12-18 00:17:14,093: INFO: historical: Loaded 68 rows and 13 columns.
+2025-12-18 00:17:14,093: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250904.csv
+2025-12-18 00:17:14,102: INFO: historical: Loaded 69 rows and 13 columns.
+2025-12-18 00:17:14,102: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250903.csv
+2025-12-18 00:17:14,109: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:17:14,109: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250902.csv
+2025-12-18 00:17:14,118: INFO: historical: Loaded 67 rows and 13 columns.
+2025-12-18 00:17:14,118: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250901.csv
+2025-12-18 00:17:14,125: INFO: historical: Loaded 81 rows and 13 columns.
+2025-12-18 00:17:14,125: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250831.csv
+2025-12-18 00:17:14,132: INFO: historical: Loaded 58 rows and 13 columns.
+2025-12-18 00:17:14,132: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250830.csv
+2025-12-18 00:17:14,140: INFO: historical: Loaded 62 rows and 13 columns.
+2025-12-18 00:17:14,141: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250829.csv
+2025-12-18 00:17:14,149: INFO: historical: Loaded 68 rows and 13 columns.
+2025-12-18 00:17:14,149: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250828.csv
+2025-12-18 00:17:14,156: INFO: historical: Loaded 81 rows and 13 columns.
+2025-12-18 00:17:14,156: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250827.csv
+2025-12-18 00:17:14,163: INFO: historical: Loaded 65 rows and 13 columns.
+2025-12-18 00:17:14,163: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250826.csv
+2025-12-18 00:17:14,171: INFO: historical: Loaded 59 rows and 13 columns.
+2025-12-18 00:17:14,171: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250825.csv
+2025-12-18 00:17:14,179: INFO: historical: Loaded 91 rows and 13 columns.
+2025-12-18 00:17:14,179: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250824.csv
+2025-12-18 00:17:14,186: INFO: historical: Loaded 36 rows and 13 columns.
+2025-12-18 00:17:14,186: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250823.csv
+2025-12-18 00:17:14,199: INFO: historical: Loaded 56 rows and 13 columns.
+2025-12-18 00:17:14,200: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250822.csv
+2025-12-18 00:17:14,209: INFO: historical: Loaded 56 rows and 13 columns.
+2025-12-18 00:17:14,209: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250821.csv
+2025-12-18 00:17:14,216: INFO: historical: Loaded 46 rows and 13 columns.
+2025-12-18 00:17:14,217: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250820.csv
+2025-12-18 00:17:14,225: INFO: historical: Loaded 56 rows and 13 columns.
+2025-12-18 00:17:14,226: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250819.csv
+2025-12-18 00:17:14,232: INFO: historical: Loaded 58 rows and 13 columns.
+2025-12-18 00:17:14,233: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250818.csv
+2025-12-18 00:17:14,239: INFO: historical: Loaded 47 rows and 13 columns.
+2025-12-18 00:17:14,240: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250817.csv
+2025-12-18 00:17:14,247: INFO: historical: Loaded 41 rows and 13 columns.
+2025-12-18 00:17:14,247: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250816.csv
+2025-12-18 00:17:14,254: INFO: historical: Loaded 56 rows and 13 columns.
+2025-12-18 00:17:14,254: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250815.csv
+2025-12-18 00:17:14,264: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:17:14,264: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250814.csv
+2025-12-18 00:17:14,272: INFO: historical: Loaded 55 rows and 13 columns.
+2025-12-18 00:17:14,272: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250813.csv
+2025-12-18 00:17:14,279: INFO: historical: Loaded 53 rows and 13 columns.
+2025-12-18 00:17:14,279: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250812.csv
+2025-12-18 00:17:14,286: INFO: historical: Loaded 44 rows and 13 columns.
+2025-12-18 00:17:14,286: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250811.csv
+2025-12-18 00:17:14,293: INFO: historical: Loaded 52 rows and 13 columns.
+2025-12-18 00:17:14,293: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250810.csv
+2025-12-18 00:17:14,300: INFO: historical: Loaded 53 rows and 13 columns.
+2025-12-18 00:17:14,301: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250809.csv
+2025-12-18 00:17:14,309: INFO: historical: Loaded 68 rows and 13 columns.
+2025-12-18 00:17:14,309: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250808.csv
+2025-12-18 00:17:14,317: INFO: historical: Loaded 82 rows and 13 columns.
+2025-12-18 00:17:14,318: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250807.csv
+2025-12-18 00:17:14,324: INFO: historical: Loaded 67 rows and 13 columns.
+2025-12-18 00:17:14,324: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250806.csv
+2025-12-18 00:17:14,332: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:17:14,332: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250805.csv
+2025-12-18 00:17:14,338: INFO: historical: Loaded 52 rows and 13 columns.
+2025-12-18 00:17:14,339: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250804.csv
+2025-12-18 00:17:14,347: INFO: historical: Loaded 76 rows and 13 columns.
+2025-12-18 00:17:14,347: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250803.csv
+2025-12-18 00:17:14,354: INFO: historical: Loaded 54 rows and 13 columns.
+2025-12-18 00:17:14,354: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250802.csv
+2025-12-18 00:17:14,361: INFO: historical: Loaded 62 rows and 13 columns.
+2025-12-18 00:17:14,362: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250801.csv
+2025-12-18 00:17:14,370: INFO: historical: Loaded 75 rows and 13 columns.
+2025-12-18 00:17:14,370: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250731.csv
+2025-12-18 00:17:14,379: INFO: historical: Loaded 80 rows and 13 columns.
+2025-12-18 00:17:14,379: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250730.csv
+2025-12-18 00:17:14,388: INFO: historical: Loaded 73 rows and 13 columns.
+2025-12-18 00:17:14,389: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250729.csv
+2025-12-18 00:17:14,400: INFO: historical: Loaded 53 rows and 13 columns.
+2025-12-18 00:17:14,400: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250728.csv
+2025-12-18 00:17:14,409: INFO: historical: Loaded 62 rows and 13 columns.
+2025-12-18 00:17:14,410: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250727.csv
+2025-12-18 00:17:14,420: INFO: historical: Loaded 76 rows and 13 columns.
+2025-12-18 00:17:14,421: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250726.csv
+2025-12-18 00:17:14,430: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:17:14,431: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250725.csv
+2025-12-18 00:17:14,439: INFO: historical: Loaded 63 rows and 13 columns.
+2025-12-18 00:17:14,440: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250724.csv
+2025-12-18 00:17:14,446: INFO: historical: Loaded 56 rows and 13 columns.
+2025-12-18 00:17:14,447: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250723.csv
+2025-12-18 00:17:14,455: INFO: historical: Loaded 55 rows and 13 columns.
+2025-12-18 00:17:14,456: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250722.csv
+2025-12-18 00:17:14,463: INFO: historical: Loaded 43 rows and 13 columns.
+2025-12-18 00:17:14,464: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250721.csv
+2025-12-18 00:17:14,470: INFO: historical: Loaded 48 rows and 13 columns.
+2025-12-18 00:17:14,470: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250720.csv
+2025-12-18 00:17:14,480: INFO: historical: Loaded 50 rows and 13 columns.
+2025-12-18 00:17:14,480: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250719.csv
+2025-12-18 00:17:14,488: INFO: historical: Loaded 51 rows and 13 columns.
+2025-12-18 00:17:14,488: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250718.csv
+2025-12-18 00:17:14,496: INFO: historical: Loaded 63 rows and 13 columns.
+2025-12-18 00:17:14,497: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250717.csv
+2025-12-18 00:17:14,504: INFO: historical: Loaded 52 rows and 13 columns.
+2025-12-18 00:17:14,504: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250716.csv
+2025-12-18 00:17:14,513: INFO: historical: Loaded 62 rows and 13 columns.
+2025-12-18 00:17:14,514: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250715.csv
+2025-12-18 00:17:14,521: INFO: historical: Loaded 51 rows and 13 columns.
+2025-12-18 00:17:14,521: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250714.csv
+2025-12-18 00:17:14,529: INFO: historical: Loaded 49 rows and 13 columns.
+2025-12-18 00:17:14,529: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250713.csv
+2025-12-18 00:17:14,536: INFO: historical: Loaded 44 rows and 13 columns.
+2025-12-18 00:17:14,536: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250712.csv
+2025-12-18 00:17:14,544: INFO: historical: Loaded 40 rows and 13 columns.
+2025-12-18 00:17:14,544: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250711.csv
+2025-12-18 00:17:14,550: INFO: historical: Loaded 54 rows and 13 columns.
+2025-12-18 00:17:14,550: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250710.csv
+2025-12-18 00:17:14,559: INFO: historical: Loaded 68 rows and 13 columns.
+2025-12-18 00:17:14,559: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250709.csv
+2025-12-18 00:17:14,565: INFO: historical: Loaded 51 rows and 13 columns.
+2025-12-18 00:17:14,565: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250708.csv
+2025-12-18 00:17:14,573: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:17:14,573: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250707.csv
+2025-12-18 00:17:14,580: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:17:14,580: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250706.csv
+2025-12-18 00:17:14,587: INFO: historical: Loaded 55 rows and 13 columns.
+2025-12-18 00:17:14,588: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250705.csv
+2025-12-18 00:17:14,595: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:17:14,596: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250704.csv
+2025-12-18 00:17:14,605: INFO: historical: Loaded 53 rows and 13 columns.
+2025-12-18 00:17:14,605: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250703.csv
+2025-12-18 00:17:14,613: INFO: historical: Loaded 54 rows and 13 columns.
+2025-12-18 00:17:14,614: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250702.csv
+2025-12-18 00:17:14,623: INFO: historical: Loaded 58 rows and 13 columns.
+2025-12-18 00:17:14,623: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250701.csv
+2025-12-18 00:17:14,634: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:17:14,634: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250630.csv
+2025-12-18 00:17:14,645: INFO: historical: Loaded 73 rows and 13 columns.
+2025-12-18 00:17:14,645: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250629.csv
+2025-12-18 00:17:14,652: INFO: historical: Loaded 48 rows and 13 columns.
+2025-12-18 00:17:14,652: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250628.csv
+2025-12-18 00:17:14,660: INFO: historical: Loaded 58 rows and 13 columns.
+2025-12-18 00:17:14,661: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250627.csv
+2025-12-18 00:17:14,668: INFO: historical: Loaded 64 rows and 13 columns.
+2025-12-18 00:17:14,668: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250626.csv
+2025-12-18 00:17:14,677: INFO: historical: Loaded 69 rows and 13 columns.
+2025-12-18 00:17:14,677: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250625.csv
+2025-12-18 00:17:14,686: INFO: historical: Loaded 90 rows and 13 columns.
+2025-12-18 00:17:14,686: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250624.csv
+2025-12-18 00:17:14,694: INFO: historical: Loaded 49 rows and 13 columns.
+2025-12-18 00:17:14,694: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250623.csv
+2025-12-18 00:17:14,702: INFO: historical: Loaded 36 rows and 13 columns.
+2025-12-18 00:17:14,702: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250622.csv
+2025-12-18 00:17:14,708: INFO: historical: Loaded 58 rows and 13 columns.
+2025-12-18 00:17:14,708: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250621.csv
+2025-12-18 00:17:14,714: INFO: historical: Loaded 48 rows and 13 columns.
+2025-12-18 00:17:14,714: INFO: historical: Concatenating all daily files...
+2025-12-18 00:17:14,715: INFO: historical: Concatenating all daily files succeed.
+2025-12-18 00:17:15,506: INFO: historical: Concatenated DataFrame has 10430 rows and 13 columns.
+2025-12-18 00:17:15,511: INFO: historical: There is no existing historical parquet data found.
+2025-12-18 00:17:15,511: INFO: historical: Making new historical parquet data into:
+2025-12-18 00:17:15,511: INFO: historical: /home/ubuntu/bvic/ibmb_script/ewallet/historical/data/ewallet_historical_data.parquet
+2025-12-18 00:17:16,299: INFO: historical: Succeeded saving the updated historical transfer online records.
+2025-12-18 00:17:16,301: INFO: main: Historical E-wallet Historical Process succeeded.
+2025-12-18 00:17:49,783: INFO: main: ==================================================
+2025-12-18 00:17:49,783: INFO: main: STEP 1: HISTORICAL E-wallet PROCESS
+2025-12-18 00:17:49,784: INFO: main: ==================================================
+2025-12-18 00:17:49,784: INFO: main: Running E-wallet Historical Process...
+2025-12-18 00:17:49,784: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251217.csv.
+2025-12-18 00:17:49,784: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251216.csv.
+2025-12-18 00:17:49,784: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251215.csv.
+2025-12-18 00:17:49,784: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251214.csv.
+2025-12-18 00:17:49,784: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251213.csv.
+2025-12-18 00:17:49,784: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251212.csv.
+2025-12-18 00:17:49,784: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251211.csv.
+2025-12-18 00:17:49,785: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251210.csv.
+2025-12-18 00:17:49,785: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251209.csv.
+2025-12-18 00:17:49,785: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251208.csv.
+2025-12-18 00:17:49,785: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251207.csv.
+2025-12-18 00:17:49,785: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251206.csv.
+2025-12-18 00:17:49,785: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251205.csv.
+2025-12-18 00:17:49,785: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251204.csv.
+2025-12-18 00:17:49,785: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251203.csv.
+2025-12-18 00:17:49,785: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251202.csv.
+2025-12-18 00:17:49,785: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251201.csv
+2025-12-18 00:17:49,798: INFO: historical: Loaded 48 rows and 13 columns.
+2025-12-18 00:17:49,798: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251130.csv
+2025-12-18 00:17:49,808: INFO: historical: Loaded 83 rows and 13 columns.
+2025-12-18 00:17:49,808: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251129.csv
+2025-12-18 00:17:49,818: INFO: historical: Loaded 90 rows and 13 columns.
+2025-12-18 00:17:49,818: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251128.csv
+2025-12-18 00:17:49,828: INFO: historical: Loaded 87 rows and 13 columns.
+2025-12-18 00:17:49,828: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251127.csv
+2025-12-18 00:17:49,837: INFO: historical: Loaded 89 rows and 13 columns.
+2025-12-18 00:17:49,838: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251126.csv
+2025-12-18 00:17:49,847: INFO: historical: Loaded 83 rows and 13 columns.
+2025-12-18 00:17:49,847: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251125.csv
+2025-12-18 00:17:49,858: INFO: historical: Loaded 63 rows and 13 columns.
+2025-12-18 00:17:49,858: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251124.csv
+2025-12-18 00:17:49,870: INFO: historical: Loaded 60 rows and 13 columns.
+2025-12-18 00:17:49,871: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251123.csv
+2025-12-18 00:17:49,880: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:17:49,880: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251122.csv
+2025-12-18 00:17:49,896: INFO: historical: Loaded 64 rows and 13 columns.
+2025-12-18 00:17:49,896: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251121.csv
+2025-12-18 00:17:49,904: INFO: historical: Loaded 76 rows and 13 columns.
+2025-12-18 00:17:49,905: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251120.csv
+2025-12-18 00:17:49,916: INFO: historical: Loaded 78 rows and 13 columns.
+2025-12-18 00:17:49,916: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251119.csv
+2025-12-18 00:17:49,925: INFO: historical: Loaded 46 rows and 13 columns.
+2025-12-18 00:17:49,925: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251118.csv
+2025-12-18 00:17:49,935: INFO: historical: Loaded 64 rows and 13 columns.
+2025-12-18 00:17:49,937: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251117.csv
+2025-12-18 00:17:49,948: INFO: historical: Loaded 67 rows and 13 columns.
+2025-12-18 00:17:49,948: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251116.csv
+2025-12-18 00:17:49,956: INFO: historical: Loaded 72 rows and 13 columns.
+2025-12-18 00:17:49,956: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251115.csv
+2025-12-18 00:17:49,964: INFO: historical: Loaded 85 rows and 13 columns.
+2025-12-18 00:17:49,964: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251114.csv
+2025-12-18 00:17:49,971: INFO: historical: Loaded 57 rows and 13 columns.
+2025-12-18 00:17:49,971: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251113.csv
+2025-12-18 00:17:49,978: INFO: historical: Loaded 53 rows and 13 columns.
+2025-12-18 00:17:49,978: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251112.csv
+2025-12-18 00:17:49,985: INFO: historical: Loaded 42 rows and 13 columns.
+2025-12-18 00:17:49,985: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251111.csv
+2025-12-18 00:17:49,992: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:17:49,992: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251110.csv
+2025-12-18 00:17:50,002: INFO: historical: Loaded 68 rows and 13 columns.
+2025-12-18 00:17:50,002: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251109.csv
+2025-12-18 00:17:50,012: INFO: historical: Loaded 55 rows and 13 columns.
+2025-12-18 00:17:50,013: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251108.csv
+2025-12-18 00:17:50,020: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:17:50,020: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251107.csv
+2025-12-18 00:17:50,030: INFO: historical: Loaded 71 rows and 13 columns.
+2025-12-18 00:17:50,030: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251106.csv
+2025-12-18 00:17:50,038: INFO: historical: Loaded 67 rows and 13 columns.
+2025-12-18 00:17:50,038: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251105.csv
+2025-12-18 00:17:50,048: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:17:50,048: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251104.csv
+2025-12-18 00:17:50,056: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:17:50,056: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251103.csv
+2025-12-18 00:17:50,064: INFO: historical: Loaded 78 rows and 13 columns.
+2025-12-18 00:17:50,064: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251102.csv
+2025-12-18 00:17:50,072: INFO: historical: Loaded 92 rows and 13 columns.
+2025-12-18 00:17:50,072: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251101.csv
+2025-12-18 00:17:50,079: INFO: historical: Loaded 113 rows and 13 columns.
+2025-12-18 00:17:50,080: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251031.csv
+2025-12-18 00:17:50,089: INFO: historical: Loaded 101 rows and 13 columns.
+2025-12-18 00:17:50,089: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251030.csv
+2025-12-18 00:17:50,096: INFO: historical: Loaded 84 rows and 13 columns.
+2025-12-18 00:17:50,096: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251029.csv
+2025-12-18 00:17:50,104: INFO: historical: Loaded 73 rows and 13 columns.
+2025-12-18 00:17:50,105: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251028.csv
+2025-12-18 00:17:50,112: INFO: historical: Loaded 72 rows and 13 columns.
+2025-12-18 00:17:50,112: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251027.csv
+2025-12-18 00:17:50,121: INFO: historical: Loaded 64 rows and 13 columns.
+2025-12-18 00:17:50,121: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251026.csv
+2025-12-18 00:17:50,128: INFO: historical: Loaded 73 rows and 13 columns.
+2025-12-18 00:17:50,129: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251025.csv
+2025-12-18 00:17:50,140: INFO: historical: Loaded 77 rows and 13 columns.
+2025-12-18 00:17:50,140: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251024.csv
+2025-12-18 00:17:50,150: INFO: historical: Loaded 96 rows and 13 columns.
+2025-12-18 00:17:50,150: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251023.csv
+2025-12-18 00:17:50,157: INFO: historical: Loaded 54 rows and 13 columns.
+2025-12-18 00:17:50,157: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251022.csv
+2025-12-18 00:17:50,165: INFO: historical: Loaded 60 rows and 13 columns.
+2025-12-18 00:17:50,165: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251021.csv
+2025-12-18 00:17:50,172: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:17:50,172: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251020.csv
+2025-12-18 00:17:50,184: INFO: historical: Loaded 65 rows and 13 columns.
+2025-12-18 00:17:50,185: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251019.csv
+2025-12-18 00:17:50,193: INFO: historical: Loaded 50 rows and 13 columns.
+2025-12-18 00:17:50,193: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251018.csv
+2025-12-18 00:17:50,201: INFO: historical: Loaded 54 rows and 13 columns.
+2025-12-18 00:17:50,202: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251017.csv
+2025-12-18 00:17:50,211: INFO: historical: Loaded 59 rows and 13 columns.
+2025-12-18 00:17:50,212: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251016.csv
+2025-12-18 00:17:50,222: INFO: historical: Loaded 50 rows and 13 columns.
+2025-12-18 00:17:50,222: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251015.csv
+2025-12-18 00:17:50,230: INFO: historical: Loaded 67 rows and 13 columns.
+2025-12-18 00:17:50,231: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251014.csv
+2025-12-18 00:17:50,237: INFO: historical: Loaded 68 rows and 13 columns.
+2025-12-18 00:17:50,237: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251013.csv
+2025-12-18 00:17:50,245: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:17:50,245: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251012.csv
+2025-12-18 00:17:50,253: INFO: historical: Loaded 57 rows and 13 columns.
+2025-12-18 00:17:50,253: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251011.csv
+2025-12-18 00:17:50,260: INFO: historical: Loaded 56 rows and 13 columns.
+2025-12-18 00:17:50,260: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251010.csv
+2025-12-18 00:17:50,267: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:17:50,268: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251009.csv
+2025-12-18 00:17:50,275: INFO: historical: Loaded 52 rows and 13 columns.
+2025-12-18 00:17:50,275: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251008.csv
+2025-12-18 00:17:50,282: INFO: historical: Loaded 75 rows and 13 columns.
+2025-12-18 00:17:50,283: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251007.csv
+2025-12-18 00:17:50,291: INFO: historical: Loaded 63 rows and 13 columns.
+2025-12-18 00:17:50,291: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251006.csv
+2025-12-18 00:17:50,299: INFO: historical: Loaded 82 rows and 13 columns.
+2025-12-18 00:17:50,300: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251005.csv
+2025-12-18 00:17:50,307: INFO: historical: Loaded 77 rows and 13 columns.
+2025-12-18 00:17:50,307: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251004.csv
+2025-12-18 00:17:50,313: INFO: historical: Loaded 59 rows and 13 columns.
+2025-12-18 00:17:50,314: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251003.csv
+2025-12-18 00:17:50,321: INFO: historical: Loaded 83 rows and 13 columns.
+2025-12-18 00:17:50,321: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251002.csv
+2025-12-18 00:17:50,328: INFO: historical: Loaded 67 rows and 13 columns.
+2025-12-18 00:17:50,328: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251001.csv
+2025-12-18 00:17:50,334: INFO: historical: Loaded 73 rows and 13 columns.
+2025-12-18 00:17:50,335: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250930.csv
+2025-12-18 00:17:50,342: INFO: historical: Loaded 70 rows and 13 columns.
+2025-12-18 00:17:50,342: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250929.csv
+2025-12-18 00:17:50,350: INFO: historical: Loaded 87 rows and 13 columns.
+2025-12-18 00:17:50,350: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250928.csv
+2025-12-18 00:17:50,356: INFO: historical: Loaded 70 rows and 13 columns.
+2025-12-18 00:17:50,356: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250927.csv
+2025-12-18 00:17:50,366: INFO: historical: Loaded 60 rows and 13 columns.
+2025-12-18 00:17:50,367: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250926.csv
+2025-12-18 00:17:50,375: INFO: historical: Loaded 92 rows and 13 columns.
+2025-12-18 00:17:50,376: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250925.csv
+2025-12-18 00:17:50,387: INFO: historical: Loaded 89 rows and 13 columns.
+2025-12-18 00:17:50,387: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250924.csv
+2025-12-18 00:17:50,394: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:17:50,395: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250923.csv
+2025-12-18 00:17:50,403: INFO: historical: Loaded 47 rows and 13 columns.
+2025-12-18 00:17:50,403: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250922.csv
+2025-12-18 00:17:50,415: INFO: historical: Loaded 52 rows and 13 columns.
+2025-12-18 00:17:50,415: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250921.csv
+2025-12-18 00:17:50,423: INFO: historical: Loaded 63 rows and 13 columns.
+2025-12-18 00:17:50,423: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250920.csv
+2025-12-18 00:17:50,430: INFO: historical: Loaded 52 rows and 13 columns.
+2025-12-18 00:17:50,431: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250919.csv
+2025-12-18 00:17:50,438: INFO: historical: Loaded 55 rows and 13 columns.
+2025-12-18 00:17:50,438: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250918.csv
+2025-12-18 00:17:50,445: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:17:50,445: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250917.csv
+2025-12-18 00:17:50,452: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:17:50,453: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250916.csv
+2025-12-18 00:17:50,464: INFO: historical: Loaded 71 rows and 13 columns.
+2025-12-18 00:17:50,464: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250915.csv
+2025-12-18 00:17:50,474: INFO: historical: Loaded 65 rows and 13 columns.
+2025-12-18 00:17:50,474: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250914.csv
+2025-12-18 00:17:50,481: INFO: historical: Loaded 67 rows and 13 columns.
+2025-12-18 00:17:50,481: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250913.csv
+2025-12-18 00:17:50,488: INFO: historical: Loaded 50 rows and 13 columns.
+2025-12-18 00:17:50,488: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250912.csv
+2025-12-18 00:17:50,494: INFO: historical: Loaded 64 rows and 13 columns.
+2025-12-18 00:17:50,495: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250911.csv
+2025-12-18 00:17:50,502: INFO: historical: Loaded 49 rows and 13 columns.
+2025-12-18 00:17:50,502: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250910.csv
+2025-12-18 00:17:50,509: INFO: historical: Loaded 53 rows and 13 columns.
+2025-12-18 00:17:50,510: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250909.csv
+2025-12-18 00:17:50,516: INFO: historical: Loaded 51 rows and 13 columns.
+2025-12-18 00:17:50,516: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250908.csv
+2025-12-18 00:17:50,523: INFO: historical: Loaded 72 rows and 13 columns.
+2025-12-18 00:17:50,524: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250907.csv
+2025-12-18 00:17:50,530: INFO: historical: Loaded 51 rows and 13 columns.
+2025-12-18 00:17:50,530: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250906.csv
+2025-12-18 00:17:50,537: INFO: historical: Loaded 63 rows and 13 columns.
+2025-12-18 00:17:50,537: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250905.csv
+2025-12-18 00:17:50,545: INFO: historical: Loaded 68 rows and 13 columns.
+2025-12-18 00:17:50,545: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250904.csv
+2025-12-18 00:17:50,552: INFO: historical: Loaded 69 rows and 13 columns.
+2025-12-18 00:17:50,553: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250903.csv
+2025-12-18 00:17:50,560: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:17:50,560: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250902.csv
+2025-12-18 00:17:50,568: INFO: historical: Loaded 67 rows and 13 columns.
+2025-12-18 00:17:50,568: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250901.csv
+2025-12-18 00:17:50,575: INFO: historical: Loaded 81 rows and 13 columns.
+2025-12-18 00:17:50,575: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250831.csv
+2025-12-18 00:17:50,581: INFO: historical: Loaded 58 rows and 13 columns.
+2025-12-18 00:17:50,581: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250830.csv
+2025-12-18 00:17:50,588: INFO: historical: Loaded 62 rows and 13 columns.
+2025-12-18 00:17:50,588: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250829.csv
+2025-12-18 00:17:50,594: INFO: historical: Loaded 68 rows and 13 columns.
+2025-12-18 00:17:50,594: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250828.csv
+2025-12-18 00:17:50,602: INFO: historical: Loaded 81 rows and 13 columns.
+2025-12-18 00:17:50,602: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250827.csv
+2025-12-18 00:17:50,610: INFO: historical: Loaded 65 rows and 13 columns.
+2025-12-18 00:17:50,610: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250826.csv
+2025-12-18 00:17:50,618: INFO: historical: Loaded 59 rows and 13 columns.
+2025-12-18 00:17:50,618: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250825.csv
+2025-12-18 00:17:50,629: INFO: historical: Loaded 91 rows and 13 columns.
+2025-12-18 00:17:50,629: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250824.csv
+2025-12-18 00:17:50,637: INFO: historical: Loaded 36 rows and 13 columns.
+2025-12-18 00:17:50,637: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250823.csv
+2025-12-18 00:17:50,645: INFO: historical: Loaded 56 rows and 13 columns.
+2025-12-18 00:17:50,645: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250822.csv
+2025-12-18 00:17:50,651: INFO: historical: Loaded 56 rows and 13 columns.
+2025-12-18 00:17:50,652: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250821.csv
+2025-12-18 00:17:50,660: INFO: historical: Loaded 46 rows and 13 columns.
+2025-12-18 00:17:50,660: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250820.csv
+2025-12-18 00:17:50,667: INFO: historical: Loaded 56 rows and 13 columns.
+2025-12-18 00:17:50,667: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250819.csv
+2025-12-18 00:17:50,678: INFO: historical: Loaded 58 rows and 13 columns.
+2025-12-18 00:17:50,678: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250818.csv
+2025-12-18 00:17:50,685: INFO: historical: Loaded 47 rows and 13 columns.
+2025-12-18 00:17:50,685: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250817.csv
+2025-12-18 00:17:50,692: INFO: historical: Loaded 41 rows and 13 columns.
+2025-12-18 00:17:50,692: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250816.csv
+2025-12-18 00:17:50,699: INFO: historical: Loaded 56 rows and 13 columns.
+2025-12-18 00:17:50,699: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250815.csv
+2025-12-18 00:17:50,708: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:17:50,708: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250814.csv
+2025-12-18 00:17:50,716: INFO: historical: Loaded 55 rows and 13 columns.
+2025-12-18 00:17:50,717: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250813.csv
+2025-12-18 00:17:50,724: INFO: historical: Loaded 53 rows and 13 columns.
+2025-12-18 00:17:50,724: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250812.csv
+2025-12-18 00:17:50,731: INFO: historical: Loaded 44 rows and 13 columns.
+2025-12-18 00:17:50,731: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250811.csv
+2025-12-18 00:17:50,739: INFO: historical: Loaded 52 rows and 13 columns.
+2025-12-18 00:17:50,739: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250810.csv
+2025-12-18 00:17:50,745: INFO: historical: Loaded 53 rows and 13 columns.
+2025-12-18 00:17:50,746: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250809.csv
+2025-12-18 00:17:50,752: INFO: historical: Loaded 68 rows and 13 columns.
+2025-12-18 00:17:50,753: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250808.csv
+2025-12-18 00:17:50,760: INFO: historical: Loaded 82 rows and 13 columns.
+2025-12-18 00:17:50,761: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250807.csv
+2025-12-18 00:17:50,767: INFO: historical: Loaded 67 rows and 13 columns.
+2025-12-18 00:17:50,767: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250806.csv
+2025-12-18 00:17:50,775: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:17:50,775: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250805.csv
+2025-12-18 00:17:50,782: INFO: historical: Loaded 52 rows and 13 columns.
+2025-12-18 00:17:50,783: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250804.csv
+2025-12-18 00:17:50,792: INFO: historical: Loaded 76 rows and 13 columns.
+2025-12-18 00:17:50,793: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250803.csv
+2025-12-18 00:17:50,800: INFO: historical: Loaded 54 rows and 13 columns.
+2025-12-18 00:17:50,800: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250802.csv
+2025-12-18 00:17:50,807: INFO: historical: Loaded 62 rows and 13 columns.
+2025-12-18 00:17:50,807: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250801.csv
+2025-12-18 00:17:50,814: INFO: historical: Loaded 75 rows and 13 columns.
+2025-12-18 00:17:50,814: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250731.csv
+2025-12-18 00:17:50,822: INFO: historical: Loaded 80 rows and 13 columns.
+2025-12-18 00:17:50,823: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250730.csv
+2025-12-18 00:17:50,830: INFO: historical: Loaded 73 rows and 13 columns.
+2025-12-18 00:17:50,830: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250729.csv
+2025-12-18 00:17:50,840: INFO: historical: Loaded 53 rows and 13 columns.
+2025-12-18 00:17:50,840: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250728.csv
+2025-12-18 00:17:50,847: INFO: historical: Loaded 62 rows and 13 columns.
+2025-12-18 00:17:50,848: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250727.csv
+2025-12-18 00:17:50,854: INFO: historical: Loaded 76 rows and 13 columns.
+2025-12-18 00:17:50,854: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250726.csv
+2025-12-18 00:17:50,861: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:17:50,861: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250725.csv
+2025-12-18 00:17:50,870: INFO: historical: Loaded 63 rows and 13 columns.
+2025-12-18 00:17:50,871: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250724.csv
+2025-12-18 00:17:50,877: INFO: historical: Loaded 56 rows and 13 columns.
+2025-12-18 00:17:50,877: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250723.csv
+2025-12-18 00:17:50,883: INFO: historical: Loaded 55 rows and 13 columns.
+2025-12-18 00:17:50,884: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250722.csv
+2025-12-18 00:17:50,890: INFO: historical: Loaded 43 rows and 13 columns.
+2025-12-18 00:17:50,890: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250721.csv
+2025-12-18 00:17:50,897: INFO: historical: Loaded 48 rows and 13 columns.
+2025-12-18 00:17:50,897: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250720.csv
+2025-12-18 00:17:50,903: INFO: historical: Loaded 50 rows and 13 columns.
+2025-12-18 00:17:50,904: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250719.csv
+2025-12-18 00:17:50,910: INFO: historical: Loaded 51 rows and 13 columns.
+2025-12-18 00:17:50,910: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250718.csv
+2025-12-18 00:17:50,916: INFO: historical: Loaded 63 rows and 13 columns.
+2025-12-18 00:17:50,916: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250717.csv
+2025-12-18 00:17:50,922: INFO: historical: Loaded 52 rows and 13 columns.
+2025-12-18 00:17:50,923: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250716.csv
+2025-12-18 00:17:50,929: INFO: historical: Loaded 62 rows and 13 columns.
+2025-12-18 00:17:50,930: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250715.csv
+2025-12-18 00:17:50,936: INFO: historical: Loaded 51 rows and 13 columns.
+2025-12-18 00:17:50,936: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250714.csv
+2025-12-18 00:17:50,942: INFO: historical: Loaded 49 rows and 13 columns.
+2025-12-18 00:17:50,942: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250713.csv
+2025-12-18 00:17:50,948: INFO: historical: Loaded 44 rows and 13 columns.
+2025-12-18 00:17:50,948: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250712.csv
+2025-12-18 00:17:50,954: INFO: historical: Loaded 40 rows and 13 columns.
+2025-12-18 00:17:50,955: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250711.csv
+2025-12-18 00:17:50,961: INFO: historical: Loaded 54 rows and 13 columns.
+2025-12-18 00:17:50,961: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250710.csv
+2025-12-18 00:17:50,967: INFO: historical: Loaded 68 rows and 13 columns.
+2025-12-18 00:17:50,967: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250709.csv
+2025-12-18 00:17:50,973: INFO: historical: Loaded 51 rows and 13 columns.
+2025-12-18 00:17:50,974: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250708.csv
+2025-12-18 00:17:50,981: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:17:50,982: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250707.csv
+2025-12-18 00:17:50,989: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:17:50,989: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250706.csv
+2025-12-18 00:17:50,997: INFO: historical: Loaded 55 rows and 13 columns.
+2025-12-18 00:17:50,998: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250705.csv
+2025-12-18 00:17:51,005: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:17:51,005: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250704.csv
+2025-12-18 00:17:51,017: INFO: historical: Loaded 53 rows and 13 columns.
+2025-12-18 00:17:51,017: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250703.csv
+2025-12-18 00:17:51,029: INFO: historical: Loaded 54 rows and 13 columns.
+2025-12-18 00:17:51,029: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250702.csv
+2025-12-18 00:17:51,041: INFO: historical: Loaded 58 rows and 13 columns.
+2025-12-18 00:17:51,041: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250701.csv
+2025-12-18 00:17:51,049: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:17:51,049: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250630.csv
+2025-12-18 00:17:51,057: INFO: historical: Loaded 73 rows and 13 columns.
+2025-12-18 00:17:51,057: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250629.csv
+2025-12-18 00:17:51,064: INFO: historical: Loaded 48 rows and 13 columns.
+2025-12-18 00:17:51,064: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250628.csv
+2025-12-18 00:17:51,070: INFO: historical: Loaded 58 rows and 13 columns.
+2025-12-18 00:17:51,070: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250627.csv
+2025-12-18 00:17:51,076: INFO: historical: Loaded 64 rows and 13 columns.
+2025-12-18 00:17:51,077: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250626.csv
+2025-12-18 00:17:51,083: INFO: historical: Loaded 69 rows and 13 columns.
+2025-12-18 00:17:51,083: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250625.csv
+2025-12-18 00:17:51,093: INFO: historical: Loaded 90 rows and 13 columns.
+2025-12-18 00:17:51,093: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250624.csv
+2025-12-18 00:17:51,102: INFO: historical: Loaded 49 rows and 13 columns.
+2025-12-18 00:17:51,102: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250623.csv
+2025-12-18 00:17:51,109: INFO: historical: Loaded 36 rows and 13 columns.
+2025-12-18 00:17:51,109: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250622.csv
+2025-12-18 00:17:51,117: INFO: historical: Loaded 58 rows and 13 columns.
+2025-12-18 00:17:51,117: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250621.csv
+2025-12-18 00:17:51,124: INFO: historical: Loaded 48 rows and 13 columns.
+2025-12-18 00:17:51,125: INFO: historical: Concatenating all daily files...
+2025-12-18 00:17:51,126: INFO: historical: Concatenating all daily files succeed.
+2025-12-18 00:17:51,872: INFO: historical: Concatenated DataFrame has 10430 rows and 13 columns.
+2025-12-18 00:17:51,878: INFO: historical: There is no existing historical parquet data found.
+2025-12-18 00:17:51,878: INFO: historical: Making new historical parquet data into:
+2025-12-18 00:17:51,878: INFO: historical: /home/ubuntu/bvic/ibmb_script/e_wallet/historical/data/ewallet_historical_data.parquet
+2025-12-18 00:17:52,703: INFO: historical: Succeeded saving the updated historical transfer online records.
+2025-12-18 00:17:52,704: INFO: main: Historical E-wallet Historical Process succeeded.
+2025-12-18 00:45:02,665: INFO: main: ==================================================
+2025-12-18 00:45:02,665: INFO: main: STEP 1: HISTORICAL E-wallet PROCESS
+2025-12-18 00:45:02,665: INFO: main: ==================================================
+2025-12-18 00:45:02,665: INFO: main: Running E-wallet Historical Process...
+2025-12-18 00:45:02,666: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251217.csv.
+2025-12-18 00:45:02,666: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251216.csv.
+2025-12-18 00:45:02,666: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251215.csv.
+2025-12-18 00:45:02,666: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251214.csv.
+2025-12-18 00:45:02,667: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251213.csv.
+2025-12-18 00:45:02,667: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251212.csv.
+2025-12-18 00:45:02,667: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251211.csv.
+2025-12-18 00:45:02,667: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251210.csv.
+2025-12-18 00:45:02,667: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251209.csv.
+2025-12-18 00:45:02,667: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251208.csv.
+2025-12-18 00:45:02,667: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251207.csv.
+2025-12-18 00:45:02,667: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251206.csv.
+2025-12-18 00:45:02,667: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251205.csv.
+2025-12-18 00:45:02,667: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251204.csv.
+2025-12-18 00:45:02,668: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251203.csv.
+2025-12-18 00:45:02,668: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251202.csv.
+2025-12-18 00:45:02,668: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251201.csv
+2025-12-18 00:45:02,683: INFO: historical: Loaded 48 rows and 13 columns.
+2025-12-18 00:45:02,683: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251130.csv
+2025-12-18 00:45:02,693: INFO: historical: Loaded 83 rows and 13 columns.
+2025-12-18 00:45:02,693: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251129.csv
+2025-12-18 00:45:02,703: INFO: historical: Loaded 90 rows and 13 columns.
+2025-12-18 00:45:02,704: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251128.csv
+2025-12-18 00:45:02,715: INFO: historical: Loaded 87 rows and 13 columns.
+2025-12-18 00:45:02,716: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251127.csv
+2025-12-18 00:45:02,725: INFO: historical: Loaded 89 rows and 13 columns.
+2025-12-18 00:45:02,725: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251126.csv
+2025-12-18 00:45:02,736: INFO: historical: Loaded 83 rows and 13 columns.
+2025-12-18 00:45:02,736: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251125.csv
+2025-12-18 00:45:02,747: INFO: historical: Loaded 63 rows and 13 columns.
+2025-12-18 00:45:02,747: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251124.csv
+2025-12-18 00:45:02,763: INFO: historical: Loaded 60 rows and 13 columns.
+2025-12-18 00:45:02,763: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251123.csv
+2025-12-18 00:45:02,773: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:45:02,774: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251122.csv
+2025-12-18 00:45:02,782: INFO: historical: Loaded 64 rows and 13 columns.
+2025-12-18 00:45:02,782: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251121.csv
+2025-12-18 00:45:02,793: INFO: historical: Loaded 76 rows and 13 columns.
+2025-12-18 00:45:02,794: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251120.csv
+2025-12-18 00:45:02,803: INFO: historical: Loaded 78 rows and 13 columns.
+2025-12-18 00:45:02,803: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251119.csv
+2025-12-18 00:45:02,814: INFO: historical: Loaded 46 rows and 13 columns.
+2025-12-18 00:45:02,814: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251118.csv
+2025-12-18 00:45:02,821: INFO: historical: Loaded 64 rows and 13 columns.
+2025-12-18 00:45:02,821: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251117.csv
+2025-12-18 00:45:02,836: INFO: historical: Loaded 67 rows and 13 columns.
+2025-12-18 00:45:02,836: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251116.csv
+2025-12-18 00:45:02,847: INFO: historical: Loaded 72 rows and 13 columns.
+2025-12-18 00:45:02,847: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251115.csv
+2025-12-18 00:45:02,855: INFO: historical: Loaded 85 rows and 13 columns.
+2025-12-18 00:45:02,855: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251114.csv
+2025-12-18 00:45:02,863: INFO: historical: Loaded 57 rows and 13 columns.
+2025-12-18 00:45:02,863: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251113.csv
+2025-12-18 00:45:02,870: INFO: historical: Loaded 53 rows and 13 columns.
+2025-12-18 00:45:02,870: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251112.csv
+2025-12-18 00:45:02,878: INFO: historical: Loaded 42 rows and 13 columns.
+2025-12-18 00:45:02,878: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251111.csv
+2025-12-18 00:45:02,886: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:45:02,886: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251110.csv
+2025-12-18 00:45:02,894: INFO: historical: Loaded 68 rows and 13 columns.
+2025-12-18 00:45:02,895: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251109.csv
+2025-12-18 00:45:02,901: INFO: historical: Loaded 55 rows and 13 columns.
+2025-12-18 00:45:02,901: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251108.csv
+2025-12-18 00:45:02,909: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:45:02,909: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251107.csv
+2025-12-18 00:45:02,921: INFO: historical: Loaded 71 rows and 13 columns.
+2025-12-18 00:45:02,921: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251106.csv
+2025-12-18 00:45:02,930: INFO: historical: Loaded 67 rows and 13 columns.
+2025-12-18 00:45:02,930: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251105.csv
+2025-12-18 00:45:02,939: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:45:02,939: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251104.csv
+2025-12-18 00:45:02,953: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:45:02,954: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251103.csv
+2025-12-18 00:45:02,963: INFO: historical: Loaded 78 rows and 13 columns.
+2025-12-18 00:45:02,963: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251102.csv
+2025-12-18 00:45:02,971: INFO: historical: Loaded 92 rows and 13 columns.
+2025-12-18 00:45:02,971: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251101.csv
+2025-12-18 00:45:02,982: INFO: historical: Loaded 113 rows and 13 columns.
+2025-12-18 00:45:02,982: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251031.csv
+2025-12-18 00:45:02,992: INFO: historical: Loaded 101 rows and 13 columns.
+2025-12-18 00:45:02,993: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251030.csv
+2025-12-18 00:45:03,003: INFO: historical: Loaded 84 rows and 13 columns.
+2025-12-18 00:45:03,003: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251029.csv
+2025-12-18 00:45:03,039: INFO: historical: Loaded 73 rows and 13 columns.
+2025-12-18 00:45:03,040: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251028.csv
+2025-12-18 00:45:03,051: INFO: historical: Loaded 72 rows and 13 columns.
+2025-12-18 00:45:03,051: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251027.csv
+2025-12-18 00:45:03,062: INFO: historical: Loaded 64 rows and 13 columns.
+2025-12-18 00:45:03,062: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251026.csv
+2025-12-18 00:45:03,071: INFO: historical: Loaded 73 rows and 13 columns.
+2025-12-18 00:45:03,072: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251025.csv
+2025-12-18 00:45:03,083: INFO: historical: Loaded 77 rows and 13 columns.
+2025-12-18 00:45:03,083: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251024.csv
+2025-12-18 00:45:03,091: INFO: historical: Loaded 96 rows and 13 columns.
+2025-12-18 00:45:03,091: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251023.csv
+2025-12-18 00:45:03,097: INFO: historical: Loaded 54 rows and 13 columns.
+2025-12-18 00:45:03,098: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251022.csv
+2025-12-18 00:45:03,111: INFO: historical: Loaded 60 rows and 13 columns.
+2025-12-18 00:45:03,112: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251021.csv
+2025-12-18 00:45:03,121: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:45:03,121: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251020.csv
+2025-12-18 00:45:03,128: INFO: historical: Loaded 65 rows and 13 columns.
+2025-12-18 00:45:03,128: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251019.csv
+2025-12-18 00:45:03,136: INFO: historical: Loaded 50 rows and 13 columns.
+2025-12-18 00:45:03,136: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251018.csv
+2025-12-18 00:45:03,145: INFO: historical: Loaded 54 rows and 13 columns.
+2025-12-18 00:45:03,145: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251017.csv
+2025-12-18 00:45:03,153: INFO: historical: Loaded 59 rows and 13 columns.
+2025-12-18 00:45:03,154: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251016.csv
+2025-12-18 00:45:03,162: INFO: historical: Loaded 50 rows and 13 columns.
+2025-12-18 00:45:03,162: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251015.csv
+2025-12-18 00:45:03,169: INFO: historical: Loaded 67 rows and 13 columns.
+2025-12-18 00:45:03,169: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251014.csv
+2025-12-18 00:45:03,181: INFO: historical: Loaded 68 rows and 13 columns.
+2025-12-18 00:45:03,181: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251013.csv
+2025-12-18 00:45:03,189: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:45:03,189: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251012.csv
+2025-12-18 00:45:03,197: INFO: historical: Loaded 57 rows and 13 columns.
+2025-12-18 00:45:03,197: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251011.csv
+2025-12-18 00:45:03,205: INFO: historical: Loaded 56 rows and 13 columns.
+2025-12-18 00:45:03,205: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251010.csv
+2025-12-18 00:45:03,212: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:45:03,212: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251009.csv
+2025-12-18 00:45:03,220: INFO: historical: Loaded 52 rows and 13 columns.
+2025-12-18 00:45:03,220: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251008.csv
+2025-12-18 00:45:03,226: INFO: historical: Loaded 75 rows and 13 columns.
+2025-12-18 00:45:03,227: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251007.csv
+2025-12-18 00:45:03,238: INFO: historical: Loaded 63 rows and 13 columns.
+2025-12-18 00:45:03,238: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251006.csv
+2025-12-18 00:45:03,246: INFO: historical: Loaded 82 rows and 13 columns.
+2025-12-18 00:45:03,246: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251005.csv
+2025-12-18 00:45:03,254: INFO: historical: Loaded 77 rows and 13 columns.
+2025-12-18 00:45:03,255: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251004.csv
+2025-12-18 00:45:03,264: INFO: historical: Loaded 59 rows and 13 columns.
+2025-12-18 00:45:03,264: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251003.csv
+2025-12-18 00:45:03,273: INFO: historical: Loaded 83 rows and 13 columns.
+2025-12-18 00:45:03,273: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251002.csv
+2025-12-18 00:45:03,281: INFO: historical: Loaded 67 rows and 13 columns.
+2025-12-18 00:45:03,281: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251001.csv
+2025-12-18 00:45:03,290: INFO: historical: Loaded 73 rows and 13 columns.
+2025-12-18 00:45:03,290: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250930.csv
+2025-12-18 00:45:03,298: INFO: historical: Loaded 70 rows and 13 columns.
+2025-12-18 00:45:03,298: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250929.csv
+2025-12-18 00:45:03,306: INFO: historical: Loaded 87 rows and 13 columns.
+2025-12-18 00:45:03,306: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250928.csv
+2025-12-18 00:45:03,314: INFO: historical: Loaded 70 rows and 13 columns.
+2025-12-18 00:45:03,315: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250927.csv
+2025-12-18 00:45:03,323: INFO: historical: Loaded 60 rows and 13 columns.
+2025-12-18 00:45:03,324: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250926.csv
+2025-12-18 00:45:03,333: INFO: historical: Loaded 92 rows and 13 columns.
+2025-12-18 00:45:03,333: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250925.csv
+2025-12-18 00:45:03,341: INFO: historical: Loaded 89 rows and 13 columns.
+2025-12-18 00:45:03,341: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250924.csv
+2025-12-18 00:45:03,348: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:45:03,348: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250923.csv
+2025-12-18 00:45:03,359: INFO: historical: Loaded 47 rows and 13 columns.
+2025-12-18 00:45:03,359: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250922.csv
+2025-12-18 00:45:03,369: INFO: historical: Loaded 52 rows and 13 columns.
+2025-12-18 00:45:03,369: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250921.csv
+2025-12-18 00:45:03,376: INFO: historical: Loaded 63 rows and 13 columns.
+2025-12-18 00:45:03,376: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250920.csv
+2025-12-18 00:45:03,383: INFO: historical: Loaded 52 rows and 13 columns.
+2025-12-18 00:45:03,383: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250919.csv
+2025-12-18 00:45:03,390: INFO: historical: Loaded 55 rows and 13 columns.
+2025-12-18 00:45:03,390: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250918.csv
+2025-12-18 00:45:03,397: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:45:03,398: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250917.csv
+2025-12-18 00:45:03,404: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:45:03,404: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250916.csv
+2025-12-18 00:45:03,413: INFO: historical: Loaded 71 rows and 13 columns.
+2025-12-18 00:45:03,413: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250915.csv
+2025-12-18 00:45:03,420: INFO: historical: Loaded 65 rows and 13 columns.
+2025-12-18 00:45:03,420: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250914.csv
+2025-12-18 00:45:03,428: INFO: historical: Loaded 67 rows and 13 columns.
+2025-12-18 00:45:03,429: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250913.csv
+2025-12-18 00:45:03,437: INFO: historical: Loaded 50 rows and 13 columns.
+2025-12-18 00:45:03,438: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250912.csv
+2025-12-18 00:45:03,446: INFO: historical: Loaded 64 rows and 13 columns.
+2025-12-18 00:45:03,447: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250911.csv
+2025-12-18 00:45:03,456: INFO: historical: Loaded 49 rows and 13 columns.
+2025-12-18 00:45:03,456: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250910.csv
+2025-12-18 00:45:03,465: INFO: historical: Loaded 53 rows and 13 columns.
+2025-12-18 00:45:03,466: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250909.csv
+2025-12-18 00:45:03,474: INFO: historical: Loaded 51 rows and 13 columns.
+2025-12-18 00:45:03,474: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250908.csv
+2025-12-18 00:45:03,482: INFO: historical: Loaded 72 rows and 13 columns.
+2025-12-18 00:45:03,483: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250907.csv
+2025-12-18 00:45:03,493: INFO: historical: Loaded 51 rows and 13 columns.
+2025-12-18 00:45:03,493: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250906.csv
+2025-12-18 00:45:03,500: INFO: historical: Loaded 63 rows and 13 columns.
+2025-12-18 00:45:03,500: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250905.csv
+2025-12-18 00:45:03,513: INFO: historical: Loaded 68 rows and 13 columns.
+2025-12-18 00:45:03,513: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250904.csv
+2025-12-18 00:45:03,521: INFO: historical: Loaded 69 rows and 13 columns.
+2025-12-18 00:45:03,522: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250903.csv
+2025-12-18 00:45:03,531: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:45:03,531: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250902.csv
+2025-12-18 00:45:03,542: INFO: historical: Loaded 67 rows and 13 columns.
+2025-12-18 00:45:03,542: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250901.csv
+2025-12-18 00:45:03,556: INFO: historical: Loaded 81 rows and 13 columns.
+2025-12-18 00:45:03,556: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250831.csv
+2025-12-18 00:45:03,565: INFO: historical: Loaded 58 rows and 13 columns.
+2025-12-18 00:45:03,565: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250830.csv
+2025-12-18 00:45:03,575: INFO: historical: Loaded 62 rows and 13 columns.
+2025-12-18 00:45:03,575: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250829.csv
+2025-12-18 00:45:03,584: INFO: historical: Loaded 68 rows and 13 columns.
+2025-12-18 00:45:03,584: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250828.csv
+2025-12-18 00:45:03,592: INFO: historical: Loaded 81 rows and 13 columns.
+2025-12-18 00:45:03,592: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250827.csv
+2025-12-18 00:45:03,600: INFO: historical: Loaded 65 rows and 13 columns.
+2025-12-18 00:45:03,600: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250826.csv
+2025-12-18 00:45:03,608: INFO: historical: Loaded 59 rows and 13 columns.
+2025-12-18 00:45:03,608: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250825.csv
+2025-12-18 00:45:03,618: INFO: historical: Loaded 91 rows and 13 columns.
+2025-12-18 00:45:03,618: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250824.csv
+2025-12-18 00:45:03,625: INFO: historical: Loaded 36 rows and 13 columns.
+2025-12-18 00:45:03,625: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250823.csv
+2025-12-18 00:45:03,638: INFO: historical: Loaded 56 rows and 13 columns.
+2025-12-18 00:45:03,639: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250822.csv
+2025-12-18 00:45:03,650: INFO: historical: Loaded 56 rows and 13 columns.
+2025-12-18 00:45:03,651: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250821.csv
+2025-12-18 00:45:03,659: INFO: historical: Loaded 46 rows and 13 columns.
+2025-12-18 00:45:03,659: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250820.csv
+2025-12-18 00:45:03,669: INFO: historical: Loaded 56 rows and 13 columns.
+2025-12-18 00:45:03,669: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250819.csv
+2025-12-18 00:45:03,678: INFO: historical: Loaded 58 rows and 13 columns.
+2025-12-18 00:45:03,678: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250818.csv
+2025-12-18 00:45:03,686: INFO: historical: Loaded 47 rows and 13 columns.
+2025-12-18 00:45:03,686: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250817.csv
+2025-12-18 00:45:03,694: INFO: historical: Loaded 41 rows and 13 columns.
+2025-12-18 00:45:03,695: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250816.csv
+2025-12-18 00:45:03,706: INFO: historical: Loaded 56 rows and 13 columns.
+2025-12-18 00:45:03,706: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250815.csv
+2025-12-18 00:45:03,718: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:45:03,718: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250814.csv
+2025-12-18 00:45:03,725: INFO: historical: Loaded 55 rows and 13 columns.
+2025-12-18 00:45:03,725: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250813.csv
+2025-12-18 00:45:03,733: INFO: historical: Loaded 53 rows and 13 columns.
+2025-12-18 00:45:03,733: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250812.csv
+2025-12-18 00:45:03,742: INFO: historical: Loaded 44 rows and 13 columns.
+2025-12-18 00:45:03,742: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250811.csv
+2025-12-18 00:45:03,750: INFO: historical: Loaded 52 rows and 13 columns.
+2025-12-18 00:45:03,750: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250810.csv
+2025-12-18 00:45:03,759: INFO: historical: Loaded 53 rows and 13 columns.
+2025-12-18 00:45:03,759: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250809.csv
+2025-12-18 00:45:03,767: INFO: historical: Loaded 68 rows and 13 columns.
+2025-12-18 00:45:03,767: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250808.csv
+2025-12-18 00:45:03,775: INFO: historical: Loaded 82 rows and 13 columns.
+2025-12-18 00:45:03,775: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250807.csv
+2025-12-18 00:45:03,784: INFO: historical: Loaded 67 rows and 13 columns.
+2025-12-18 00:45:03,784: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250806.csv
+2025-12-18 00:45:03,796: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:45:03,796: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250805.csv
+2025-12-18 00:45:03,811: INFO: historical: Loaded 52 rows and 13 columns.
+2025-12-18 00:45:03,811: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250804.csv
+2025-12-18 00:45:03,819: INFO: historical: Loaded 76 rows and 13 columns.
+2025-12-18 00:45:03,819: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250803.csv
+2025-12-18 00:45:03,826: INFO: historical: Loaded 54 rows and 13 columns.
+2025-12-18 00:45:03,826: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250802.csv
+2025-12-18 00:45:03,835: INFO: historical: Loaded 62 rows and 13 columns.
+2025-12-18 00:45:03,835: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250801.csv
+2025-12-18 00:45:03,844: INFO: historical: Loaded 75 rows and 13 columns.
+2025-12-18 00:45:03,845: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250731.csv
+2025-12-18 00:45:03,852: INFO: historical: Loaded 80 rows and 13 columns.
+2025-12-18 00:45:03,853: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250730.csv
+2025-12-18 00:45:03,859: INFO: historical: Loaded 73 rows and 13 columns.
+2025-12-18 00:45:03,859: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250729.csv
+2025-12-18 00:45:03,867: INFO: historical: Loaded 53 rows and 13 columns.
+2025-12-18 00:45:03,868: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250728.csv
+2025-12-18 00:45:03,876: INFO: historical: Loaded 62 rows and 13 columns.
+2025-12-18 00:45:03,876: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250727.csv
+2025-12-18 00:45:03,883: INFO: historical: Loaded 76 rows and 13 columns.
+2025-12-18 00:45:03,883: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250726.csv
+2025-12-18 00:45:03,891: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:45:03,892: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250725.csv
+2025-12-18 00:45:03,899: INFO: historical: Loaded 63 rows and 13 columns.
+2025-12-18 00:45:03,899: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250724.csv
+2025-12-18 00:45:03,905: INFO: historical: Loaded 56 rows and 13 columns.
+2025-12-18 00:45:03,906: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250723.csv
+2025-12-18 00:45:03,912: INFO: historical: Loaded 55 rows and 13 columns.
+2025-12-18 00:45:03,912: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250722.csv
+2025-12-18 00:45:03,921: INFO: historical: Loaded 43 rows and 13 columns.
+2025-12-18 00:45:03,922: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250721.csv
+2025-12-18 00:45:03,934: INFO: historical: Loaded 48 rows and 13 columns.
+2025-12-18 00:45:03,934: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250720.csv
+2025-12-18 00:45:03,946: INFO: historical: Loaded 50 rows and 13 columns.
+2025-12-18 00:45:03,946: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250719.csv
+2025-12-18 00:45:03,952: INFO: historical: Loaded 51 rows and 13 columns.
+2025-12-18 00:45:03,952: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250718.csv
+2025-12-18 00:45:03,959: INFO: historical: Loaded 63 rows and 13 columns.
+2025-12-18 00:45:03,960: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250717.csv
+2025-12-18 00:45:03,966: INFO: historical: Loaded 52 rows and 13 columns.
+2025-12-18 00:45:03,967: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250716.csv
+2025-12-18 00:45:03,973: INFO: historical: Loaded 62 rows and 13 columns.
+2025-12-18 00:45:03,973: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250715.csv
+2025-12-18 00:45:03,981: INFO: historical: Loaded 51 rows and 13 columns.
+2025-12-18 00:45:03,981: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250714.csv
+2025-12-18 00:45:03,988: INFO: historical: Loaded 49 rows and 13 columns.
+2025-12-18 00:45:03,988: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250713.csv
+2025-12-18 00:45:03,994: INFO: historical: Loaded 44 rows and 13 columns.
+2025-12-18 00:45:03,995: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250712.csv
+2025-12-18 00:45:04,001: INFO: historical: Loaded 40 rows and 13 columns.
+2025-12-18 00:45:04,001: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250711.csv
+2025-12-18 00:45:04,015: INFO: historical: Loaded 54 rows and 13 columns.
+2025-12-18 00:45:04,015: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250710.csv
+2025-12-18 00:45:04,026: INFO: historical: Loaded 68 rows and 13 columns.
+2025-12-18 00:45:04,027: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250709.csv
+2025-12-18 00:45:04,034: INFO: historical: Loaded 51 rows and 13 columns.
+2025-12-18 00:45:04,035: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250708.csv
+2025-12-18 00:45:04,045: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:45:04,046: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250707.csv
+2025-12-18 00:45:04,055: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:45:04,055: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250706.csv
+2025-12-18 00:45:04,064: INFO: historical: Loaded 55 rows and 13 columns.
+2025-12-18 00:45:04,065: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250705.csv
+2025-12-18 00:45:04,073: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:45:04,073: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250704.csv
+2025-12-18 00:45:04,088: INFO: historical: Loaded 53 rows and 13 columns.
+2025-12-18 00:45:04,089: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250703.csv
+2025-12-18 00:45:04,100: INFO: historical: Loaded 54 rows and 13 columns.
+2025-12-18 00:45:04,100: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250702.csv
+2025-12-18 00:45:04,111: INFO: historical: Loaded 58 rows and 13 columns.
+2025-12-18 00:45:04,111: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250701.csv
+2025-12-18 00:45:04,119: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:45:04,120: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250630.csv
+2025-12-18 00:45:04,129: INFO: historical: Loaded 73 rows and 13 columns.
+2025-12-18 00:45:04,129: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250629.csv
+2025-12-18 00:45:04,135: INFO: historical: Loaded 48 rows and 13 columns.
+2025-12-18 00:45:04,135: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250628.csv
+2025-12-18 00:45:04,143: INFO: historical: Loaded 58 rows and 13 columns.
+2025-12-18 00:45:04,144: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250627.csv
+2025-12-18 00:45:04,150: INFO: historical: Loaded 64 rows and 13 columns.
+2025-12-18 00:45:04,150: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250626.csv
+2025-12-18 00:45:04,158: INFO: historical: Loaded 69 rows and 13 columns.
+2025-12-18 00:45:04,158: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250625.csv
+2025-12-18 00:45:04,168: INFO: historical: Loaded 90 rows and 13 columns.
+2025-12-18 00:45:04,168: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250624.csv
+2025-12-18 00:45:04,175: INFO: historical: Loaded 49 rows and 13 columns.
+2025-12-18 00:45:04,175: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250623.csv
+2025-12-18 00:45:04,182: INFO: historical: Loaded 36 rows and 13 columns.
+2025-12-18 00:45:04,182: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250622.csv
+2025-12-18 00:45:04,191: INFO: historical: Loaded 58 rows and 13 columns.
+2025-12-18 00:45:04,191: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250621.csv
+2025-12-18 00:45:04,199: INFO: historical: Loaded 48 rows and 13 columns.
+2025-12-18 00:45:04,200: INFO: historical: Concatenating all daily files...
+2025-12-18 00:45:04,200: INFO: historical: Concatenating all daily files succeed.
+2025-12-18 00:45:05,048: INFO: historical: Concatenated DataFrame has 10430 rows and 13 columns.
+2025-12-18 00:45:05,051: INFO: historical: Historical Data Exist...
+2025-12-18 00:45:05,052: INFO: historical: Loading Historical Data...
+2025-12-18 00:45:05,052: INFO: historical: Loading Historical Data succeed.
+2025-12-18 00:45:05,053: INFO: historical: Searching delta in new daily data.
+2025-12-18 00:45:05,053: INFO: historical: Searching delta in historical data.
+2025-12-18 00:45:06,679: INFO: historical: There is no historical data to be updated
+2025-12-18 00:45:06,680: INFO: historical: Update Historical Process finished
+2025-12-18 00:45:06,681: INFO: main: Historical E-wallet Historical Process succeeded.
+2025-12-18 00:46:41,886: INFO: main: ==================================================
+2025-12-18 00:46:41,886: INFO: main: STEP 1: HISTORICAL E-wallet PROCESS
+2025-12-18 00:46:41,886: INFO: main: ==================================================
+2025-12-18 00:46:41,886: INFO: main: Running E-wallet Historical Process...
+2025-12-18 00:46:41,886: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251217.csv.
+2025-12-18 00:46:41,887: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251216.csv.
+2025-12-18 00:46:41,887: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251215.csv.
+2025-12-18 00:46:41,887: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251214.csv.
+2025-12-18 00:46:41,887: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251213.csv.
+2025-12-18 00:46:41,887: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251212.csv.
+2025-12-18 00:46:41,887: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251211.csv.
+2025-12-18 00:46:41,887: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251210.csv.
+2025-12-18 00:46:41,887: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251209.csv.
+2025-12-18 00:46:41,887: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251208.csv.
+2025-12-18 00:46:41,887: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251207.csv.
+2025-12-18 00:46:41,887: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251206.csv.
+2025-12-18 00:46:41,887: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251205.csv.
+2025-12-18 00:46:41,887: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251204.csv.
+2025-12-18 00:46:41,887: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251203.csv.
+2025-12-18 00:46:41,887: WARNING: historical: File not found: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251202.csv.
+2025-12-18 00:46:41,887: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251201.csv
+2025-12-18 00:46:41,907: INFO: historical: Loaded 48 rows and 13 columns.
+2025-12-18 00:46:41,907: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251130.csv
+2025-12-18 00:46:41,927: INFO: historical: Loaded 83 rows and 13 columns.
+2025-12-18 00:46:41,927: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251129.csv
+2025-12-18 00:46:41,937: INFO: historical: Loaded 90 rows and 13 columns.
+2025-12-18 00:46:41,938: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251128.csv
+2025-12-18 00:46:41,947: INFO: historical: Loaded 87 rows and 13 columns.
+2025-12-18 00:46:41,947: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251127.csv
+2025-12-18 00:46:41,955: INFO: historical: Loaded 89 rows and 13 columns.
+2025-12-18 00:46:41,956: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251126.csv
+2025-12-18 00:46:41,966: INFO: historical: Loaded 83 rows and 13 columns.
+2025-12-18 00:46:41,967: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251125.csv
+2025-12-18 00:46:41,977: INFO: historical: Loaded 63 rows and 13 columns.
+2025-12-18 00:46:41,977: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251124.csv
+2025-12-18 00:46:41,986: INFO: historical: Loaded 60 rows and 13 columns.
+2025-12-18 00:46:41,986: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251123.csv
+2025-12-18 00:46:41,993: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:46:41,993: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251122.csv
+2025-12-18 00:46:42,002: INFO: historical: Loaded 64 rows and 13 columns.
+2025-12-18 00:46:42,002: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251121.csv
+2025-12-18 00:46:42,010: INFO: historical: Loaded 76 rows and 13 columns.
+2025-12-18 00:46:42,010: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251120.csv
+2025-12-18 00:46:42,028: INFO: historical: Loaded 78 rows and 13 columns.
+2025-12-18 00:46:42,029: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251119.csv
+2025-12-18 00:46:42,035: INFO: historical: Loaded 46 rows and 13 columns.
+2025-12-18 00:46:42,035: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251118.csv
+2025-12-18 00:46:42,043: INFO: historical: Loaded 64 rows and 13 columns.
+2025-12-18 00:46:42,043: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251117.csv
+2025-12-18 00:46:42,051: INFO: historical: Loaded 67 rows and 13 columns.
+2025-12-18 00:46:42,051: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251116.csv
+2025-12-18 00:46:42,057: INFO: historical: Loaded 72 rows and 13 columns.
+2025-12-18 00:46:42,057: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251115.csv
+2025-12-18 00:46:42,081: INFO: historical: Loaded 85 rows and 13 columns.
+2025-12-18 00:46:42,081: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251114.csv
+2025-12-18 00:46:42,089: INFO: historical: Loaded 57 rows and 13 columns.
+2025-12-18 00:46:42,089: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251113.csv
+2025-12-18 00:46:42,097: INFO: historical: Loaded 53 rows and 13 columns.
+2025-12-18 00:46:42,097: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251112.csv
+2025-12-18 00:46:42,103: INFO: historical: Loaded 42 rows and 13 columns.
+2025-12-18 00:46:42,104: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251111.csv
+2025-12-18 00:46:42,113: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:46:42,114: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251110.csv
+2025-12-18 00:46:42,121: INFO: historical: Loaded 68 rows and 13 columns.
+2025-12-18 00:46:42,121: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251109.csv
+2025-12-18 00:46:42,128: INFO: historical: Loaded 55 rows and 13 columns.
+2025-12-18 00:46:42,129: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251108.csv
+2025-12-18 00:46:42,144: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:46:42,144: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251107.csv
+2025-12-18 00:46:42,153: INFO: historical: Loaded 71 rows and 13 columns.
+2025-12-18 00:46:42,153: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251106.csv
+2025-12-18 00:46:42,161: INFO: historical: Loaded 67 rows and 13 columns.
+2025-12-18 00:46:42,161: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251105.csv
+2025-12-18 00:46:42,171: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:46:42,171: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251104.csv
+2025-12-18 00:46:42,178: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:46:42,178: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251103.csv
+2025-12-18 00:46:42,189: INFO: historical: Loaded 78 rows and 13 columns.
+2025-12-18 00:46:42,190: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251102.csv
+2025-12-18 00:46:42,200: INFO: historical: Loaded 92 rows and 13 columns.
+2025-12-18 00:46:42,200: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251101.csv
+2025-12-18 00:46:42,213: INFO: historical: Loaded 113 rows and 13 columns.
+2025-12-18 00:46:42,213: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251031.csv
+2025-12-18 00:46:42,223: INFO: historical: Loaded 101 rows and 13 columns.
+2025-12-18 00:46:42,223: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251030.csv
+2025-12-18 00:46:42,231: INFO: historical: Loaded 84 rows and 13 columns.
+2025-12-18 00:46:42,231: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251029.csv
+2025-12-18 00:46:42,244: INFO: historical: Loaded 73 rows and 13 columns.
+2025-12-18 00:46:42,244: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251028.csv
+2025-12-18 00:46:42,253: INFO: historical: Loaded 72 rows and 13 columns.
+2025-12-18 00:46:42,253: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251027.csv
+2025-12-18 00:46:42,261: INFO: historical: Loaded 64 rows and 13 columns.
+2025-12-18 00:46:42,261: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251026.csv
+2025-12-18 00:46:42,269: INFO: historical: Loaded 73 rows and 13 columns.
+2025-12-18 00:46:42,270: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251025.csv
+2025-12-18 00:46:42,277: INFO: historical: Loaded 77 rows and 13 columns.
+2025-12-18 00:46:42,278: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251024.csv
+2025-12-18 00:46:42,292: INFO: historical: Loaded 96 rows and 13 columns.
+2025-12-18 00:46:42,293: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251023.csv
+2025-12-18 00:46:42,301: INFO: historical: Loaded 54 rows and 13 columns.
+2025-12-18 00:46:42,301: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251022.csv
+2025-12-18 00:46:42,314: INFO: historical: Loaded 60 rows and 13 columns.
+2025-12-18 00:46:42,315: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251021.csv
+2025-12-18 00:46:42,325: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:46:42,325: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251020.csv
+2025-12-18 00:46:42,333: INFO: historical: Loaded 65 rows and 13 columns.
+2025-12-18 00:46:42,333: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251019.csv
+2025-12-18 00:46:42,340: INFO: historical: Loaded 50 rows and 13 columns.
+2025-12-18 00:46:42,340: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251018.csv
+2025-12-18 00:46:42,348: INFO: historical: Loaded 54 rows and 13 columns.
+2025-12-18 00:46:42,348: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251017.csv
+2025-12-18 00:46:42,357: INFO: historical: Loaded 59 rows and 13 columns.
+2025-12-18 00:46:42,357: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251016.csv
+2025-12-18 00:46:42,367: INFO: historical: Loaded 50 rows and 13 columns.
+2025-12-18 00:46:42,367: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251015.csv
+2025-12-18 00:46:42,376: INFO: historical: Loaded 67 rows and 13 columns.
+2025-12-18 00:46:42,376: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251014.csv
+2025-12-18 00:46:42,384: INFO: historical: Loaded 68 rows and 13 columns.
+2025-12-18 00:46:42,385: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251013.csv
+2025-12-18 00:46:42,394: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:46:42,395: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251012.csv
+2025-12-18 00:46:42,402: INFO: historical: Loaded 57 rows and 13 columns.
+2025-12-18 00:46:42,402: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251011.csv
+2025-12-18 00:46:42,411: INFO: historical: Loaded 56 rows and 13 columns.
+2025-12-18 00:46:42,412: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251010.csv
+2025-12-18 00:46:42,419: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:46:42,419: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251009.csv
+2025-12-18 00:46:42,426: INFO: historical: Loaded 52 rows and 13 columns.
+2025-12-18 00:46:42,426: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251008.csv
+2025-12-18 00:46:42,434: INFO: historical: Loaded 75 rows and 13 columns.
+2025-12-18 00:46:42,435: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251007.csv
+2025-12-18 00:46:42,446: INFO: historical: Loaded 63 rows and 13 columns.
+2025-12-18 00:46:42,446: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251006.csv
+2025-12-18 00:46:42,457: INFO: historical: Loaded 82 rows and 13 columns.
+2025-12-18 00:46:42,457: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251005.csv
+2025-12-18 00:46:42,473: INFO: historical: Loaded 77 rows and 13 columns.
+2025-12-18 00:46:42,474: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251004.csv
+2025-12-18 00:46:42,484: INFO: historical: Loaded 59 rows and 13 columns.
+2025-12-18 00:46:42,485: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251003.csv
+2025-12-18 00:46:42,501: INFO: historical: Loaded 83 rows and 13 columns.
+2025-12-18 00:46:42,502: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251002.csv
+2025-12-18 00:46:42,514: INFO: historical: Loaded 67 rows and 13 columns.
+2025-12-18 00:46:42,514: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20251001.csv
+2025-12-18 00:46:42,527: INFO: historical: Loaded 73 rows and 13 columns.
+2025-12-18 00:46:42,527: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250930.csv
+2025-12-18 00:46:42,539: INFO: historical: Loaded 70 rows and 13 columns.
+2025-12-18 00:46:42,540: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250929.csv
+2025-12-18 00:46:42,551: INFO: historical: Loaded 87 rows and 13 columns.
+2025-12-18 00:46:42,552: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250928.csv
+2025-12-18 00:46:42,561: INFO: historical: Loaded 70 rows and 13 columns.
+2025-12-18 00:46:42,562: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250927.csv
+2025-12-18 00:46:42,581: INFO: historical: Loaded 60 rows and 13 columns.
+2025-12-18 00:46:42,581: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250926.csv
+2025-12-18 00:46:42,591: INFO: historical: Loaded 92 rows and 13 columns.
+2025-12-18 00:46:42,591: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250925.csv
+2025-12-18 00:46:42,603: INFO: historical: Loaded 89 rows and 13 columns.
+2025-12-18 00:46:42,604: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250924.csv
+2025-12-18 00:46:42,614: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:46:42,615: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250923.csv
+2025-12-18 00:46:42,625: INFO: historical: Loaded 47 rows and 13 columns.
+2025-12-18 00:46:42,626: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250922.csv
+2025-12-18 00:46:42,633: INFO: historical: Loaded 52 rows and 13 columns.
+2025-12-18 00:46:42,634: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250921.csv
+2025-12-18 00:46:42,641: INFO: historical: Loaded 63 rows and 13 columns.
+2025-12-18 00:46:42,642: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250920.csv
+2025-12-18 00:46:42,649: INFO: historical: Loaded 52 rows and 13 columns.
+2025-12-18 00:46:42,650: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250919.csv
+2025-12-18 00:46:42,660: INFO: historical: Loaded 55 rows and 13 columns.
+2025-12-18 00:46:42,660: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250918.csv
+2025-12-18 00:46:42,670: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:46:42,670: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250917.csv
+2025-12-18 00:46:42,679: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:46:42,680: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250916.csv
+2025-12-18 00:46:42,688: INFO: historical: Loaded 71 rows and 13 columns.
+2025-12-18 00:46:42,688: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250915.csv
+2025-12-18 00:46:42,703: INFO: historical: Loaded 65 rows and 13 columns.
+2025-12-18 00:46:42,703: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250914.csv
+2025-12-18 00:46:42,711: INFO: historical: Loaded 67 rows and 13 columns.
+2025-12-18 00:46:42,711: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250913.csv
+2025-12-18 00:46:42,718: INFO: historical: Loaded 50 rows and 13 columns.
+2025-12-18 00:46:42,718: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250912.csv
+2025-12-18 00:46:42,730: INFO: historical: Loaded 64 rows and 13 columns.
+2025-12-18 00:46:42,730: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250911.csv
+2025-12-18 00:46:42,741: INFO: historical: Loaded 49 rows and 13 columns.
+2025-12-18 00:46:42,741: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250910.csv
+2025-12-18 00:46:42,763: INFO: historical: Loaded 53 rows and 13 columns.
+2025-12-18 00:46:42,763: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250909.csv
+2025-12-18 00:46:42,773: INFO: historical: Loaded 51 rows and 13 columns.
+2025-12-18 00:46:42,773: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250908.csv
+2025-12-18 00:46:42,783: INFO: historical: Loaded 72 rows and 13 columns.
+2025-12-18 00:46:42,784: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250907.csv
+2025-12-18 00:46:42,793: INFO: historical: Loaded 51 rows and 13 columns.
+2025-12-18 00:46:42,793: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250906.csv
+2025-12-18 00:46:42,800: INFO: historical: Loaded 63 rows and 13 columns.
+2025-12-18 00:46:42,801: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250905.csv
+2025-12-18 00:46:42,809: INFO: historical: Loaded 68 rows and 13 columns.
+2025-12-18 00:46:42,809: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250904.csv
+2025-12-18 00:46:42,816: INFO: historical: Loaded 69 rows and 13 columns.
+2025-12-18 00:46:42,816: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250903.csv
+2025-12-18 00:46:42,824: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:46:42,824: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250902.csv
+2025-12-18 00:46:42,831: INFO: historical: Loaded 67 rows and 13 columns.
+2025-12-18 00:46:42,831: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250901.csv
+2025-12-18 00:46:42,839: INFO: historical: Loaded 81 rows and 13 columns.
+2025-12-18 00:46:42,839: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250831.csv
+2025-12-18 00:46:42,846: INFO: historical: Loaded 58 rows and 13 columns.
+2025-12-18 00:46:42,847: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250830.csv
+2025-12-18 00:46:42,855: INFO: historical: Loaded 62 rows and 13 columns.
+2025-12-18 00:46:42,855: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250829.csv
+2025-12-18 00:46:42,873: INFO: historical: Loaded 68 rows and 13 columns.
+2025-12-18 00:46:42,873: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250828.csv
+2025-12-18 00:46:42,881: INFO: historical: Loaded 81 rows and 13 columns.
+2025-12-18 00:46:42,881: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250827.csv
+2025-12-18 00:46:42,889: INFO: historical: Loaded 65 rows and 13 columns.
+2025-12-18 00:46:42,889: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250826.csv
+2025-12-18 00:46:42,897: INFO: historical: Loaded 59 rows and 13 columns.
+2025-12-18 00:46:42,897: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250825.csv
+2025-12-18 00:46:42,908: INFO: historical: Loaded 91 rows and 13 columns.
+2025-12-18 00:46:42,908: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250824.csv
+2025-12-18 00:46:42,915: INFO: historical: Loaded 36 rows and 13 columns.
+2025-12-18 00:46:42,916: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250823.csv
+2025-12-18 00:46:42,924: INFO: historical: Loaded 56 rows and 13 columns.
+2025-12-18 00:46:42,925: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250822.csv
+2025-12-18 00:46:42,933: INFO: historical: Loaded 56 rows and 13 columns.
+2025-12-18 00:46:42,933: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250821.csv
+2025-12-18 00:46:42,942: INFO: historical: Loaded 46 rows and 13 columns.
+2025-12-18 00:46:42,942: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250820.csv
+2025-12-18 00:46:42,957: INFO: historical: Loaded 56 rows and 13 columns.
+2025-12-18 00:46:42,957: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250819.csv
+2025-12-18 00:46:42,964: INFO: historical: Loaded 58 rows and 13 columns.
+2025-12-18 00:46:42,965: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250818.csv
+2025-12-18 00:46:42,972: INFO: historical: Loaded 47 rows and 13 columns.
+2025-12-18 00:46:42,972: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250817.csv
+2025-12-18 00:46:42,979: INFO: historical: Loaded 41 rows and 13 columns.
+2025-12-18 00:46:42,980: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250816.csv
+2025-12-18 00:46:42,988: INFO: historical: Loaded 56 rows and 13 columns.
+2025-12-18 00:46:42,988: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250815.csv
+2025-12-18 00:46:42,995: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:46:42,995: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250814.csv
+2025-12-18 00:46:43,004: INFO: historical: Loaded 55 rows and 13 columns.
+2025-12-18 00:46:43,005: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250813.csv
+2025-12-18 00:46:43,012: INFO: historical: Loaded 53 rows and 13 columns.
+2025-12-18 00:46:43,012: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250812.csv
+2025-12-18 00:46:43,020: INFO: historical: Loaded 44 rows and 13 columns.
+2025-12-18 00:46:43,020: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250811.csv
+2025-12-18 00:46:43,028: INFO: historical: Loaded 52 rows and 13 columns.
+2025-12-18 00:46:43,028: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250810.csv
+2025-12-18 00:46:43,037: INFO: historical: Loaded 53 rows and 13 columns.
+2025-12-18 00:46:43,037: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250809.csv
+2025-12-18 00:46:43,045: INFO: historical: Loaded 68 rows and 13 columns.
+2025-12-18 00:46:43,045: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250808.csv
+2025-12-18 00:46:43,051: INFO: historical: Loaded 82 rows and 13 columns.
+2025-12-18 00:46:43,051: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250807.csv
+2025-12-18 00:46:43,061: INFO: historical: Loaded 67 rows and 13 columns.
+2025-12-18 00:46:43,061: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250806.csv
+2025-12-18 00:46:43,073: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:46:43,074: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250805.csv
+2025-12-18 00:46:43,082: INFO: historical: Loaded 52 rows and 13 columns.
+2025-12-18 00:46:43,082: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250804.csv
+2025-12-18 00:46:43,090: INFO: historical: Loaded 76 rows and 13 columns.
+2025-12-18 00:46:43,090: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250803.csv
+2025-12-18 00:46:43,098: INFO: historical: Loaded 54 rows and 13 columns.
+2025-12-18 00:46:43,098: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250802.csv
+2025-12-18 00:46:43,105: INFO: historical: Loaded 62 rows and 13 columns.
+2025-12-18 00:46:43,106: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250801.csv
+2025-12-18 00:46:43,114: INFO: historical: Loaded 75 rows and 13 columns.
+2025-12-18 00:46:43,115: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250731.csv
+2025-12-18 00:46:43,125: INFO: historical: Loaded 80 rows and 13 columns.
+2025-12-18 00:46:43,126: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250730.csv
+2025-12-18 00:46:43,140: INFO: historical: Loaded 73 rows and 13 columns.
+2025-12-18 00:46:43,140: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250729.csv
+2025-12-18 00:46:43,150: INFO: historical: Loaded 53 rows and 13 columns.
+2025-12-18 00:46:43,150: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250728.csv
+2025-12-18 00:46:43,158: INFO: historical: Loaded 62 rows and 13 columns.
+2025-12-18 00:46:43,158: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250727.csv
+2025-12-18 00:46:43,165: INFO: historical: Loaded 76 rows and 13 columns.
+2025-12-18 00:46:43,166: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250726.csv
+2025-12-18 00:46:43,172: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:46:43,173: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250725.csv
+2025-12-18 00:46:43,182: INFO: historical: Loaded 63 rows and 13 columns.
+2025-12-18 00:46:43,182: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250724.csv
+2025-12-18 00:46:43,190: INFO: historical: Loaded 56 rows and 13 columns.
+2025-12-18 00:46:43,190: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250723.csv
+2025-12-18 00:46:43,198: INFO: historical: Loaded 55 rows and 13 columns.
+2025-12-18 00:46:43,198: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250722.csv
+2025-12-18 00:46:43,205: INFO: historical: Loaded 43 rows and 13 columns.
+2025-12-18 00:46:43,206: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250721.csv
+2025-12-18 00:46:43,214: INFO: historical: Loaded 48 rows and 13 columns.
+2025-12-18 00:46:43,214: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250720.csv
+2025-12-18 00:46:43,221: INFO: historical: Loaded 50 rows and 13 columns.
+2025-12-18 00:46:43,222: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250719.csv
+2025-12-18 00:46:43,230: INFO: historical: Loaded 51 rows and 13 columns.
+2025-12-18 00:46:43,230: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250718.csv
+2025-12-18 00:46:43,251: INFO: historical: Loaded 63 rows and 13 columns.
+2025-12-18 00:46:43,251: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250717.csv
+2025-12-18 00:46:43,260: INFO: historical: Loaded 52 rows and 13 columns.
+2025-12-18 00:46:43,261: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250716.csv
+2025-12-18 00:46:43,267: INFO: historical: Loaded 62 rows and 13 columns.
+2025-12-18 00:46:43,268: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250715.csv
+2025-12-18 00:46:43,274: INFO: historical: Loaded 51 rows and 13 columns.
+2025-12-18 00:46:43,275: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250714.csv
+2025-12-18 00:46:43,289: INFO: historical: Loaded 49 rows and 13 columns.
+2025-12-18 00:46:43,289: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250713.csv
+2025-12-18 00:46:43,296: INFO: historical: Loaded 44 rows and 13 columns.
+2025-12-18 00:46:43,296: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250712.csv
+2025-12-18 00:46:43,303: INFO: historical: Loaded 40 rows and 13 columns.
+2025-12-18 00:46:43,303: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250711.csv
+2025-12-18 00:46:43,314: INFO: historical: Loaded 54 rows and 13 columns.
+2025-12-18 00:46:43,314: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250710.csv
+2025-12-18 00:46:43,323: INFO: historical: Loaded 68 rows and 13 columns.
+2025-12-18 00:46:43,323: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250709.csv
+2025-12-18 00:46:43,332: INFO: historical: Loaded 51 rows and 13 columns.
+2025-12-18 00:46:43,332: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250708.csv
+2025-12-18 00:46:43,340: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:46:43,340: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250707.csv
+2025-12-18 00:46:43,349: INFO: historical: Loaded 61 rows and 13 columns.
+2025-12-18 00:46:43,350: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250706.csv
+2025-12-18 00:46:43,357: INFO: historical: Loaded 55 rows and 13 columns.
+2025-12-18 00:46:43,357: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250705.csv
+2025-12-18 00:46:43,365: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:46:43,365: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250704.csv
+2025-12-18 00:46:43,372: INFO: historical: Loaded 53 rows and 13 columns.
+2025-12-18 00:46:43,372: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250703.csv
+2025-12-18 00:46:43,383: INFO: historical: Loaded 54 rows and 13 columns.
+2025-12-18 00:46:43,384: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250702.csv
+2025-12-18 00:46:43,396: INFO: historical: Loaded 58 rows and 13 columns.
+2025-12-18 00:46:43,396: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250701.csv
+2025-12-18 00:46:43,413: INFO: historical: Loaded 66 rows and 13 columns.
+2025-12-18 00:46:43,413: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250630.csv
+2025-12-18 00:46:43,422: INFO: historical: Loaded 73 rows and 13 columns.
+2025-12-18 00:46:43,423: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250629.csv
+2025-12-18 00:46:43,430: INFO: historical: Loaded 48 rows and 13 columns.
+2025-12-18 00:46:43,430: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250628.csv
+2025-12-18 00:46:43,438: INFO: historical: Loaded 58 rows and 13 columns.
+2025-12-18 00:46:43,439: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250627.csv
+2025-12-18 00:46:43,446: INFO: historical: Loaded 64 rows and 13 columns.
+2025-12-18 00:46:43,446: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250626.csv
+2025-12-18 00:46:43,465: INFO: historical: Loaded 69 rows and 13 columns.
+2025-12-18 00:46:43,465: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250625.csv
+2025-12-18 00:46:43,476: INFO: historical: Loaded 90 rows and 13 columns.
+2025-12-18 00:46:43,476: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250624.csv
+2025-12-18 00:46:43,484: INFO: historical: Loaded 49 rows and 13 columns.
+2025-12-18 00:46:43,485: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250623.csv
+2025-12-18 00:46:43,492: INFO: historical: Loaded 36 rows and 13 columns.
+2025-12-18 00:46:43,492: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250622.csv
+2025-12-18 00:46:43,498: INFO: historical: Loaded 58 rows and 13 columns.
+2025-12-18 00:46:43,499: INFO: historical: Loading: /home/ubuntu/bvic/data/new_ibmb_data/trx_history_20250621.csv
+2025-12-18 00:46:43,505: INFO: historical: Loaded 48 rows and 13 columns.
+2025-12-18 00:46:43,505: INFO: historical: Concatenating all daily files...
+2025-12-18 00:46:43,506: INFO: historical: Concatenating all daily files succeed.
+2025-12-18 00:46:44,414: INFO: historical: Concatenated DataFrame has 10430 rows and 13 columns.
+2025-12-18 00:46:44,419: INFO: historical: Historical Data Exist...
+2025-12-18 00:46:44,419: INFO: historical: Loading Historical Data...
+2025-12-18 00:46:44,420: INFO: historical: Loading Historical Data succeed.
+2025-12-18 00:46:44,420: INFO: historical: Searching delta in new daily data.
+2025-12-18 00:46:44,420: INFO: historical: Searching delta in historical data.
+2025-12-18 00:46:45,971: INFO: historical: There is no historical data to be updated
+2025-12-18 00:46:45,972: INFO: historical: Update Historical Process finished
+2025-12-18 00:46:45,973: INFO: main: Historical E-wallet Historical Process succeeded.
+2025-12-18 00:46:45,974: INFO: main: ==================================================
+2025-12-18 00:46:45,974: INFO: main: STEP 2: UPDATE FLAG 10MIN PROCESS
+2025-12-18 00:46:45,974: INFO: main: ==================================================
+2025-12-18 00:46:45,974: INFO: main: Running Update Flag 10min Process...
+2025-12-18 00:46:45,974: INFO: daily: Reading daily flag pembayaran non-QR data from /home/ubuntu/bvic/ibmb_script/e_wallet/historical/data/ewallet_historical_data.parquet...
+2025-12-18 00:46:45,974: INFO: daily: Daily flag pembayaran non-QR data read succeeded.
+2025-12-18 00:46:45,976: INFO: daily: Reading historical data from /home/ubuntu/bvic/ibmb_script/e_wallet/historical/data/ewallet_historical_data.parquet...
+2025-12-18 00:46:45,976: INFO: daily: Historical data read successfully.
+2025-12-18 00:46:45,981: INFO: daily: New records found in daily flag pembayaran non-QR data.
+2025-12-18 00:46:45,985: INFO: daily: Flagging 69 new records to historical pembayaran non-QR data..
+2025-12-18 00:46:45,997: INFO: daily: Historical parquet data updated successfully.
+2025-12-18 00:46:45,997: INFO: daily: Process completed.
+2025-12-18 00:46:45,997: INFO: main: Update Flag 10min Process succeeded.
+2025-12-18 00:46:45,997: INFO: main: ==================================================
+2025-12-18 00:46:45,997: INFO: main: STEP 3: UPDATE FLAG 50MIO PROCESS
+2025-12-18 00:46:45,997: INFO: main: ==================================================
+2025-12-18 00:46:45,997: INFO: main: Running Update Flag 50mio Process...
+2025-12-18 00:46:45,997: INFO: daily: Reading daily flag pembayaran non-QR data from /home/ubuntu/bvic/ibmb_script/e_wallet/historical/data/ewallet_historical_data.parquet...
+2025-12-18 00:46:45,998: INFO: daily: Daily flag pembayaran non-QR data read succeeded.
+2025-12-18 00:46:45,999: INFO: daily: Reading historical data from /home/ubuntu/bvic/ibmb_script/e_wallet/historical/data/ewallet_historical_data.parquet...
+2025-12-18 00:46:45,999: INFO: daily: Historical data read successfully.
+2025-12-18 00:46:46,003: INFO: daily: New records found in daily flag pembayaran non-QR data.
+2025-12-18 00:46:46,007: INFO: daily: Flagging 270 new records to historical pembayaran non-QR data..
+2025-12-18 00:46:46,017: INFO: daily: Historical parquet data updated successfully.
+2025-12-18 00:46:46,017: INFO: daily: Process completed.
+2025-12-18 00:46:46,017: INFO: main: Update Flag 50mio Process succeeded.

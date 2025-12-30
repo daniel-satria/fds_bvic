@@ -17,7 +17,7 @@ def update_historical(
     file_prefix: str = CONSTS.historical.file_prefix,
     file_suffix: str = CONSTS.historical.file_suffix,
     date_format: str = CONSTS.date.date_file_format,
-    ccw_hist_path: Path | str = CONSTS.historical.ccw_hist_path,
+    hist_path: Path | str = CONSTS.historical.hist_path,
     transaction_date_col: str = CONSTS.historical.transaction_date,
     account_number_col: str = CONSTS.historical.account_number,
     flag_col: str = CONSTS.historical.flag_col,
@@ -47,7 +47,7 @@ def update_historical(
         File extension (e.g., ".csv").
     date_format : str
         Format of the date inside the filename.
-    ccw_hist_path : Path | str
+    hist_path : Path | str
         Path to save the filtered CCW historical data.
     transaction_date_col: str
         Column name to be used a transaction date.
@@ -82,8 +82,8 @@ def update_historical(
     """
     dataframes = []
     today = datetime.today()
-    ccw_hist_path = Path(ccw_hist_path)
-    ccw_hist_path.parent.mkdir(parents=True, exist_ok=True)
+    hist_path = Path(hist_path)
+    hist_path.parent.mkdir(parents=True, exist_ok=True)
 
     for i in range(n_days):
         date_str = (today - timedelta(days=i)).strftime(date_format)
@@ -164,12 +164,12 @@ def update_historical(
         )
 
     # If there existing historical data
-    if ccw_hist_path.exists():
+    if hist_path.exists():
         logger.info("Historical Data Exist...")
         logger.info("Loading Historical Data...")
         try:
             ccw_hist_df = (pl.scan_parquet(
-                ccw_hist_path)
+                hist_path)
             )  # Load historical data
             logger.info("Loading Historical Data succeed.")
         except Exception as e:
@@ -182,12 +182,16 @@ def update_historical(
                 on=no_referensi_col,
                 how="anti"
             )  # Get records from daily not in history
+
             logger.info("Searching delta in historical data.")
             delta_old = ccw_hist_df.join(
                 ccw_hist_df,
                 on=no_referensi_col,
                 how="anti"
             )  # Get records from history not in daily
+            delta_old = delta_old.with_columns(
+                pl.col("transaction_date").cast(pl.Datetime("us"))
+            )
         except Exception as e:
             logger.info(
                 f"Error during sorting unique records with anti-join: {e}")
@@ -200,15 +204,15 @@ def update_historical(
         # Concatenating all unique records
         logger.info("Concatenating new CCW data into historical data...")
         ccw_hist_df = pl.concat([delta_new, delta_old])
-        logger.info(f"Saving historical data into {ccw_hist_path}...")
-        ccw_hist_df.collect().write_parquet(ccw_hist_path)
+        logger.info(f"Saving historical data into {hist_path}...")
+        ccw_hist_df.collect().write_parquet(hist_path)
         logger.info(f"Saving historical data succeed.")
     else:
         logger.info("There is no existing historical parquet data found.")
         logger.info("Making new historical parquet data...")
 
     try:
-        ccw_daily_df.collect().write_parquet(ccw_hist_path)
+        ccw_daily_df.collect().write_parquet(hist_path)
         logger.info(
             "Succeeded saving the updated historical CCW records.")
     except Exception as e:
@@ -220,7 +224,7 @@ def update_historical(
 
 def update_flag(
     n_days: int = CONSTS.update.n_days,
-    history_path: Path | str = CONSTS.update.ccw_hist_path,
+    history_path: Path | str = CONSTS.update.hist_path,
     daily_path: Path | str = CONSTS.update.daily_path_flag,
     no_referensi_col: str = CONSTS.update.no_referensi,
     temp_date_col: str = CONSTS.update.temp_date_col,
@@ -283,6 +287,8 @@ def update_flag(
         logger.info(f"Reading historical data from {history_path}...")
         existing_df = pl.scan_parquet(history_path)
         logger.info("Historical data read successfully.")
+        logger.info(
+            f"Existing CCW records: {existing_df.select(pl.len()).collect()[0, 0]}.")
 
         new_flag_refs = (daily_flag_df
                          .select(no_referensi_col)

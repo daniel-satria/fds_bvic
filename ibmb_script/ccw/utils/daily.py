@@ -2,7 +2,11 @@ import polars as pl
 from datetime import datetime, timedelta
 from pathlib import Path
 from .logger import logger
-from .models import CONSTS
+from .models import CONSTS, dtypes
+
+
+def is_empty(lf: pl.LazyFrame) -> bool:
+    return lf.limit(1).collect().height == 0
 
 
 def filter_date(
@@ -43,12 +47,15 @@ def filter_date(
 
 
 def flag_ccw(
-    ccw_hist_path: Path | str = CONSTS.daily.ccw_hist_path,
+    job_title: str = CONSTS.job.title,
+    hist_path: Path | str = CONSTS.daily.hist_path,
     output_path: Path | str = CONSTS.daily.output_path,
+    usecols: list = CONSTS.daily.usecols,
     transaction_date_col: str = CONSTS.daily.transaction_date,
     account_number_col: str = CONSTS.daily.account_number,
     no_referensi_col: str = CONSTS.daily.no_referensi,
     flag_col: str = CONSTS.daily.flag_col,
+    temp_date_col: str = CONSTS.daily.temp_date_col,
     rolling_window: int = CONSTS.params_ccw.rolling_window,
     threshold: int = CONSTS.params_ccw.threshold,
 ) -> None:
@@ -56,7 +63,9 @@ def flag_ccw(
     Count transactions based on rolling window time frame.
     Params:
     -------
-    ccw_hist_path: Path | str
+    job_title: str
+        Job title for logging purpose.
+    hist_path: Path | str
         Path to the historical CCW data file.
     output_path: Path | str
         Path to save daily flagged CCW data.
@@ -77,19 +86,20 @@ def flag_ccw(
     --------
     None
     """
-    logger.info("Processing Flagged CCW data...")
+    logger.info(f"Processing {job_title} data...")
     output_path = Path(output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
     try:
-        logger.info("Loading historical CCW data...")
-        df = pl.scan_parquet(ccw_hist_path)
+        logger.info("Loading historical data...")
+        df = pl.scan_parquet(hist_path)
+        df = df.sort(transaction_date_col)
         logger.info(
             f"Total CCW records: {df.select(pl.len()).collect()[0, 0]}")
-        logger.info("Succeeded loading historical CCW data.")
+        logger.info("Succeeded historical CCW data.")
     except Exception as e:
-        logger.error(f"Error loading historical CCW data: {e}.")
-        logger.error("Flag CCW Process terminated.")
+        logger.error(f"Error loading historical data: {e}.")
+        logger.error(f"Flag {job_title} Process terminated.")
         return
     # Filter based on days
     try:
@@ -100,57 +110,74 @@ def flag_ccw(
             f"Data after filtering: {df.select(pl.len()).collect()[0, 0]}")
     except Exception as e:
         logger.error(f"Error filtering data: {e}")
-        logger.error("Flag CCW Process terminated.")
+        logger.error(f"Flag {job_title} Process terminated.")
         return
     try:
         logger.info("Calculating flagged transaction data...")
-        df_rolling = (df.rolling(
-            index_column=transaction_date_col,
-            period=rolling_window,
-            group_by=account_number_col
-        ).agg(pl.len()).rename({"len": "rolling_count"})
+        df_rolling = (
+            df.rolling(
+                index_column=transaction_date_col,
+                period=rolling_window,
+                group_by=account_number_col
+            ).agg(pl.len()).rename({"len": "rolling_count"})
         )
-        df_with_rolling = (df.join(
-            df_rolling,
-            on=[account_number_col, transaction_date_col],
-            how="left")
+        df_with_rolling = (
+            df.join(
+                df_rolling,
+                on=[account_number_col, transaction_date_col],
+                how="left")
         )
-        burst_end = (df_rolling.filter(
-            pl.col("rolling_count") >= threshold).select([account_number_col, transaction_date_col])
+        burst_end = (
+            df_rolling.filter(
+                pl.col("rolling_count") >= threshold).select([account_number_col, transaction_date_col])
         )
         # burst_end: ensure "t_start" column exists
-        burst_end = (burst_end.with_columns(
-            (pl.col(f"{transaction_date_col}") - pl.duration(minutes=10)).alias("t_start"))
+        burst_end = (
+            burst_end.with_columns(
+                (pl.col(f"{transaction_date_col}") - pl.duration(minutes=10)).alias("t_start"))
         )
-        df_with_rolling_with_burst = (df_with_rolling.join(
-            burst_end,
-            on=[f"{account_number_col}"],
-            how="inner")
+        df_with_rolling_with_burst = (
+            df_with_rolling.join(
+                burst_end,
+                on=[f"{account_number_col}"],
+                how="inner")
         )
-        ccw_flag_only = (df_with_rolling_with_burst.filter(
-            (pl.col(transaction_date_col) >= pl.col("t_start")) &
-            (pl.col(transaction_date_col) <= pl.col("transaction_date_right"))).unique(subset=[no_referensi_col])
+        flag_only = (
+            df_with_rolling_with_burst.filter(
+                (pl.col(transaction_date_col) >= pl.col("t_start")) &
+                (pl.col(transaction_date_col) <= pl.col("transaction_date_right"))).unique(subset=[no_referensi_col])
         )
-        ccw_flag_only = (ccw_flag_only.with_columns(
-            pl.lit(1).cast(pl.Int8).alias(flag_col))
+        flag_only = (
+            flag_only.with_columns(
+                pl.lit(1).cast(pl.Int8).alias(flag_col))
         )
-        if not ccw_flag_only.collect().is_empty():
+        if not is_empty(flag_only):
             try:
-                rows = ccw_flag_only.select(pl.len()).collect()[0, 0]
+                rows = flag_only.select(pl.len()).collect()[0, 0]
                 logger.info(f"Found {rows} flagged records.")
-                logger.info("Saving daily flagged CCW transactions...")
+                logger.info(
+                    f"Saving daily flagged {job_title} ...")
                 logger.info(f"Saving into {output_path}.")
-                ccw_flag_only.collect().write_parquet(output_path)
-                logger.info("Saving daily flagged CCW transactions succeed.")
+                flag_only.collect().write_parquet(output_path)
+                logger.info(f"Saving daily {job_title} succeed.")
             except Exception as e:
                 logger.error(
-                    f"Error saving daily flagged CCW transactions: {e}")
-                logger.error("Flag CCW Process terminated.")
+                    f"Error saving daily flagged {job_title} : {e}")
+                logger.error(f"{job_title} process terminated.")
                 return
         else:
-            logger.info("There is no daily flagged CCW transaction found.")
+            dtypes_list = list(dtypes.values())
+            # Make blank dataframe with same schema if no flagged data found
+            flag_only = df = pl.DataFrame(
+                {col: pl.Series(col, dtype=col_type) for col, col_type in zip(usecols, dtypes_list)})
+            flag_only = flag_only.with_columns(
+                pl.lit(None, dtype=pl.Int8).alias(flag_col))
+            flag_only = flag_only.with_columns(
+                pl.lit(None, dtype=pl.Int8).alias(temp_date_col))
+            flag_only.write_parquet(output_path)
+            logger.info("There is no daily flagged transaction found.")
             logger.info("Process finished")
     except Exception as e:
-        logger.error(f"Error calculation flagged CCW transactions: {e}.")
-        logger.error("Flag CCW Process terminated.")
+        logger.error(f"Error {job_title}: {e}.")
+        logger.error(f"{job_title} process terminated.")
         return

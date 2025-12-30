@@ -7,11 +7,11 @@ from .constant import CONFIG_FILE_PATH
 from .logger import logger
 
 
-# Shared settings block (the anchor)
 class JobConfig(BaseModel):
     title: str
 
 
+# Shared settings block (the anchor)
 class ColIdentifier(BaseModel):
     hist_path: str
     transaction_date: str
@@ -66,11 +66,9 @@ def load_constants(
         with open(path, "r") as f:
             data = yaml.safe_load(f)
         return AppConfig(**data)
-
     except ValidationError as e:
         logger.error(f"Parameter validation failed: {e}")
         return None
-
     except Exception as e:
         logger.exception(f"Error loading params: {e}")
         return None

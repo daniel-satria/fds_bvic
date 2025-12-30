@@ -7,9 +7,13 @@ from .constant import CONFIG_FILE_PATH
 from .logger import logger
 
 
+class JobConfig(BaseModel):
+    title: str
+
+
 # Shared settings block (the anchor)
 class ColIdentifier(BaseModel):
-    ccw_hist_path: str
+    hist_path: str
     transaction_date: str
     account_number: str
     transaction_status: str
@@ -48,9 +52,8 @@ class FilterConfig(BaseModel, frozen=True):
     def convert_to_int(cls, v):
         return [int(x) for x in v]
 
+
 # CCW parameters block
-
-
 class ParamsCCWConfig(ColIdentifier, frozen=True):
     rolling_window: str
     threshold: int
@@ -62,6 +65,7 @@ class DateConfig(BaseModel, frozen=True):
 
 
 class AppConfig(BaseModel, frozen=True):
+    job: JobConfig
     historical: HistoricalConfig
     daily: DailyCOnfig
     update: UpdateConfig
@@ -86,15 +90,16 @@ def load_constants(
         with open(path, "r") as f:
             data = yaml.safe_load(f)
         return AppConfig(**data)
-
     except ValidationError as e:
         logger.error(f"Parameter validation failed: {e}")
         return None
-
     except Exception as e:
         logger.exception(f"Error loading params: {e}")
         return None
 
 
 CONSTS = load_constants()
+if CONSTS is None:
+    raise RuntimeError("Failed to load config.")
+
 dtypes = {k: dtype_map[v] for k, v in CONSTS.dtypes.items()}

@@ -1,5 +1,5 @@
 job:
-  title: Flag Pembayaran Listrik 5mio
+  title: Flag Pembayaran Listrik 5mio IDR
 
 col_identifier: &shared_settings
   hist_path: /home/ubuntu/bvic/ibmb_script/pembelian/listrik/historical/data/listrik_historical_data.parquet
@@ -25,7 +25,7 @@ col_identifier: &shared_settings
     - channel_code 
     - transaction_state 
     - no_referensi
-  n_days: 180
+  n_days: 2
   null_values:
     - "null"
     - "NULL"
@@ -45,6 +45,7 @@ dtypes:
   transaction_currency: Utf8
   channel_code: Utf8
   transaction_state: Int8
+  no_referensi: Utf8
 
 flag:
   <<: *shared_settings

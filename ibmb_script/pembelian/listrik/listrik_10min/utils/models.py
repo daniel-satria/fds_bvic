@@ -7,11 +7,11 @@ from .constant import CONFIG_FILE_PATH
 from .logger import logger
 
 
-# Shared settings block (the anchor)
 class JobConfig(BaseModel):
     title: str
 
 
+# Shared settings block (the anchor)
 class ColIdentifier(BaseModel):
     hist_path: str
     transaction_date: str

@@ -27,7 +27,7 @@ col_identifier: &shared_settings
     - channel_code 
     - transaction_state 
     - no_referensi
-  n_days: 180
+  n_days: 120
   null_values:
     - "null"
     - "NULL"
@@ -47,6 +47,7 @@ dtypes:
   transaction_currency: Utf8
   channel_code: Utf8
   transaction_state: Int8
+  no_referensi: Utf8
 
 historical:
   <<: *shared_settings
@@ -54,15 +55,15 @@ historical:
   file_prefix: trx_history_
   file_suffix: .csv
 
-update_flag_10min:
-  <<: *shared_settings
-  daily_path_flag: /home/ubuntu/bvic/ibmb_script/pembelian/pulsa/pulsa_10min/flagged/listrik_10min_flag.parquet
-  flag_col: flag_10min
-
 update_flag_5mio:
   <<: *shared_settings
   daily_path_flag: /home/ubuntu/bvic/ibmb_script/pembelian/pulsa/pulsa_5mio/flagged/pulsa_5mio_flag.parquet
   flag_col: flag_5mio
+
+update_flag_10min:
+  <<: *shared_settings
+  daily_path_flag: /home/ubuntu/bvic/ibmb_script/pembelian/pulsa/pulsa_10min/flagged/pulsa_10min_flag.parquet
+  flag_col: flag_10min
 
 filter:
   transaction_status:
@@ -70,7 +71,8 @@ filter:
   transaction_state:
     - 1
   transaction_category:
-    - PURCHASE_PLN_PREPAIDV2
+    - PURCHASE_PHONE
+    - PURCHASE_PHONE_PREPAID
 
   
 date:

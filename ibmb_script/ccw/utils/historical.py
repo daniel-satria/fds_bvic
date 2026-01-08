@@ -1,4 +1,5 @@
 import os
+import uuid
 import polars as pl
 from typing import List
 from datetime import datetime, timedelta
@@ -12,6 +13,7 @@ def is_empty(lf: pl.LazyFrame) -> bool:
 
 
 def update_historical(
+    job_title: str = CONSTS.job.title,
     n_days: int = CONSTS.historical.n_days,
     input_folder: str = CONSTS.historical.input_folder,
     file_prefix: str = CONSTS.historical.file_prefix,
@@ -21,7 +23,6 @@ def update_historical(
     transaction_date_col: str = CONSTS.historical.transaction_date,
     account_number_col: str = CONSTS.historical.account_number,
     flag_col: str = CONSTS.historical.flag_col,
-    usecols: List[str] = CONSTS.historical.usecols,
     transaction_status_col: List[int] = CONSTS.historical.transaction_status,
     transaction_state_col: List[int] = CONSTS.historical.transaction_state,
     transaction_category_col: List[str] = CONSTS.historical.transaction_category,
@@ -84,6 +85,8 @@ def update_historical(
     today = datetime.today()
     hist_path = Path(hist_path)
     hist_path.parent.mkdir(parents=True, exist_ok=True)
+    os.makedirs(os.path.dirname(hist_path), exist_ok=True)
+    tmp_path = f"{hist_path}.{uuid.uuid4().hex}.tmp"
 
     for i in range(n_days):
         date_str = (today - timedelta(days=i)).strftime(date_format)
@@ -97,19 +100,36 @@ def update_historical(
                 df = pl.scan_csv(
                     filepath,
                     separator='|',
-                    new_columns=usecols,
+                    # new_columns=usecols,
                     null_values=null_values,
                     dtypes=dtypes
                 )
                 df_rows = df.select(pl.len()).collect()[0, 0]
                 df_cols = len(df.collect_schema().names())
-
-                logger.info(
-                    f"Loaded {df_rows} rows and {df_cols} columns.")
-                dataframes.append(df)
             except Exception as e:
                 logger.error(f"Error loading {filepath}: {e}")
                 logger.error("Update historical data terminated.")
+                return
+
+            # Filter CCW only data
+            try:
+                df = (
+                    df.filter(
+                        (pl.col(transaction_status_col).is_in
+                         (transaction_status)) &
+                        (pl.col(transaction_state_col).is_in
+                         (transaction_state)) &
+                        (pl.col(transaction_category_col).is_in
+                         (transaction_category))
+                    )
+                )
+                df_rows = df.select(pl.len()).collect()[0, 0]
+                df_cols = len(df.collect_schema().names())
+                logger.info(f"Loaded {df_rows} rows and {df_cols} columns.")
+                dataframes.append(df)
+            except Exception as e:
+                logger.info(f"Error filtering data : {e}")
+                logger.info(f"{job_title} process terminated.")
                 return
         else:
             logger.warning(f"File not found: {filepath}.")
@@ -117,114 +137,126 @@ def update_historical(
     # If no files found
     if not dataframes:
         logger.warning("No files found.")
-        logger.warning("Updating historical CCW process finished.")
+        logger.warning(f"{job_title} Process Finished.")
         return
-    logger.info("Concatenating all daily files...")
+    else:
+        logger.info("Concatenating all daily files...")
+        try:
+            daily_df = pl.concat(dataframes)
+            daily_df = daily_df.sort(
+                by=[transaction_date_col, account_number_col])
+            logger.info("Concatenating all daily files succeed.")
+        except Exception as e:
+            logger.error(f"Error concatenating files: {e}.")
+            logger.error(f"Updating {job_title} process terminated.")
+            return
 
-    try:
-        df_all = pl.concat(dataframes)
-        logger.info("Concatenating all daily files succeed.")
-    except Exception as e:
-        logger.error(f"Error concatenating files: {e}.")
-        logger.error("Updating historical CCW process terminated.")
-        return
-
-    total_rows = df_all.select(pl.len()).collect()[0, 0]
-    total_cols = len(df_all.collect_schema().names())
+    total_rows = daily_df.select(pl.len()).collect()[0, 0]
+    total_cols = len(daily_df.collect_schema().names())
     logger.info(
         f"Concatenated DataFrame has {total_rows} rows and {total_cols} columns.")
 
-    # Filter settled CCW transactions
-    logger.info("Filtering CCW records only...")
+    # Check if flag columns already exists
+    existing_cols = set(daily_df.collect_schema().names())
+    if isinstance(flag_col, str):
+        missing_flags = [pl.lit(0).cast(pl.Int8).alias(flag_col)]
 
-    # Filter CCW Daily data only
-    try:
-        ccw_daily_df = (
-            df_all.filter(
-                (pl.col(transaction_status_col).is_in
-                 (transaction_status)) &
-                (pl.col(transaction_state_col).is_in
-                 (transaction_state)) &
-                (pl.col(transaction_category_col).is_in
-                 (transaction_category))
-            )
-            .sort(by=[transaction_date_col, account_number_col])
-        )
-        logger.info("Succeeded filtering Daily CCW records.")
-        logger.info(
-            f"Total CCW records after filtering: {ccw_daily_df.select(pl.len()).collect()[0, 0]}")
-    except Exception as e:
-        logger.info(f"Error filterring CCW data: {e}")
-        logger.info("Update Historical process terminated.")
-        return
+    else:  # in case flag_col is a list of columns
+        missing_flags = [
+            pl.lit(0).cast(pl.Int8).alias(col)
+            for col in flag_col
+            if col not in existing_cols
+        ]
 
-    if "flag" not in ccw_daily_df.collect_schema().names():
-        ccw_daily_df = (ccw_daily_df.with_columns(
-            pl.lit(0).cast(pl.Int8).alias(flag_col))
-        )
+    if missing_flags:
+        daily_df = daily_df.with_columns(missing_flags)
 
     # If there existing historical data
     if hist_path.exists():
         logger.info("Historical Data Exist...")
         logger.info("Loading Historical Data...")
         try:
-            ccw_hist_df = (pl.scan_parquet(
-                hist_path)
-            )  # Load historical data
+            # Load historical data
+            hist_df = (
+                pl.read_parquet(hist_path).lazy()
+            )
             logger.info("Loading Historical Data succeed.")
         except Exception as e:
             logger.info(f"Error loading historical data: {e}")
 
-        try:
-            logger.info("Searching delta in new daily data.")
-            delta_new = ccw_daily_df.join(
-                ccw_hist_df,
-                on=no_referensi_col,
-                how="anti"
-            )  # Get records from daily not in history
+        # Ensure historical df has all flag columns
+        hist_existing_cols = set(
+            hist_df.collect_schema().names())
+        hist_missing_flags = [
+            pl.lit(0).cast(pl.Int8).alias(col)
+            for col in flag_col
+            if col not in hist_existing_cols
+        ]
+        if hist_missing_flags:
+            hist_df = hist_df.with_columns(
+                hist_missing_flags)
 
-            logger.info("Searching delta in historical data.")
-            delta_old = ccw_hist_df.join(
-                ccw_hist_df,
+        try:
+            logger.info("Searching delta in daily data.")
+
+            # Only append NEW records
+            delta_new = daily_df.join(
+                hist_df,
                 on=no_referensi_col,
                 how="anti"
-            )  # Get records from history not in daily
-            delta_old = delta_old.with_columns(
-                pl.col("transaction_date").cast(pl.Datetime("us"))
             )
+            if is_empty(delta_new):
+                logger.info("No new records to append.")
+                final_df = hist_df
+            else:
+                final_df = pl.concat(
+                    [hist_df, delta_new],
+                    how="vertical",
+                    rechunk=True,
+                )
         except Exception as e:
             logger.info(
                 f"Error during sorting unique records with anti-join: {e}")
 
-        if is_empty(delta_new) and is_empty(delta_old):
-            logger.info("There is no historical data to be updated")
-            logger.info("Update Historical Process finished")
-            return
-
-        # Concatenating all unique records
-        logger.info("Concatenating new CCW data into historical data...")
-        ccw_hist_df = pl.concat([delta_new, delta_old])
         logger.info(f"Saving historical data into {hist_path}...")
-        ccw_hist_df.collect().write_parquet(hist_path)
+        logger.info(f"Rows: {final_df.select(pl.len()).collect()[0, 0]}")
+        final_df.collect(streaming=False).write_parquet(
+            tmp_path,
+            compression="zstd",
+            statistics=True,
+            use_pyarrow=True
+        )
+        # Atomic replace (POSIX-safe)
+        os.replace(tmp_path, hist_path)
         logger.info(f"Saving historical data succeed.")
     else:
-        logger.info("There is no existing historical parquet data found.")
+        logger.info(f"There is no historical {job_title} data found.")
         logger.info("Making new historical parquet data...")
 
-    try:
-        ccw_daily_df.collect().write_parquet(hist_path)
-        logger.info(
-            "Succeeded saving the updated historical CCW records.")
-    except Exception as e:
-        logger.error(
-            f"Error saving the historical CCW records: {e}")
-        logger.error("Update historical process terminated.")
-        return
+        try:
+            final_df = daily_df
+            logger.info(f"Saving historical data into {hist_path}...")
+            logger.info(f"Rows: {final_df.select(pl.len()).collect()[0, 0]}")
+            final_df.collect(streaming=False).write_parquet(
+                tmp_path,
+                compression="zstd",
+                statistics=True,
+                use_pyarrow=True
+            )
+            # Atomic replace (POSIX-safe)
+            os.replace(tmp_path, hist_path)
+            logger.info(
+                f"Succeeded saving the updated {job_title}.")
+        except Exception as e:
+            logger.error(
+                f"Error saving {job_title}: {e}")
+            logger.error("Update historical process terminated.")
+            return
 
 
 def update_flag(
     n_days: int = CONSTS.update.n_days,
-    history_path: Path | str = CONSTS.update.hist_path,
+    hist_path: Path | str = CONSTS.update.hist_path,
     daily_path: Path | str = CONSTS.update.daily_path_flag,
     no_referensi_col: str = CONSTS.update.no_referensi,
     temp_date_col: str = CONSTS.update.temp_date_col,
@@ -253,18 +285,21 @@ def update_flag(
     None
     """
     cutoff_date = datetime.now().date() - timedelta(days=n_days)
-    history_path = Path(history_path)
+    hist_path = Path(hist_path)
     daily_path = Path(daily_path)
-    history_path.parent.mkdir(parents=True, exist_ok=True)
+    hist_path.parent.mkdir(parents=True, exist_ok=True)
+    os.makedirs(os.path.dirname(hist_path), exist_ok=True)
+    tmp_path = f"{hist_path}.{uuid.uuid4().hex}.tmp"
 
-    logger.info(f"Reading daily flag CCW data from {history_path}...")
+    logger.info(f"Reading daily flag CCW data from {hist_path}...")
     logger.info(f"Filtering for date: {cutoff_date}...")
 
     if daily_path.exists():
         try:
-            daily_flag_df = pl.scan_parquet(daily_path)
+            daily_flag_df = pl.read_parquet(daily_path).lazy()
             daily_flag_df = daily_flag_df.filter(
-                pl.col(temp_date_col) >= cutoff_date
+                pl.col(temp_date_col).cast(
+                    pl.Date, strict=False) >= cutoff_date
             )
             logger.info("Daily flag CCW data read succeed.")
         except Exception as e:
@@ -277,47 +312,74 @@ def update_flag(
         logger.info("Update Flag to Historical data finished.")
         return
 
-    if daily_flag_df.collect().is_empty():
+    if is_empty(daily_flag_df):
         logger.info("There is no daily flag CCW data found.")
         logger.info("Update flag process finished.")
         return
 
     # Check if Historical Data exist
-    if history_path.exists():
-        logger.info(f"Reading historical data from {history_path}...")
-        existing_df = pl.scan_parquet(history_path)
+    if hist_path.exists():
+        logger.info(f"Reading historical data from {hist_path}...")
+        existing_df = pl.read_parquet(hist_path).lazy()
         logger.info("Historical data read successfully.")
         logger.info(
-            f"Existing CCW records: {existing_df.select(pl.len()).collect()[0, 0]}.")
+            f"Existing records: {existing_df.select(pl.len()).collect()[0, 0]}.")
 
-        new_flag_refs = (daily_flag_df
-                         .select(no_referensi_col)
-                         .collect()
-                         .to_series()
-                         .to_list()
-                         )
-        # Check if new_refs already updated as flag 1 in historical
-        is_new_refs_exist = (existing_df.filter(
-            pl.col(no_referensi_col).is_in(new_flag_refs))
-            .select((pl.col(flag_col) == 1).all())
+        new_flag_refs = (
+            daily_flag_df
+            .select(no_referensi_col)
             .collect()
-            .item()
+            .to_series()
+            .to_list()
         )
-        # Append only if there are new records
-        if not is_new_refs_exist:
-            delta_df = existing_df.filter(
+        # Check if new_refs already updated as flag 1 in historical
+        has_unflagged = (
+            existing_df
+            .filter(
                 (pl.col(no_referensi_col).is_in(new_flag_refs)) &
                 (pl.col(flag_col) == 0)
             )
-            logger.info("New records found in daily flag CCW data.")
-            logger.info(
-                f"Flagging {delta_df.select(pl.len()).collect()[0, 0]} new records to historical CW data..")
-            # Updating flagged records colunm 'flag' to 1
-            updated_exist_df = (existing_df.with_columns(
-                (pl.col(flag_col) | pl.col(no_referensi_col).is_in(
-                    new_flag_refs)).alias(flag_col))
+            .select(pl.len())
+            .collect()[0, 0] > 0
+        )
+        # Append only if there are new records
+        if has_unflagged:
+            delta_df = (
+                existing_df
+                .filter(
+                    (pl.col(no_referensi_col).is_in(new_flag_refs)) &
+                    (pl.col(flag_col) == 0)
+                )
             )
-            updated_exist_df.collect().write_parquet(history_path)
+            logger.info("New records found.")
+            logger.info(
+                f"Flagging {delta_df.select(pl.len()).collect()[0, 0]} new records...")
+
+            if isinstance(flag_col, list):
+                if len(flag_col) == 1:
+                    flag_col = flag_col[0]
+                else:
+                    raise ValueError(
+                        "Update_flag supports only a single flag column.")
+
+            # Updating flagged records colunm 'flag' to 1
+            updated_exist_df = (
+                existing_df.with_columns(
+                    ((pl.col(flag_col) == 1) | pl.col(no_referensi_col).is_in(
+                        new_flag_refs)).alias(flag_col)
+                )
+            )
+            logger.info(f"Saving historical data into {hist_path}...")
+            logger.info(
+                f"Rows: {updated_exist_df.select(pl.len()).collect()[0, 0]}")
+            updated_exist_df.collect(streaming=False).write_parquet(
+                tmp_path,
+                compression="zstd",
+                statistics=True,
+                use_pyarrow=True
+            )
+            # Atomic replace (POSIX-safe)
+            os.replace(tmp_path, hist_path)
             logger.info("Historical parquet data updated successfully.")
         else:
             logger.info("There is no new flag CCW found.")

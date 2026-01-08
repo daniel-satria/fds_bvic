@@ -1,5 +1,8 @@
+job:
+  title: Historical Transfer Online
+
 col_identifier: &shared_settings
-  tf_online_hist_path: /home/ubuntu/bvic/ibmb_script/tf_online/historical/data/tf_online_historical_data.parquet
+  hist_path: /home/ubuntu/bvic/ibmb_script/tf_online/historical/data/tf_online_historical_data.parquet
   transaction_date: transaction_date
   account_number: from_account_number
   transaction_status: transaction_status
@@ -26,7 +29,7 @@ col_identifier: &shared_settings
     - channel_code 
     - transaction_state 
     - no_referensi
-  n_days: 180
+  n_days: 3
   null_values:
     - "null"
     - "NULL"
@@ -46,6 +49,7 @@ dtypes:
   transaction_currency: Utf8
   channel_code: Utf8
   transaction_state: Int8
+  no_referensi: Utf8
 
 historical:
   <<: *shared_settings

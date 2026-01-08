@@ -1,3 +1,5 @@
+import os
+import uuid
 import polars as pl
 from pathlib import Path
 from .logger import logger
@@ -9,7 +11,7 @@ def is_empty(lf: pl.LazyFrame) -> bool:
 
 
 def update_flag_5min(
-    history_path: Path | str = CONSTS.update_flag_5min.tf_online_hist_path,
+    hist_path: Path | str = CONSTS.update_flag_5min.hist_path,
     daily_path: Path | str = CONSTS.update_flag_5min.daily_path_flag,
     no_referensi_col: str = CONSTS.update_flag_5min.no_referensi,
     flag_col: str = CONSTS.update_flag_5min.flag_col,
@@ -21,7 +23,7 @@ def update_flag_5min(
     ------
     n_days: int
         Total number of days to look back for the flagged TF Online data.
-    history_path: Path | str
+    hist_path: Path | str
         Path where the historical TF Online data stored.
     daily_path: Path | str
         Path where the daily flagged TF Online data stored.
@@ -34,15 +36,17 @@ def update_flag_5min(
     -------
     None
     """
-    history_path = Path(history_path)
+    hist_path = Path(hist_path)
     daily_path = Path(daily_path)
-    history_path.parent.mkdir(parents=True, exist_ok=True)
+    hist_path.parent.mkdir(parents=True, exist_ok=True)
+    os.makedirs(os.path.dirname(hist_path), exist_ok=True)
+    tmp_path = f"{hist_path}.{uuid.uuid4().hex}.tmp"
 
-    logger.info(f"Reading daily flag TF Online data from {history_path}...")
+    logger.info(f"Reading daily flag TF Online data from {daily_path}...")
 
     if daily_path.exists():
         try:
-            daily_flag_df = pl.scan_parquet(daily_path)
+            daily_flag_df = pl.read_parquet(daily_path).lazy()
             logger.info("Daily flag TF online data read succeeded.")
         except Exception as e:
             logger.error(f"Error reading parquet data : {e}")
@@ -60,30 +64,36 @@ def update_flag_5min(
         return
 
     # Check if Historical Data exist
-    if history_path.exists():
-        logger.info(f"Reading historical data from {history_path}...")
-        existing_df = pl.scan_parquet(history_path)
+    if hist_path.exists():
+        logger.info(f"Reading historical data from {hist_path}...")
+        existing_df = pl.read_parquet(hist_path).lazy()
         logger.info("Historical data read successfully.")
 
-        new_flag_refs = (daily_flag_df
-                         .select(no_referensi_col)
-                         .collect()
-                         .to_series()
-                         .to_list()
-                         )
-
-        # Check if new_refs already updated as flag 1 in historical
-        is_new_refs_exist = (existing_df.filter(
-            pl.col(no_referensi_col).is_in(new_flag_refs))
-            .select((pl.col(flag_col) == 1).all())
+        new_flag_refs = (
+            daily_flag_df
+            .select(no_referensi_col)
             .collect()
-            .item()
+            .to_series()
+            .to_list()
         )
-        # Append only if there are new records
-        if not is_new_refs_exist:
-            delta_df = existing_df.filter(
+        # Check if new_refs already updated as flag 1 in historical
+        has_unflagged = (
+            existing_df
+            .filter(
                 (pl.col(no_referensi_col).is_in(new_flag_refs)) &
                 (pl.col(flag_col) == 0)
+            )
+            .select(pl.len())
+            .collect()[0, 0] > 0
+        )
+        # Append only if there are new records
+        if has_unflagged:
+            delta_df = (
+                existing_df
+                .filter(
+                    (pl.col(no_referensi_col).is_in(new_flag_refs)) &
+                    (pl.col(flag_col) == 0)
+                )
             )
             logger.info("New records found in daily flag TF Online data.")
             logger.info(
@@ -92,10 +102,18 @@ def update_flag_5min(
             # Updating flagged records colunm 'flag' to 1
             updated_exist_df = (
                 existing_df.with_columns(
-                    (pl.col(flag_col) | pl.col(no_referensi_col).is_in(
-                        new_flag_refs)).alias(flag_col))
+                    ((pl.col(flag_col) == 1) | pl.col(no_referensi_col).is_in(
+                        new_flag_refs)).alias(flag_col)
+                )
             )
-            updated_exist_df.collect().write_parquet(history_path)
+            updated_exist_df.collect(streaming=False).write_parquet(
+                tmp_path,
+                compression="zstd",
+                statistics=True,
+                use_pyarrow=True
+            )
+            # Atomic replace (POSIX-safe)
+            os.replace(tmp_path, hist_path)
             logger.info("Historical parquet data updated successfully.")
         else:
             logger.info("There is no new flag TF Online found.")
@@ -110,7 +128,7 @@ def update_flag_5min(
 
 
 def update_flag_10min(
-    history_path: Path | str = CONSTS.update_flag_10min.tf_online_hist_path,
+    hist_path: Path | str = CONSTS.update_flag_10min.hist_path,
     daily_path: Path | str = CONSTS.update_flag_10min.daily_path_flag,
     no_referensi_col: str = CONSTS.update_flag_10min.no_referensi,
     flag_col: str = CONSTS.update_flag_10min.flag_col,
@@ -122,7 +140,7 @@ def update_flag_10min(
     ------
     n_days: int
         Total number of days to look back for the flagged TF Online data.
-    history_path: Path | str
+    hist_path: Path | str
         Path where the historical TF Online data stored.
     daily_path: Path | str
         Path where the daily flagged TF Online data stored.
@@ -135,15 +153,17 @@ def update_flag_10min(
     -------
     None
     """
-    history_path = Path(history_path)
+    hist_path = Path(hist_path)
     daily_path = Path(daily_path)
-    history_path.parent.mkdir(parents=True, exist_ok=True)
+    hist_path.parent.mkdir(parents=True, exist_ok=True)
+    os.makedirs(os.path.dirname(hist_path), exist_ok=True)
+    tmp_path = f"{hist_path}.{uuid.uuid4().hex}.tmp"
 
-    logger.info(f"Reading daily flag TF Online data from {history_path}...")
+    logger.info(f"Reading daily flag TF Online data from {daily_path}...")
 
     if daily_path.exists():
         try:
-            daily_flag_df = pl.scan_parquet(daily_path)
+            daily_flag_df = pl.read_parquet(daily_path).lazy()
             logger.info("Daily flag TF online data read succeeded.")
         except Exception as e:
             logger.error(f"Error reading parquet data : {e}")
@@ -161,30 +181,35 @@ def update_flag_10min(
         return
 
     # Check if Historical Data exist
-    if history_path.exists():
-        logger.info(f"Reading historical data from {history_path}...")
-        existing_df = pl.scan_parquet(history_path)
+    if hist_path.exists():
+        logger.info(f"Reading historical data from {hist_path}...")
+        existing_df = pl.read_parquet(hist_path).lazy()
         logger.info("Historical data read successfully.")
 
-        new_flag_refs = (daily_flag_df
-                         .select(no_referensi_col)
-                         .collect()
-                         .to_series()
-                         .to_list()
-                         )
-
-        # Check if new_refs already updated as flag 1 in historical
-        is_new_refs_exist = (existing_df.filter(
-            pl.col(no_referensi_col).is_in(new_flag_refs))
-            .select((pl.col(flag_col) == 1).all())
+        new_flag_refs = (
+            daily_flag_df
+            .select(no_referensi_col)
             .collect()
-            .item()
+            .to_series()
+            .to_list()
+        )
+        # Check if new_refs already updated as flag 1 in historical
+        has_unflagged = (
+            existing_df
+            .filter((pl.col(no_referensi_col).is_in(new_flag_refs)) &
+                    (pl.col(flag_col) == 0)
+                    )
+            .select(pl.len())
+            .collect()[0, 0] > 0
         )
         # Append only if there are new records
-        if not is_new_refs_exist:
-            delta_df = existing_df.filter(
-                (pl.col(no_referensi_col).is_in(new_flag_refs)) &
-                (pl.col(flag_col) == 0)
+        if has_unflagged:
+            delta_df = (
+                existing_df
+                .filter(
+                    (pl.col(no_referensi_col).is_in(new_flag_refs)) &
+                    (pl.col(flag_col) == 0)
+                )
             )
             logger.info("New records found in daily flag TF Online data.")
             logger.info(
@@ -193,10 +218,18 @@ def update_flag_10min(
             # Updating flagged records colunm 'flag' to 1
             updated_exist_df = (
                 existing_df.with_columns(
-                    (pl.col(flag_col) | pl.col(no_referensi_col).is_in(
-                        new_flag_refs)).alias(flag_col))
+                    ((pl.col(flag_col) == 1) | pl.col(no_referensi_col).is_in(
+                        new_flag_refs)).alias(flag_col)
+                )
             )
-            updated_exist_df.collect().write_parquet(history_path)
+            updated_exist_df.collect(streaming=False).write_parquet(
+                tmp_path,
+                compression="zstd",
+                statistics=True,
+                use_pyarrow=True
+            )
+            # Atomic replace (POSIX-safe)
+            os.replace(tmp_path, hist_path)
             logger.info("Historical parquet data updated successfully.")
         else:
             logger.info("There is no new flag TF Online found.")
@@ -211,7 +244,7 @@ def update_flag_10min(
 
 
 def update_flag_50mio_e(
-    history_path: Path | str = CONSTS.update_flag_50mio_early.tf_online_hist_path,
+    hist_path: Path | str = CONSTS.update_flag_50mio_early.hist_path,
     daily_path: Path | str = CONSTS.update_flag_50mio_early.daily_path_flag,
     no_referensi_col: str = CONSTS.update_flag_50mio_early.no_referensi,
     flag_col: str = CONSTS.update_flag_50mio_early.flag_col,
@@ -223,7 +256,7 @@ def update_flag_50mio_e(
     ------
     n_days: int
         Total number of days to look back for the flagged TF Online data.
-    history_path: Path | str
+    hist_path: Path | str
         Path where the historical TF Online data stored.
     daily_path: Path | str
         Path where the daily flagged TF Online data stored.
@@ -236,15 +269,17 @@ def update_flag_50mio_e(
     -------
     None
     """
-    history_path = Path(history_path)
+    hist_path = Path(hist_path)
     daily_path = Path(daily_path)
-    history_path.parent.mkdir(parents=True, exist_ok=True)
+    hist_path.parent.mkdir(parents=True, exist_ok=True)
+    os.makedirs(os.path.dirname(hist_path), exist_ok=True)
+    tmp_path = f"{hist_path}.{uuid.uuid4().hex}.tmp"
 
-    logger.info(f"Reading daily flag TF Online data from {history_path}...")
+    logger.info(f"Reading daily flag TF Online data from {daily_path}...")
 
     if daily_path.exists():
         try:
-            daily_flag_df = pl.scan_parquet(daily_path)
+            daily_flag_df = pl.read_parquet(daily_path).lazy()
             logger.info("Daily flag TF online data read succeeded.")
         except Exception as e:
             logger.error(f"Error reading parquet data : {e}")
@@ -262,30 +297,37 @@ def update_flag_50mio_e(
         return
 
     # Check if Historical Data exist
-    if history_path.exists():
-        logger.info(f"Reading historical data from {history_path}...")
-        existing_df = pl.scan_parquet(history_path)
+    if hist_path.exists():
+        logger.info(f"Reading historical data from {hist_path}...")
+        existing_df = pl.read_parquet(hist_path).lazy()
         logger.info("Historical data read successfully.")
 
-        new_flag_refs = (daily_flag_df
-                         .select(no_referensi_col)
-                         .collect()
-                         .to_series()
-                         .to_list()
-                         )
+        new_flag_refs = (
+            daily_flag_df
+            .select(no_referensi_col)
+            .collect()
+            .to_series()
+            .to_list()
+        )
 
         # Check if new_refs already updated as flag 1 in historical
-        is_new_refs_exist = (existing_df.filter(
-            pl.col(no_referensi_col).is_in(new_flag_refs))
-            .select((pl.col(flag_col) == 1).all())
-            .collect()
-            .item()
-        )
-        # Append only if there are new records
-        if not is_new_refs_exist:
-            delta_df = existing_df.filter(
+        has_unflagged = (
+            existing_df
+            .filter(
                 (pl.col(no_referensi_col).is_in(new_flag_refs)) &
                 (pl.col(flag_col) == 0)
+            )
+            .select(pl.len())
+            .collect()[0, 0] > 0
+        )
+        # Append only if there are new records
+        if has_unflagged:
+            delta_df = (
+                existing_df
+                .filter(
+                    (pl.col(no_referensi_col).is_in(new_flag_refs)) &
+                    (pl.col(flag_col) == 0)
+                )
             )
             logger.info("New records found in daily flag TF Online data.")
             logger.info(
@@ -294,10 +336,18 @@ def update_flag_50mio_e(
             # Updating flagged records colunm 'flag' to 1
             updated_exist_df = (
                 existing_df.with_columns(
-                    (pl.col(flag_col) | pl.col(no_referensi_col).is_in(
-                        new_flag_refs)).alias(flag_col))
+                    ((pl.col(flag_col) == 1) | pl.col(no_referensi_col).is_in(
+                        new_flag_refs)).alias(flag_col)
+                )
             )
-            updated_exist_df.collect().write_parquet(history_path)
+            updated_exist_df.collect(streaming=False).write_parquet(
+                tmp_path,
+                compression="zstd",
+                statistics=True,
+                use_pyarrow=True
+            )
+            # Atomic replace (POSIX-safe)
+            os.replace(tmp_path, hist_path)
             logger.info("Historical parquet data updated successfully.")
         else:
             logger.info("There is no new flag TF Online found.")
@@ -312,7 +362,7 @@ def update_flag_50mio_e(
 
 
 def update_flag_50mio(
-    history_path: Path | str = CONSTS.update_flag_50mio.tf_online_hist_path,
+    hist_path: Path | str = CONSTS.update_flag_50mio.hist_path,
     daily_path: Path | str = CONSTS.update_flag_50mio.daily_path_flag,
     no_referensi_col: str = CONSTS.update_flag_50mio.no_referensi,
     flag_col: str = CONSTS.update_flag_50mio.flag_col,
@@ -324,7 +374,7 @@ def update_flag_50mio(
     ------
     n_days: int
         Total number of days to look back for the flagged TF Online data.
-    history_path: Path | str
+    hist_path: Path | str
         Path where the historical TF Online data stored.
     daily_path: Path | str
         Path where the daily flagged TF Online data stored.
@@ -337,15 +387,17 @@ def update_flag_50mio(
     -------
     None
     """
-    history_path = Path(history_path)
+    hist_path = Path(hist_path)
     daily_path = Path(daily_path)
-    history_path.parent.mkdir(parents=True, exist_ok=True)
+    hist_path.parent.mkdir(parents=True, exist_ok=True)
+    os.makedirs(os.path.dirname(hist_path), exist_ok=True)
+    tmp_path = f"{hist_path}.{uuid.uuid4().hex}.tmp"
 
-    logger.info(f"Reading daily flag TF Online data from {history_path}...")
+    logger.info(f"Reading daily flag TF Online data from {daily_path}...")
 
     if daily_path.exists():
         try:
-            daily_flag_df = pl.scan_parquet(daily_path)
+            daily_flag_df = pl.read_parquet(daily_path).lazy()
             logger.info("Daily flag TF online data read succeeded.")
         except Exception as e:
             logger.error(f"Error reading parquet data : {e}")
@@ -363,30 +415,36 @@ def update_flag_50mio(
         return
 
     # Check if Historical Data exist
-    if history_path.exists():
-        logger.info(f"Reading historical data from {history_path}...")
-        existing_df = pl.scan_parquet(history_path)
+    if hist_path.exists():
+        logger.info(f"Reading historical data from {hist_path}...")
+        existing_df = pl.read_parquet(hist_path).lazy()
         logger.info("Historical data read successfully.")
 
-        new_flag_refs = (daily_flag_df
-                         .select(no_referensi_col)
-                         .collect()
-                         .to_series()
-                         .to_list()
-                         )
+        new_flag_refs = (
+            daily_flag_df
+            .select(no_referensi_col)
+            .collect()
+            .to_series()
+            .to_list()
+        )
 
         # Check if new_refs already updated as flag 1 in historical
-        is_new_refs_exist = (existing_df.filter(
-            pl.col(no_referensi_col).is_in(new_flag_refs))
-            .select((pl.col(flag_col) == 1).all())
-            .collect()
-            .item()
-        )
-        # Append only if there are new records
-        if not is_new_refs_exist:
-            delta_df = existing_df.filter(
+        has_unflagged = (
+            existing_df.filter(
                 (pl.col(no_referensi_col).is_in(new_flag_refs)) &
                 (pl.col(flag_col) == 0)
+            )
+            .select(pl.len())
+            .collect()[0, 0] > 0
+        )
+        # Append only if there are new records
+        if has_unflagged:
+            delta_df = (
+                existing_df
+                .filter(
+                    (pl.col(no_referensi_col).is_in(new_flag_refs)) &
+                    (pl.col(flag_col) == 0)
+                )
             )
             logger.info("New records found in daily flag TF Online data.")
             logger.info(
@@ -395,10 +453,18 @@ def update_flag_50mio(
             # Updating flagged records colunm 'flag' to 1
             updated_exist_df = (
                 existing_df.with_columns(
-                    (pl.col(flag_col) | pl.col(no_referensi_col).is_in(
-                        new_flag_refs)).alias(flag_col))
+                    ((pl.col(flag_col) == 1) | pl.col(no_referensi_col).is_in(
+                        new_flag_refs)).alias(flag_col)
+                )
             )
-            updated_exist_df.collect().write_parquet(history_path)
+            updated_exist_df.collect(streaming=False).write_parquet(
+                tmp_path,
+                compression="zstd",
+                statistics=True,
+                use_pyarrow=True
+            )
+            # Atomic replace (POSIX-safe)
+            os.replace(tmp_path, hist_path)
             logger.info("Historical parquet data updated successfully.")
         else:
             logger.info("There is no new flag TF Online found.")

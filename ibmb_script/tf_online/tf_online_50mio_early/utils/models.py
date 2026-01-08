@@ -7,9 +7,13 @@ from .constant import CONFIG_FILE_PATH
 from .logger import logger
 
 
+class JobConfig(BaseModel):
+    title: str
+
+
 # Shared settings block (the anchor)
 class ColIdentifier(BaseModel):
-    tf_online_hist_path: str
+    hist_path: str
     transaction_date: str
     account_number: str
     transaction_status: str
@@ -42,6 +46,7 @@ class DateConfig(BaseModel, frozen=True):
 
 
 class AppConfig(BaseModel, frozen=True):
+    job: JobConfig
     flag: FlagCOnfig
     params_tf_online_50mio_e: ParamsTFOnlineConfig
     date: DateConfig

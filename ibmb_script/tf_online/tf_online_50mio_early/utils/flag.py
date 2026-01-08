@@ -1,11 +1,13 @@
+import os
+import uuid
 import polars as pl
 from datetime import datetime, timedelta
 from pathlib import Path
 from .logger import logger
-from .models import CONSTS
+from .models import CONSTS, dtypes
 
 
-DROP_COLS = ["flag_5min", "flag_10min", "flag_50mio"]
+DROP_COLS = ["flag_5min", "flag_10min", "flag_50mio", "flag_50mio_early"]
 
 
 def is_empty(lf: pl.LazyFrame) -> bool:
@@ -56,12 +58,15 @@ def filter_date(
 
 
 def flag_tf_online_50m_early(
-    tf_online_hist_path: Path | str = CONSTS.flag.tf_online_hist_path,
+    job_title: str = CONSTS.job.title,
+    hist_path: Path | str = CONSTS.flag.hist_path,
     output_path: Path | str = CONSTS.flag.output_path,
+    usecols: list = CONSTS.flag.usecols,
     transaction_date_col: str = CONSTS.flag.transaction_date,
     account_number_col: str = CONSTS.flag.account_number,
     no_referensi_col: str = CONSTS.flag.no_referensi,
     flag_col: str = CONSTS.flag.flag_col,
+    temp_date_col: str = CONSTS.flag.temp_date_col,
     rolling_window: int = CONSTS.params_tf_online_50mio_e.rolling_window,
     threshold: int = CONSTS.params_tf_online_50mio_e.threshold,
 ) -> None:
@@ -69,7 +74,7 @@ def flag_tf_online_50m_early(
     Count transactions based on rolling window time frame.
     Params:
     -------
-    tf_online_hist_path: Path | str
+    hist_path: Path | str
         Path to the historical transfer online data.
     output_path: Path | str
         Path to save daily flagged tf_online data.
@@ -90,23 +95,27 @@ def flag_tf_online_50m_early(
     --------
     None
     """
-    logger.info("Processing Flagged transfer online data...")
+    logger.info(f"Processing {job_title}...")
     output_path = Path(output_path)
-    output_path.parent.mkdir(parents=True, exist_ok=True)
+    # output_path.parent.mkdir(parents=True, exist_ok=True)
+    os.makedirs(os.path.dirname(hist_path), exist_ok=True)
+    tmp_path = f"{hist_path}.{uuid.uuid4().hex}.tmp"
 
     try:
-        logger.info("Loading historical transfer online data...")
-        df = pl.scan_parquet(tf_online_hist_path)
+        logger.info("Loading historical data...")
+        df = pl.read_parquet(hist_path).lazy()
         df = df.drop(DROP_COLS, strict=False)
+        df = df.sort(transaction_date_col)
 
         logger.info(
             f"Total tf_online records: {df.select(pl.len()).collect()[0, 0]}")
-        logger.info("Succeeded loading historical transfer online data.")
+        logger.info("Succeeded loading historical data.")
     except Exception as e:
-        logger.error(f"Error loading historical transfer online data: {e}.")
+        logger.error(f"Error loading historical data: {e}.")
         logger.error(
-            "Flag transfer online 50 millions IDR Process terminated.")
+            f"{job_title} Process terminated.")
         return
+
     # Filter based on days
     try:
         logger.info("Filtering daily data...")
@@ -118,7 +127,7 @@ def flag_tf_online_50m_early(
     except Exception as e:
         logger.error(f"Error filtering data: {e}")
         logger.error(
-            "Flag transfer online 50 millions IDR Process terminated.")
+            f"{job_title} Process terminated.")
         return
 
     # Calculating flag transaction
@@ -138,30 +147,26 @@ def flag_tf_online_50m_early(
                  <= pl.col(transaction_date_col))
             )
         )
-
         # Step 2: Group sums on the original transaction
         df_sums = (
             df_rolled
             .group_by(no_referensi_col)
             .agg(pl.sum("transaction_amount_r").alias("rolling_24h_sum"))
         )
-
         # Step 3: Join sums back and filter >= 50M
         df_flagged_accounts = (
             df_rolled
             .join(df_sums, on=no_referensi_col)
             .filter(pl.col("rolling_24h_sum") >= threshold)
         )
-
         # Step 4: Extract keys (these transactions exceeded 50M)
         keys = (
             df_flagged_accounts
             .select([account_number_col, no_referensi_col])
             .unique()
         )
-
         # Step 5: Returns only rows that match the keys
-        tf_online_flag_only = (
+        flag_only = (
             df.join(
                 keys,
                 on=[account_number_col, no_referensi_col],
@@ -171,28 +176,58 @@ def flag_tf_online_50m_early(
 
     except Exception as e:
         logger.error(
-            f"Error calculation flagged transfer online 50 millions IDR: {e}.")
+            f"Error calculatiing {job_title}: {e}.")
         logger.error(
-            "Flag transfer online 50 millions IDR Process terminated.")
+            f"{job_title} Process terminated.")
         return
 
-    if not is_empty(tf_online_flag_only):
+    if not is_empty(flag_only):
         try:
-            rows = tf_online_flag_only.select(pl.len()).collect()[0, 0]
+            rows = flag_only.select(pl.len()).collect()[0, 0]
             logger.info(f"Found {rows} flagged records.")
             logger.info(
-                "Saving daily flagged transfer online transactions...")
+                f"Saving daily {job_title}...")
             logger.info(f"Saving into {output_path}.")
-            tf_online_flag_only.collect().write_parquet(output_path)
+            logger.info(f"Rows: {flag_only.select(pl.len()).collect()[0, 0]}")
+            flag_only.collect(streaming=False).write_parquet(
+                tmp_path,
+                compression="zstd",
+                statistics=True,
+                use_pyarrow=True
+            )
+            # Atomic replace (POSIX-safe)
+            os.replace(tmp_path, output_path)
             logger.info(
-                "Saving daily flagged transfer online transactions succeed.")
+                f"Saving {job_title} succeed.")
         except Exception as e:
             logger.error(
-                f"Error saving daily flagged transfer online transactions: {e}")
+                f"Error saving {job_title}: {e}")
             logger.error(
-                "Flag transfer online 50 millions IDR Process terminated.")
+                f"{job_title} Process terminated.")
             return
     else:
+        dtypes_list = list(dtypes.values())
+
+        # Make blank dataframe with same schema if no flagged data found
+        flag_only = df = pl.DataFrame(
+            {col: pl.Series(col, dtype=col_type) for col, col_type in zip(usecols, dtypes_list)})
+        flag_only = flag_only.with_columns(
+            pl.lit(
+                None,
+                dtype=pl.Int8).alias(flag_col))
+        flag_only = flag_only.with_columns(
+            pl.lit(
+                None,
+                dtype=pl.Int8).alias(temp_date_col))
+        logger.info(f"Rows: {flag_only.select(pl.len()).collect()[0, 0]}")
+        flag_only.write_parquet(
+            tmp_path,
+            compression="zstd",
+            statistics=True,
+            use_pyarrow=True
+        )
+        # Atomic replace (POSIX-safe)
+        os.replace(tmp_path, output_path)
         logger.info(
-            "There is no daily flagged transfer online 50 millions IDR transaction found.")
+            f"There is no daily {job_title} found.")
         logger.info("Process finished")

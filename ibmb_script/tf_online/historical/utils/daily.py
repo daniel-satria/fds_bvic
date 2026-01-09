@@ -10,6 +10,20 @@ def is_empty(lf: pl.LazyFrame) -> bool:
     return lf.limit(1).collect().height == 0
 
 
+def ensure_flag_int8(existing_df: pl.LazyFrame, flag_cols: list[str]) -> pl.LazyFrame:
+    schema = existing_df.collect_schema()
+    bool_flags = [
+        c for c in flag_cols
+        if c in schema and schema[c] == pl.Boolean
+    ]
+    if bool_flags:
+        logger.info(f"Casting flag columns from Bool to Int8: {bool_flags}")
+        existing_df = existing_df.with_columns(
+            [pl.col(c).cast(pl.Int8) for c in bool_flags]
+        )
+    return existing_df
+
+
 def update_flag_5min(
     hist_path: Path | str = CONSTS.update_flag_5min.hist_path,
     daily_path: Path | str = CONSTS.update_flag_5min.daily_path_flag,
@@ -68,8 +82,9 @@ def update_flag_5min(
         logger.info(f"Reading historical data from {hist_path}...")
         existing_df = pl.read_parquet(hist_path).lazy()
         # Ensure flag column is Int8
-        existing_df = existing_df.with_columns(
-            [pl.col(c).cast(pl.Int8) for c in flag_col]
+        ensure_flag_int8(
+            existing_df,
+            flag_col
         )
         logger.info("Historical data read successfully.")
 
@@ -189,8 +204,9 @@ def update_flag_10min(
         logger.info(f"Reading historical data from {hist_path}...")
         existing_df = pl.read_parquet(hist_path).lazy()
         # Ensure flag column is Int8
-        existing_df = existing_df.with_columns(
-            [pl.col(c).cast(pl.Int8) for c in flag_col]
+        ensure_flag_int8(
+            existing_df,
+            flag_col
         )
         logger.info("Historical data read successfully.")
 
@@ -310,8 +326,9 @@ def update_flag_50mio_e(
         logger.info(f"Reading historical data from {hist_path}...")
         existing_df = pl.read_parquet(hist_path).lazy()
         # Ensure flag column is Int8
-        existing_df = existing_df.with_columns(
-            [pl.col(c).cast(pl.Int8) for c in flag_col]
+        ensure_flag_int8(
+            existing_df,
+            flag_col
         )
         logger.info("Historical data read successfully.")
 
@@ -433,8 +450,9 @@ def update_flag_50mio(
         logger.info(f"Reading historical data from {hist_path}...")
         existing_df = pl.read_parquet(hist_path).lazy()
         # Ensure flag column is Int8
-        existing_df = existing_df.with_columns(
-            [pl.col(c).cast(pl.Int8) for c in flag_col]
+        ensure_flag_int8(
+            existing_df,
+            flag_col
         )
         logger.info("Historical data read successfully.")
 

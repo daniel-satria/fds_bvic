@@ -13,7 +13,7 @@ class JobConfig(BaseModel):
 
 
 class ColIdentifier(BaseModel):
-    non_qr_hist_path: str
+    hist_path: str
     transaction_date: str
     account_number: str
     transaction_status: str

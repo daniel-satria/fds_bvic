@@ -2,7 +2,7 @@ job:
   title: E-wallet Historical
 
 col_identifier: &shared_settings
-  non_qr_hist_path: /home/ubuntu/bvic/ibmb_script/e_wallet/historical/data/ewallet_historical_data.parquet
+  hist_path: /home/ubuntu/bvic/ibmb_script/e_wallet/historical/data/ewallet_historical_data.parquet
   transaction_date: transaction_date
   account_number: from_account_number
   transaction_status: transaction_status
@@ -47,6 +47,7 @@ dtypes:
   transaction_currency: Utf8
   channel_code: Utf8
   transaction_state: Int8
+  no_referensi: Utf8
 
 historical:
   <<: *shared_settings

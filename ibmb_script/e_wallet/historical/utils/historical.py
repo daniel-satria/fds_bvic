@@ -1,4 +1,6 @@
 import os
+import uuid
+import os
 import polars as pl
 from typing import List
 from datetime import datetime, timedelta
@@ -18,7 +20,7 @@ def update_historical(
     file_prefix: str = CONSTS.historical.file_prefix,
     file_suffix: str = CONSTS.historical.file_suffix,
     date_format: str = CONSTS.date.date_file_format,
-    hist_path: Path | str = CONSTS.historical.non_qr_hist_path,
+    hist_path: Path | str = CONSTS.historical.hist_path,
     transaction_date_col: str = CONSTS.historical.transaction_date,
     account_number_col: str = CONSTS.historical.account_number,
     flag_col: List[str] = CONSTS.historical.flag_col,
@@ -85,6 +87,8 @@ def update_historical(
     today = datetime.today()
     hist_path = Path(hist_path)
     hist_path.parent.mkdir(parents=True, exist_ok=True)
+    os.makedirs(os.path.dirname(hist_path), exist_ok=True)
+    tmp_path = f"{hist_path}.{uuid.uuid4().hex}.tmp"
 
     for i in range(n_days):
         date_str = (today - timedelta(days=i)).strftime(date_format)
@@ -98,7 +102,7 @@ def update_historical(
                 df = pl.scan_csv(
                     filepath,
                     separator='|',
-                    new_columns=usecols,
+                    # new_columns=usecols,
                     null_values=null_values,
                     dtypes=dtypes
                 )
@@ -107,7 +111,7 @@ def update_historical(
                 logger.error("Update historical data terminated.")
                 return
 
-            # Filter job data only
+            # Filter Ewallet data only
             try:
                 df = (
                     df.filter(
@@ -120,7 +124,8 @@ def update_historical(
                     )
                     .sort(by=[transaction_date_col, account_number_col])
                 )
-                df_rows, df_cols = df.collect().shape
+                df_rows = df.select(pl.len()).collect()[0, 0]
+                df_cols = len(df.collect_schema().names())
                 logger.info(f"Loaded {df_rows} rows and {df_cols} columns.")
             except Exception:
                 logger.info(f"Error filtering {job_title} Data : {e}")
@@ -135,105 +140,112 @@ def update_historical(
     # If no files found
     if not dataframes:
         logger.warning("No files found.")
-        logger.warning(f"Updating historical {job_title} process finished.")
+        logger.warning(f"Updating {job_title} process finished.")
         return
-    logger.info("Concatenating all daily files...")
+    else:
+        logger.info("Concatenating all daily files...")
+        try:
+            daily_df = pl.concat(dataframes)
+            daily_df = daily_df.sort(
+                by=[transaction_date_col, account_number_col])
+            logger.info("Concatenating all daily files succeed.")
+        except Exception as e:
+            logger.error(f"Error concatenating files: {e}.")
+            logger.error(f"Updating {job_title} process terminated.")
+            return
 
-    try:
-        non_qr_daily_df = pl.concat(dataframes)
-        non_qr_daily_df = non_qr_daily_df.sort(
-            by=[transaction_date_col, account_number_col])
-        logger.info("Concatenating all daily files succeed.")
-    except Exception as e:
-        logger.error(f"Error concatenating files: {e}.")
-        logger.error(f"Updating historical {job_title} process terminated.")
-        return
-
-    total_rows, total_cols = non_qr_daily_df.collect().shape
+    total_rows = daily_df.select(pl.len()).collect()[0, 0]
+    total_cols = len(daily_df.collect_schema().names())
     logger.info(
         f"Concatenated DataFrame has {total_rows} rows and {total_cols} columns.")
 
     # Check if flag columns already exists
-    existing_cols = set(non_qr_daily_df.collect_schema().names())
+    existing_cols = set(daily_df.collect_schema().names())
     missing_flags = [
         pl.lit(0).cast(pl.Int8).alias(col)
         for col in flag_col
         if col not in existing_cols
     ]
     if missing_flags:
-        non_qr_daily_df = non_qr_daily_df.with_columns(missing_flags)
+        daily_df = daily_df.with_columns(missing_flags)
 
     # If there existing historical data
     if hist_path.exists():
         logger.info("Historical Data Exist...")
         logger.info("Loading Historical Data...")
         try:
-            non_qr_hist_df = (pl.scan_parquet(
-                hist_path)
-            )  # Load historical data
+            # Load historical data
+            hist_df = (
+                pl.read_parquet(hist_path).lazy()
+            )
             logger.info("Loading Historical Data succeed.")
         except Exception as e:
             logger.info(f"Error loading historical data: {e}")
 
         # Ensure historical df has all flag columns
         hist_existing_cols = set(
-            non_qr_hist_df.collect_schema().names())
+            hist_df.collect_schema().names())
         hist_missing_flags = [
             pl.lit(0).cast(pl.Int8).alias(col)
             for col in flag_col
             if col not in hist_existing_cols
         ]
         if hist_missing_flags:
-            non_qr_hist_df = non_qr_hist_df.with_columns(
+            hist_df = hist_df.with_columns(
                 hist_missing_flags)
 
         try:
-            logger.info("Searching delta in new daily data.")
-            delta_new = non_qr_daily_df.join(
-                non_qr_hist_df,
+            logger.info("Searching delta in daily data.")
+            # Only append NEW records
+            delta_new = daily_df.join(
+                hist_df,
                 on=no_referensi_col,
                 how="anti"
-            )  # Get records from daily not in history
-            logger.info("Searching delta in historical data.")
-            delta_old = non_qr_hist_df.join(
-                non_qr_daily_df,
-                on=no_referensi_col,
-                how="anti"
-            )  # Get records from history not in daily
+            )
+            if is_empty(delta_new):
+                logger.info("No new records to append.")
+                final_df = hist_df
+            else:
+                final_df = pl.concat(
+                    [hist_df, delta_new],
+                    how="vertical",
+                    rechunk=True,
+                )
         except Exception as e:
             logger.info(
                 f"Error during sorting unique records with anti-join: {e}")
 
-        if is_empty(delta_new) and is_empty(delta_old):
-            logger.info("There is no historical data to be updated")
-            logger.info("Update Historical Process finished")
-            return
-
-        # Concatenating all unique records
-        logger.info(
-            "Concatenating new transfer online data into historical data...")
-        non_qr_hist_df = pl.concat([delta_new, delta_old])
         logger.info(f"Saving historical data into {hist_path}...")
-        non_qr_hist_df.collect().write_parquet(hist_path)
+        logger.info(f"Rows: {final_df.select(pl.len()).collect()[0, 0]}")
+        final_df.collect(streaming=False).write_parquet(
+            tmp_path,
+            compression="zstd",
+            statistics=True,
+            use_pyarrow=True
+        )
+        # Atomic replace (POSIX-safe)
+        os.replace(tmp_path, hist_path)
         logger.info(f"Saving historical data succeed.")
     else:
-        logger.info("There is no existing historical parquet data found.")
-        logger.info("Making new historical parquet data into:")
-        logger.info(hist_path)
+        logger.info(f"There is no {job_title} data found.")
+        logger.info("Making new historical parquet data...")
 
-    try:
-        final_df = (
-            non_qr_hist_df
-            if hist_path.exists()
-            else non_qr_daily_df
-        )
-
-        final_df.collect().write_parquet(hist_path)
-
-        logger.info(
-            "Succeeded saving the updated historical transfer online records.")
-    except Exception as e:
-        logger.error(
-            f"Error saving the historical transfer online records: {e}")
-        logger.error("Update historical process terminated.")
-        return
+        try:
+            final_df = daily_df
+            logger.info(f"Saving historical data into {hist_path}...")
+            logger.info(f"Rows: {final_df.select(pl.len()).collect()[0, 0]}")
+            final_df.collect(streaming=False).write_parquet(
+                tmp_path,
+                compression="zstd",
+                statistics=True,
+                use_pyarrow=True
+            )
+            # Atomic replace (POSIX-safe)
+            os.replace(tmp_path, hist_path)
+            logger.info(
+                f"Succeeded saving the updated {job_title}.")
+        except Exception as e:
+            logger.error(
+                f"Error saving {job_title}: {e}")
+            logger.error("Update historical process terminated.")
+            return

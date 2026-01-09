@@ -22,11 +22,11 @@ def update_flag_5mio(
     Params:
     ------
     n_days: int
-        Total number of days to look back for the flagged pembayaran non-QR data.
+        Total number of days to look back for the flagged pembayaran E-Wallet data.
     history_path: Path | str
-        Path where the historical pembayaran non-QR data stored.
+        Path where the historical pembayaran E-Wallet data stored.
     daily_path: Path | str
-        Path where the daily flagged pembayaran non-QR data stored.
+        Path where the daily flagged pembayaran E-Wallet data stored.
     no_referensi_col: str
         Column of no_referensi to use.
     flag_col: str
@@ -43,24 +43,24 @@ def update_flag_5mio(
     tmp_path = f"{hist_path}.{uuid.uuid4().hex}.tmp"
 
     logger.info(
-        f"Reading daily flag pembayaran non-QR data from {hist_path}...")
+        f"Reading daily flag pembayaran E-Wallet data from {hist_path}...")
 
     if daily_path.exists():
         try:
             daily_flag_df = pl.read_parquet(daily_path).lazy()
-            logger.info("Daily flag pembayaran non-QR data read succeeded.")
+            logger.info("Daily flag pembayaran E-Wallet data read succeeded.")
         except Exception as e:
             logger.error(f"Error reading parquet data : {e}")
             logger.error(
-                "Update pembayaran non-QR flag to Historical Data Process terminated.")
+                "Update pembayaran E-Wallet flag to Historical Data Process terminated.")
             return
     else:
-        logger.info("There is no daily flag pembayaran non-QR data found.")
+        logger.info("There is no daily flag pembayaran E-Wallet data found.")
         logger.info("Update Flag to Historical data finished.")
         return
 
     if is_empty(daily_flag_df):
-        logger.info("There is no daily flag pembayaran non-QR data found.")
+        logger.info("There is no daily flag pembayaran E-Wallet data found.")
         logger.info("Update flag process finished.")
         return
 
@@ -119,7 +119,7 @@ def update_flag_5mio(
             os.replace(tmp_path, hist_path)
             logger.info("Historical parquet data updated successfully.")
         else:
-            logger.info("There is no new flag pembayaran non-QR found.")
+            logger.info("There is no new flag pembayaran E-Wallet found.")
             logger.info("Flagged records have been added previously.")
             logger.info("Updating flag record finished.")
             return
@@ -142,11 +142,11 @@ def update_flag_10min(
     Params:
     ------
     n_days: int
-        Total number of days to look back for the flagged pembayaran non-QR data.
+        Total number of days to look back for the flagged pembayaran E-Wallet data.
     hist_path: Path | str
-        Path where the historical pembayaran non-QR data stored.
+        Path where the historical pembayaran E-Wallet data stored.
     daily_path: Path | str
-        Path where the daily flagged pembayaran non-QR data stored.
+        Path where the daily flagged pembayaran E-Wallet data stored.
     no_referensi_col: str
         Column of no_referensi to use.
     flag_col: str
@@ -163,7 +163,7 @@ def update_flag_10min(
     tmp_path = f"{hist_path}.{uuid.uuid4().hex}.tmp"
 
     logger.info(
-        f"Reading daily flag pembayaran non-QR data from {hist_path}...")
+        f"Reading daily flag pembayaran E-Wallet data from {hist_path}...")
 
     if daily_path.exists():
         try:
@@ -217,7 +217,6 @@ def update_flag_10min(
             logger.info("New records found.")
             logger.info(
                 f"Flagging {delta_df.select(pl.len()).collect()[0, 0]} new records.")
-
             # Updating flagged records colunm 'flag' to 1
             updated_exist_df = existing_df.with_columns(
                 (
@@ -237,7 +236,7 @@ def update_flag_10min(
             os.replace(tmp_path, hist_path)
             logger.info("Historical parquet data updated successfully.")
         else:
-            logger.info("There is no new flag pembayaran non-QR found.")
+            logger.info("There is no new flag pembayaran E-Wallet found.")
             logger.info("Flagged records have been added previously.")
             logger.info("Updating flag record finished.")
             return

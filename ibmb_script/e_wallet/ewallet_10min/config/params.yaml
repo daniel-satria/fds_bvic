@@ -1,5 +1,5 @@
 job:
-  title: E-wallet 10min
+  title: Flag E-wallet 10min
 
 col_identifier: &shared_settings
   hist_path: /home/ubuntu/bvic/ibmb_script/e_wallet/historical/data/ewallet_historical_data.parquet
@@ -45,6 +45,7 @@ dtypes:
   transaction_currency: Utf8
   channel_code: Utf8
   transaction_state: Int8
+  no_referensi: Utf8
 
 flag:
   <<: *shared_settings

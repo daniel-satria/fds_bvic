@@ -67,6 +67,10 @@ def update_flag_5min(
     if hist_path.exists():
         logger.info(f"Reading historical data from {hist_path}...")
         existing_df = pl.read_parquet(hist_path).lazy()
+        # Ensure flag column is Int8
+        existing_df = existing_df.with_columns(
+            [pl.col(c).cast(pl.Int8) for c in flag_col]
+        )
         logger.info("Historical data read successfully.")
 
         new_flag_refs = (
@@ -100,11 +104,11 @@ def update_flag_5min(
                 f"Flagging {delta_df.select(pl.len()).collect()[0, 0]} new records to historical TF online data..")
 
             # Updating flagged records colunm 'flag' to 1
-            updated_exist_df = (
-                existing_df.with_columns(
-                    ((pl.col(flag_col) == 1) | pl.col(no_referensi_col).is_in(
-                        new_flag_refs)).alias(flag_col)
-                )
+            updated_exist_df = existing_df.with_columns(
+                pl.when(pl.col(no_referensi_col).is_in(new_flag_refs))
+                .then(pl.lit(1, dtype=pl.Int8))
+                .otherwise(pl.col(flag_col))
+                .alias(flag_col)
             )
             updated_exist_df.collect(streaming=False).write_parquet(
                 tmp_path,
@@ -184,6 +188,10 @@ def update_flag_10min(
     if hist_path.exists():
         logger.info(f"Reading historical data from {hist_path}...")
         existing_df = pl.read_parquet(hist_path).lazy()
+        # Ensure flag column is Int8
+        existing_df = existing_df.with_columns(
+            [pl.col(c).cast(pl.Int8) for c in flag_col]
+        )
         logger.info("Historical data read successfully.")
 
         new_flag_refs = (
@@ -216,12 +224,13 @@ def update_flag_10min(
                 f"Flagging {delta_df.select(pl.len()).collect()[0, 0]} new records to historical TF online data..")
 
             # Updating flagged records colunm 'flag' to 1
-            updated_exist_df = (
-                existing_df.with_columns(
-                    ((pl.col(flag_col) == 1) | pl.col(no_referensi_col).is_in(
-                        new_flag_refs)).alias(flag_col)
-                )
+            updated_exist_df = existing_df.with_columns(
+                pl.when(pl.col(no_referensi_col).is_in(new_flag_refs))
+                .then(pl.lit(1, dtype=pl.Int8))
+                .otherwise(pl.col(flag_col))
+                .alias(flag_col)
             )
+
             updated_exist_df.collect(streaming=False).write_parquet(
                 tmp_path,
                 compression="zstd",
@@ -300,6 +309,10 @@ def update_flag_50mio_e(
     if hist_path.exists():
         logger.info(f"Reading historical data from {hist_path}...")
         existing_df = pl.read_parquet(hist_path).lazy()
+        # Ensure flag column is Int8
+        existing_df = existing_df.with_columns(
+            [pl.col(c).cast(pl.Int8) for c in flag_col]
+        )
         logger.info("Historical data read successfully.")
 
         new_flag_refs = (
@@ -334,12 +347,13 @@ def update_flag_50mio_e(
                 f"Flagging {delta_df.select(pl.len()).collect()[0, 0]} new records to historical TF online data..")
 
             # Updating flagged records colunm 'flag' to 1
-            updated_exist_df = (
-                existing_df.with_columns(
-                    ((pl.col(flag_col) == 1) | pl.col(no_referensi_col).is_in(
-                        new_flag_refs)).alias(flag_col)
-                )
+            updated_exist_df = existing_df.with_columns(
+                pl.when(pl.col(no_referensi_col).is_in(new_flag_refs))
+                .then(pl.lit(1, dtype=pl.Int8))
+                .otherwise(pl.col(flag_col))
+                .alias(flag_col)
             )
+
             updated_exist_df.collect(streaming=False).write_parquet(
                 tmp_path,
                 compression="zstd",
@@ -418,6 +432,10 @@ def update_flag_50mio(
     if hist_path.exists():
         logger.info(f"Reading historical data from {hist_path}...")
         existing_df = pl.read_parquet(hist_path).lazy()
+        # Ensure flag column is Int8
+        existing_df = existing_df.with_columns(
+            [pl.col(c).cast(pl.Int8) for c in flag_col]
+        )
         logger.info("Historical data read successfully.")
 
         new_flag_refs = (
@@ -451,12 +469,13 @@ def update_flag_50mio(
                 f"Flagging {delta_df.select(pl.len()).collect()[0, 0]} new records to historical TF online data..")
 
             # Updating flagged records colunm 'flag' to 1
-            updated_exist_df = (
-                existing_df.with_columns(
-                    ((pl.col(flag_col) == 1) | pl.col(no_referensi_col).is_in(
-                        new_flag_refs)).alias(flag_col)
-                )
+            updated_exist_df = existing_df.with_columns(
+                pl.when(pl.col(no_referensi_col).is_in(new_flag_refs))
+                .then(pl.lit(1, dtype=pl.Int8))
+                .otherwise(pl.col(flag_col))
+                .alias(flag_col)
             )
+
             updated_exist_df.collect(streaming=False).write_parquet(
                 tmp_path,
                 compression="zstd",

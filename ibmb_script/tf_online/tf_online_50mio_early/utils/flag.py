@@ -219,7 +219,7 @@ def flag_tf_online_50m_early(
             pl.lit(
                 None,
                 dtype=pl.Int8).alias(temp_date_col))
-        logger.info(f"Rows: {flag_only.select(pl.len()).collect()[0, 0]}")
+        logger.info(f"Rows: {flag_only.select(pl.len())[0, 0]}")
         flag_only.write_parquet(
             tmp_path,
             compression="zstd",

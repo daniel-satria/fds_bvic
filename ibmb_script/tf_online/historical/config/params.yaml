@@ -50,6 +50,10 @@ dtypes:
   channel_code: Utf8
   transaction_state: Int8
   no_referensi: Utf8
+  flag_5min: Int8
+  flag_10min: Int8
+  flag_50mio: Int8
+  flag_50mio_early: Int8
 
 historical:
   <<: *shared_settings

@@ -12,6 +12,20 @@ def is_empty(lf: pl.LazyFrame) -> bool:
     return lf.limit(1).collect().height == 0
 
 
+def ensure_flag_int8(existing_df: pl.LazyFrame, flag_cols: list[str]) -> pl.LazyFrame:
+    schema = existing_df.collect_schema()
+    bool_flags = [
+        c for c in flag_cols
+        if c in schema and schema[c] == pl.Boolean
+    ]
+    if bool_flags:
+        logger.info(f"Casting flag columns from Bool to Int8: {bool_flags}")
+        existing_df = existing_df.with_columns(
+            [pl.col(c).cast(pl.Int8) for c in bool_flags]
+        )
+    return existing_df
+
+
 def update_historical(
     job_title: str = CONSTS.job.title,
     n_days: int = CONSTS.historical.n_days,
@@ -180,6 +194,10 @@ def update_historical(
             hist_df = (
                 pl.read_parquet(hist_path).lazy()
             )
+            ensure_flag_int8(
+                hist_df,
+                flag_col
+            )
             logger.info("Loading Historical Data succeed.")
         except Exception as e:
             logger.info(f"Error loading historical data: {e}")
@@ -321,6 +339,10 @@ def update_flag(
     if hist_path.exists():
         logger.info(f"Reading historical data from {hist_path}...")
         existing_df = pl.read_parquet(hist_path).lazy()
+        ensure_flag_int8(
+            existing_df,
+            flag_col
+        )
         logger.info("Historical data read successfully.")
         logger.info(
             f"Existing records: {existing_df.select(pl.len()).collect()[0, 0]}.")
@@ -363,11 +385,11 @@ def update_flag(
                         "Update_flag supports only a single flag column.")
 
             # Updating flagged records colunm 'flag' to 1
-            updated_exist_df = (
-                existing_df.with_columns(
-                    ((pl.col(flag_col) == 1) | pl.col(no_referensi_col).is_in(
-                        new_flag_refs)).alias(flag_col)
-                )
+            updated_exist_df = existing_df.with_columns(
+                pl.when(pl.col(no_referensi_col).is_in(new_flag_refs))
+                .then(pl.lit(1, dtype=pl.Int8))
+                .otherwise(pl.col(flag_col))
+                .alias(flag_col)
             )
             logger.info(f"Saving historical data into {hist_path}...")
             logger.info(
